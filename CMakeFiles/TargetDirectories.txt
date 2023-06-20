@@ -1,0 +1,7 @@
+/home/ant/Downloads/gol-1/gol/CMakeFiles/conway.dir
+/home/ant/Downloads/gol-1/gol/CMakeFiles/edit_cache.dir
+/home/ant/Downloads/gol-1/gol/CMakeFiles/rebuild_cache.dir
+/home/ant/Downloads/gol-1/gol/CMakeFiles/list_install_components.dir
+/home/ant/Downloads/gol-1/gol/CMakeFiles/install.dir
+/home/ant/Downloads/gol-1/gol/CMakeFiles/install/local.dir
+/home/ant/Downloads/gol-1/gol/CMakeFiles/install/strip.dir

@@ -5,6 +5,8 @@ if(NOT DEFINED CMAKE_SUPPRESS_DEVELOPER_WARNINGS)
 endif()
 
 project(conway C)
+set(CMAKE_C_COMPILER mpicc)
+set(CMAKE_CXX_COMPILER mpiccxx)
 list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake/sdl2)
 
 find_package(SDL2 REQUIRED)

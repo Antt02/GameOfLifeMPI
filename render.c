@@ -4,48 +4,54 @@
 #include "./render.h"
 #include "./logic.h"
 
-void render_board(SDL_Renderer* renderer, board_t* board,
-                  int neighbors[COL_NUM][ROW_NUM])
-{
-  switch(board->game_state) {
+bool Graphical_Mode = false;
+int rows, M;
+
+void render_board(SDL_Renderer* renderer, boardRowInfo *board,
+                  unsigned char neighbors[rows][M], board_t* fullBoard)
+{ 
+  switch(fullBoard->game_state) { 
     case RUNNING_STATE:
-      render_running_state(renderer, board);
+      if (Graphical_Mode){
+      	render_running_state(renderer, board, fullBoard);
+      }
       count_neighbors(board, neighbors);
       evolve(board, neighbors);
       break;
     case PAUSE_STATE:
-      render_pause_state(renderer, board);
+      if (Graphical_Mode)
+        render_pause_state(renderer, board, fullBoard);
       break;
     default: {}
   }
 }
 
-void render_running_state(SDL_Renderer *renderer, board_t *board)
+void render_running_state(SDL_Renderer *renderer, boardRowInfo *board, board_t *fullBoard)
 {
   int pos_x = 0;
   int pos_y = 0;
 
-  for (int i = 0; i < COL_NUM; i++) {
-    for (int j = 0; j < ROW_NUM; j++) {
-      pos_x = i * board->CELL_WIDTH;
-      pos_y = j * board->CELL_HEIGHT;
+  for (int i = 0; i < board->COL_NUM; i++) {
+    for (int j = 0; j < board->ROW_NUM; j++) {
+      pos_x = i * fullBoard->CELL_WIDTH;
+      pos_y = j * fullBoard->CELL_HEIGHT;
       if (board->cell_state[i][j] == ALIVE)
-        render_square(renderer, pos_x, pos_y, board);
+        render_square(renderer, pos_x, pos_y, fullBoard);
     }
   }
 }
 
-void render_pause_state(SDL_Renderer *renderer, board_t *board)
+void render_pause_state(SDL_Renderer *renderer, boardRowInfo *board, board_t *fullBoard)
 {
   int pos_x = 0;
   int pos_y = 0;
 
-  for (int i = 0; i < COL_NUM; i++) {
-    for (int j = 0; j < ROW_NUM; j++) {
-      pos_x = i * board->CELL_WIDTH;
-      pos_y = j * board->CELL_HEIGHT;
+  for (int i = 0; i < board->COL_NUM; i++) {
+    for (int j = 0; j < board->ROW_NUM; j++) {
+      pos_x = i * fullBoard->CELL_WIDTH;
+      pos_y = j * fullBoard->CELL_HEIGHT;
       if (board->cell_state[i][j] == ALIVE)
-        pause_square(renderer, pos_x, pos_y, board);
+        pause_square(renderer, pos_x, pos_y, fullBoard);
     }
   }
 }
@@ -71,3 +77,5 @@ void pause_square(SDL_Renderer *renderer, int pos_x, int pos_y, board_t* board)
   SDL_SetRenderDrawColor(renderer, 146, 131, 116, 1);
   SDL_RenderFillRect(renderer, &cell);
 }
+
+
