@@ -371,34 +371,34 @@ int main(int argc, char** argv)
 	
 		
 		//se comparteixen les files que falten per fer el calcul
-		if (rank==0) { //FIRST NODE
-			//send my last row -> upper for the next
-			MPI_Send(&myBoard->cell_state[rows-1], M, boardRow, 1, 1, MPI_COMM_WORLD);
-			//recieve my upper from previous
-			MPI_Recv(&myBoard->upper, M, boardRow, size-1, 1, MPI_COMM_WORLD, &st);
-			//send my first row -> under for the previous
-			MPI_Send(&myBoard->cell_state[0], M, boardRow, size-1, 2, MPI_COMM_WORLD);
-			//recieve my under from next
-			MPI_Recv(&myBoard->under, M, boardRow, 1, 2, MPI_COMM_WORLD, &st);
-		}else if(rank==size-1){ //LAST NODE
-			//recieve my upper from previous
-			MPI_Recv(&myBoard->upper, M, boardRow, size-2, 1, MPI_COMM_WORLD, &st);
-			//send my last row -> upper for the next
-			MPI_Send(&myBoard->cell_state[rows-1], M, boardRow, 0, 1, MPI_COMM_WORLD);
-			//recieve my under from next
-			MPI_Recv(&myBoard->upper, M, boardRow, 0, 2, MPI_COMM_WORLD, &st);
-			//send my first row -> under for the previous
-			MPI_Send(&myBoard->cell_state[0], M, boardRow, size-2, 2, MPI_COMM_WORLD);
-		}else{ //INTERMEDIUM NODE
-			//recieve my upper from previous
-			MPI_Recv(&myBoard->upper, M, boardRow, rank-1, 1, MPI_COMM_WORLD, &st);
-			//send my last row -> upper for the next
-			MPI_Send(&myBoard->cell_state[rows-1], M, boardRow, rank+1, 1, MPI_COMM_WORLD);
-			//recieve my under from next
-			MPI_Recv(&myBoard->under, M, boardRow, rank+1, 2, MPI_COMM_WORLD, &st);
-			//send my first row -> under for the previous
-			MPI_Send(&myBoard->cell_state[rows-1], M, boardRow, rank-1, 2, MPI_COMM_WORLD);
-		}
+        if (rank==0) { //FIRST NODE
+            //send my last row -> upper for the next
+            MPI_Send(&myBoard->cell_state[rows-1], M, boardRow, 1, 1, MPI_COMM_WORLD);
+            //recieve my upper from previous
+            MPI_Recv(&myBoard->upper, M, boardRow, size-1, 1, MPI_COMM_WORLD, &st);
+            //send my first row -> under for the previous
+            MPI_Send(&myBoard->cell_state[0], M, boardRow, size-1, 2, MPI_COMM_WORLD);
+            //recieve my under from next
+            MPI_Recv(&myBoard->under, M, boardRow, 1, 2, MPI_COMM_WORLD, &st);
+        }else if(rank==size-1){ //LAST NODE
+            //recieve my upper from previous
+            MPI_Recv(&myBoard->upper, M, boardRow, size-2, 1, MPI_COMM_WORLD, &st);
+            //send my last row -> upper for the next
+            MPI_Send(&myBoard->cell_state[rows-1], M, boardRow, 0, 1, MPI_COMM_WORLD);
+            //recieve my under from next
+            MPI_Recv(&myBoard->under, M, boardRow, 0, 2, MPI_COMM_WORLD, &st);
+            //send my first row -> under for the previous
+            MPI_Send(&myBoard->cell_state[0], M, boardRow, size-2, 2, MPI_COMM_WORLD);
+        }else{ //INTERMEDIUM NODE
+            //recieve my upper from previous
+            MPI_Recv(&myBoard->upper, M, boardRow, rank-1, 1, MPI_COMM_WORLD, &st);
+            //send my last row -> upper for the next
+            MPI_Send(&myBoard->cell_state[rows-1], M, boardRow, rank+1, 1, MPI_COMM_WORLD);
+            //recieve my under from next
+            MPI_Recv(&myBoard->under, M, boardRow, rank+1, 2, MPI_COMM_WORLD, &st);
+            //send my first row -> under for the previous
+            MPI_Send(&myBoard->cell_state[rows-1], M, boardRow, rank-1, 2, MPI_COMM_WORLD);
+        }
 #ifdef NO_SDL 
 		render_board(myBoard, neighbors, board);
 #else
@@ -434,34 +434,20 @@ int main(int argc, char** argv)
 		}
 		fclose(fptr);
       }
-	  if(rank==0){
-		FILE *fptr;
-
-		// use appropriate location if you are using MacOS or Linux
-		fptr = fopen("./test2.log","w");
-
-			for(i=0;i<5;i++){
-				for(j=0;j<board->COL_NUM;j++){
-				fprintf(fptr,"%u ",neighbors[i][j]);
-				}
-				fprintf(fptr,"\n");
-
-			}
-		fclose(fptr);
-		}
-		if(rank==1){
+	  if(rank==2){
 			FILE *fptr;
 
 		// use appropriate location if you are using MacOS or Linux
-		fptr = fopen("./test3.log","w");
-      	for(i=0;i<5;i++){
-			for(j=0;j<myBoard->finalRow+1;j++){
-			fprintf(fptr,"%u ",neighbors[i][j]);
+		fptr = fopen("./test2.log","w");
+      	for(i=0;i<myBoard->ROW_NUM;i++){
+			for(j=0;j<myBoard->COL_NUM;j++){
+			fprintf(fptr,"%u ",myBoard->cell_state[i][j]);
 			}
 			fprintf(fptr,"\n");
 		}
 		fclose(fptr);
       }
+
 #endif
 
 		
