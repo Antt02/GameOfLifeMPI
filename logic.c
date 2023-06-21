@@ -74,88 +74,89 @@ void count_neighbors_spherical_world(boardRowInfo* board, unsigned char pop[rows
       printf(" %i \n",board->neighbors[i][j]);
     }
   }
-  for (int j = 0; j < (board->COL_NUM); j++) {
-    
-    int i=0;
-    i_prev = (0 < i) ? i - 1 : board->finalRow - board->startingRow;;
-    i_next = (i < board->finalRow - board->startingRow) ? i + 1 : 0;
-    j_prev = (0 < j) ? j - 1 : board->COL_NUM-1;
-    j_next = (j <  board->COL_NUM-1) ? j + 1 : 0;  
-    printf("[2]Calculating %i (%i, %i),  Searching(%i)(%i)(%i)(%i)",board->rank ,i+board->rank*5, j,i_prev+board->rank*5,i_next+board->rank*5,j_prev,j_next);
-    
 
-    if (board->upper[j_prev] == ALIVE) {
-      board->neighbors[i][j]++;
-      printf(" 1[%i,%i]",i,j);
-    }
-    if (board->cell_state[i][j_prev] == ALIVE) {
-      board->neighbors[i][j]++;
-      printf(" 2[%i,%i]",i,j_prev);
-    }
-    if (board->cell_state[i_next][j_prev] == ALIVE) {
-      board->neighbors[i][j]++;
-      printf(" 3[%i,%i]",i_next,j_prev);
-    }
-    if (board->upper[j] == ALIVE) {
-      board->neighbors[i][j]++;
-      printf(" 4[%i,%i]",i,j);
-    }
-    if (board->cell_state[i_next][j] == ALIVE) {
-      board->neighbors[i][j]++;
-      printf(" 5[%i,%i]",i_next,j);
-    }
-    if (board->upper[j_next] == ALIVE) {
-      board->neighbors[i][j]++;
-      printf(" 6[%i]",j_next);
-    }
-    if (board->cell_state[i][j_next] == ALIVE) {
-      board->neighbors[i][j]++;
-      printf(" 7[%i,%i]",i,j_next);
-    }
-    if (board->cell_state[i_next][j_next] == ALIVE) {
-      board->neighbors[i][j]++;
-      printf(" 8[%i,%i]",i_next,j_next);
-    }
-      printf(" %i \n",board->neighbors[i][j]);
+    for (int j = 0; j < (board->COL_NUM); j++) {
       
-  }
-  for (int j = 0; j < (board->COL_NUM); j++) {
-    
-    int i = board->finalRow-board->startingRow-1;
-    i_prev = (0 < i) ? i - 1 : board->finalRow - board->startingRow;;
-    i_next = (i < board->finalRow - board->startingRow) ? i + 1 : 0;
-    j_prev = (0 < j) ? j - 1 : board->COL_NUM-1;
-    j_next = (j <  board->COL_NUM-1) ? j + 1 : 0;  
-    printf("[3]Calculating %i (%i, %i),  Searching(%i)(%i)(%i)(%i)",board->rank ,i+board->rank*5, j,i_prev+board->rank*5,i_next+board->rank*5,j_prev,j_next);
-    
+      int i=0;
+      i_prev = (0 < i) ? i - 1 : board->finalRow - board->startingRow;;
+      i_next = (i < board->finalRow - board->startingRow) ? i + 1 : 0;
+      j_prev = (0 < j) ? j - 1 : board->COL_NUM-1;
+      j_next = (j <  board->COL_NUM-1) ? j + 1 : 0;  
+      printf("[2]Calculating %i (%i, %i),  Searching(%i)(%i)(%i)(%i)",board->rank ,i+board->rank*5, j,i_prev+board->rank*5,i_next+board->rank*5,j_prev,j_next);
+      
 
-    
-    if (board->cell_state[i_prev][j_prev] == ALIVE) {
-      board->neighbors[i][j]++;
+      if (board->upper[j_prev] == ALIVE) {
+        board->neighbors[i][j]++;
+        printf(" 1[%i,%i]",i,j);
+      }
+      if (board->cell_state[i][j_prev] == ALIVE) {
+        board->neighbors[i][j]++;
+        printf(" 2[%i,%i]",i,j_prev);
+      }
+      if (board->cell_state[i_next][j_prev] == ALIVE) {
+        board->neighbors[i][j]++;
+        printf(" 3[%i,%i]",i_next,j_prev);
+      }
+      if (board->upper[j] == ALIVE) {
+        board->neighbors[i][j]++;
+        printf(" 4[%i,%i]",i,j);
+      }
+      if (board->cell_state[i_next][j] == ALIVE) {
+        board->neighbors[i][j]++;
+        printf(" 5[%i,%i]",i_next,j);
+      }
+      if (board->upper[j_next] == ALIVE) {
+        board->neighbors[i][j]++;
+        printf(" 6[%i]",j_next);
+      }
+      if (board->cell_state[i][j_next] == ALIVE) {
+        board->neighbors[i][j]++;
+        printf(" 7[%i,%i]",i,j_next);
+      }
+      if (board->cell_state[i_next][j_next] == ALIVE) {
+        board->neighbors[i][j]++;
+        printf(" 8[%i,%i]",i_next,j_next);
+      }
+       printf(" %i \n",board->neighbors[i][j]);
+       
     }
-    if (board->cell_state[i][j_prev] == ALIVE) {
-      board->neighbors[i][j]++;
+    for (int j = 0; j < (board->COL_NUM); j++) {
+      
+      int i = board->finalRow-board->startingRow-1;
+      i_prev = (0 < i) ? i - 1 : board->finalRow - board->startingRow;;
+      i_next = (i < board->finalRow - board->startingRow) ? i + 1 : 0;
+      j_prev = (0 < j) ? j - 1 : board->COL_NUM-1;
+      j_next = (j <  board->COL_NUM-1) ? j + 1 : 0;  
+      printf("[3]Calculating %i (%i, %i),  Searching(%i)(%i)(%i)(%i)",board->rank ,i+board->rank*5, j,i_prev+board->rank*5,i_next+board->rank*5,j_prev,j_next);
+      
+
+      
+      if (board->cell_state[i_prev][j_prev] == ALIVE) {
+        board->neighbors[i][j]++;
+      }
+      if (board->cell_state[i][j_prev] == ALIVE) {
+        board->neighbors[i][j]++;
+      }
+      if (board->under[j_prev] == ALIVE) {
+        board->neighbors[i][j]++;
+      }
+      if (board->cell_state[i_prev][j] == ALIVE) {
+        board->neighbors[i][j]++;
+      }
+      if (board->under[j] == ALIVE) {
+        board->neighbors[i][j]++;
+      }
+      if (board->cell_state[i_prev][j_next] == ALIVE) {
+        board->neighbors[i][j]++;
+      }
+      if (board->cell_state[i][j_next] == ALIVE) {
+        board->neighbors[i][j]++;
+      }
+      if (board->under[j_next] == ALIVE) {
+        board->neighbors[i][j]++;
+      }
+      printf(" %i \n",board->neighbors[i][j]);
     }
-    if (board->under[j_prev] == ALIVE) {
-      board->neighbors[i][j]++;
-    }
-    if (board->cell_state[i_prev][j] == ALIVE) {
-      board->neighbors[i][j]++;
-    }
-    if (board->under[j] == ALIVE) {
-      board->neighbors[i][j]++;
-    }
-    if (board->cell_state[i_prev][j_next] == ALIVE) {
-      board->neighbors[i][j]++;
-    }
-    if (board->cell_state[i][j_next] == ALIVE) {
-      board->neighbors[i][j]++;
-    }
-    if (board->under[j_next] == ALIVE) {
-      board->neighbors[i][j]++;
-    }
-    printf(" %i \n",board->neighbors[i][j]);
-  }
   return;
   
 }
@@ -308,45 +309,26 @@ void count_neighbors_flat_world(board_t* board, unsigned char neighbors[D_COL_NU
     neighbors[board->COL_NUM - 1][0]++;
 }
 
-void evolve(boardRowInfo* board, const unsigned char pop[rows][M])
-{
+void evolve(boardRowInfo* board, const unsigned char pop[rows][M]){
   for (int i = 0; i < board->ROW_NUM; i++) {
-    for (int j = 0; j < board->COL_NUM; j++) {
-      // underopulation case
-      if (board->neighbors[i][j] < 2)
-        board->cell_state[i][j] = DEAD;
-      // birth case
-      else if (board->neighbors[i][j] == 3)
-        board->cell_state[i][j] = ALIVE;
-      // overpopulation case
-      else if (board->neighbors[i][j] > 3)
-        board->cell_state[i][j] = DEAD;
-      // survival case is implicit, as only cells with 2 or 3 neighbors will
-      // survive.
-      printf(" [%i,%u,(%i,%i)] ",board->neighbors[i][j],board->cell_state[i][j],i,j);
-    }
-    printf("\n");
-  }
-}void evolve(boardRowInfo* board, const unsigned char pop[rows][M])
-{
-  for (int i = 0; i < board->ROW_NUM; i++) {
-    for (int j = 0; j < board->COL_NUM; j++) {
-      // underopulation case
-      if (board->neighbors[i][j] < 2)
-        board->cell_state[i][j] = DEAD;
-      // birth case
-      else if (board->neighbors[i][j] == 3)
-        board->cell_state[i][j] = ALIVE;
-      // overpopulation case
-      else if (board->neighbors[i][j] > 3)
-        board->cell_state[i][j] = DEAD;
-      // survival case is implicit, as only cells with 2 or 3 neighbors will
-      // survive.
-      printf(" [%i,%u,(%i,%i)] ",board->neighbors[i][j],board->cell_state[i][j],i,j);
-    }
-    printf("\n");
+      for (int j = 0; j < board->COL_NUM; j++) {
+        // underopulation case
+        if (board->neighbors[i][j] < 2)
+          board->cell_state[i][j] = DEAD;
+        // birth case
+        else if (board->neighbors[i][j] == 3)
+          board->cell_state[i][j] = ALIVE;
+        // overpopulation case
+        else if (board->neighbors[i][j] > 3)
+          board->cell_state[i][j] = DEAD;
+        // survival case is implicit, as only cells with 2 or 3 neighbors will
+        // survive.
+        printf(" [%i,%u,(%i,%i)] ",board->neighbors[i][j],board->cell_state[i][j],i,j);
+      }
+      printf("\n");
   }
 }
+  
 
 
 /******************************************************************************/

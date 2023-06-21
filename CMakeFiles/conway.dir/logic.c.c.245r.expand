@@ -697,22 +697,41 @@ Partition 0: size 4 align 4
 
 ;; Generating RTL for gimple basic block 94
 
+;; Generating RTL for gimple basic block 95
+
+;; Generating RTL for gimple basic block 96
+
+;; Generating RTL for gimple basic block 97
+
+;; Generating RTL for gimple basic block 98
+
+;; Generating RTL for gimple basic block 99
+
+;; Generating RTL for gimple basic block 100
+
+;; Generating RTL for gimple basic block 101
+
+;; Generating RTL for gimple basic block 102
+
+;; Generating RTL for gimple basic block 103
+
+;; Generating RTL for gimple basic block 104
+
+;; Generating RTL for gimple basic block 105
+
 
 try_optimize_cfg iteration 1
 
 Merging block 3 into block 2...
 Merged blocks 2 and 3.
 Merged 2 and 3 without moving.
-Merging block 51 into block 50...
-Merged blocks 50 and 51.
-Merged 50 and 51 without moving.
-Forwarding edge 93->94 to 96 failed.
-Merging block 95 into block 94...
-Merged blocks 94 and 95.
-Merged 94 and 95 without moving.
-Merging block 96 into block 94...
-Merged blocks 94 and 96.
-Merged 94 and 96 without moving.
+Forwarding edge 104->105 to 107 failed.
+Merging block 106 into block 105...
+Merged blocks 105 and 106.
+Merged 105 and 106 without moving.
+Merging block 107 into block 105...
+Merged blocks 105 and 107.
+Merged 105 and 107 without moving.
 
 
 try_optimize_cfg iteration 2
@@ -1213,7 +1232,7 @@ try_optimize_cfg iteration 2
         ]) "/home/ant/Downloads/gol-1/gol/logic.c":51:7 -1
      (expr_list:REG_EQUAL (plus:SI (reg:SI 100 [ _19 ])
             (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
-                    (const_int -52 [0xffffffffffffffcc])) [2 i_next+0 S4 A32]))
+                    (const_int -24 [0xffffffffffffffe8])) [2 i_next+0 S4 A64]))
         (nil)))
 (insn 139 138 140 23 (set (reg/f:DI 253)
         (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
@@ -1254,7 +1273,7 @@ try_optimize_cfg iteration 2
         ]) "/home/ant/Downloads/gol-1/gol/logic.c":51:7 -1
      (expr_list:REG_EQUAL (plus:SI (reg:SI 103 [ _22 ])
             (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
-                    (const_int -56 [0xffffffffffffffc8])) [2 i_prev+0 S4 A64]))
+                    (const_int -28 [0xffffffffffffffe4])) [2 i_prev+0 S4 A32]))
         (nil)))
 (insn 146 145 147 23 (set (reg/f:DI 256)
         (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
@@ -6380,7 +6399,7 @@ try_optimize_cfg iteration 2
      (nil)
  -> 33)
 (barrier 9 8 37)
-(code_label 37 9 10 4 65 (nil) [1 uses])
+(code_label 37 9 10 4 73 (nil) [1 uses])
 (note 10 37 11 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
 (insn 11 10 12 4 (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
                 (const_int -28 [0xffffffffffffffe4])) [2 j+0 S4 A32])
@@ -6391,7 +6410,7 @@ try_optimize_cfg iteration 2
      (nil)
  -> 24)
 (barrier 13 12 28)
-(code_label 28 13 14 5 64 (nil) [1 uses])
+(code_label 28 13 14 5 72 (nil) [1 uses])
 (note 14 28 15 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
 (insn 15 14 16 5 (set (reg:SI 422)
         (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
@@ -6441,7 +6460,7 @@ try_optimize_cfg iteration 2
             (clobber (reg:CC 17 flags))
         ]) "/home/ant/Downloads/gol-1/gol/logic.c":163:42 -1
      (nil))
-(code_label 24 23 25 6 63 (nil) [1 uses])
+(code_label 24 23 25 6 71 (nil) [1 uses])
 (note 25 24 26 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
 (insn 26 25 27 6 (set (reg/f:DI 426)
         (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
@@ -6473,7 +6492,7 @@ try_optimize_cfg iteration 2
             (clobber (reg:CC 17 flags))
         ]) "/home/ant/Downloads/gol-1/gol/logic.c":162:40 -1
      (nil))
-(code_label 33 32 34 8 62 (nil) [1 uses])
+(code_label 33 32 34 8 70 (nil) [1 uses])
 (note 34 33 35 8 [bb 8] NOTE_INSN_BASIC_BLOCK)
 (insn 35 34 36 8 (set (reg/f:DI 427)
         (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
@@ -6505,7 +6524,7 @@ try_optimize_cfg iteration 2
      (nil)
  -> 280)
 (barrier 43 42 285)
-(code_label 285 43 44 10 77 (nil) [1 uses])
+(code_label 285 43 44 10 85 (nil) [1 uses])
 (note 44 285 45 10 [bb 10] NOTE_INSN_BASIC_BLOCK)
 (insn 45 44 46 10 (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
                 (const_int -20 [0xffffffffffffffec])) [2 j+0 S4 A32])
@@ -6516,7 +6535,7 @@ try_optimize_cfg iteration 2
      (nil)
  -> 270)
 (barrier 47 46 275)
-(code_label 275 47 48 11 76 (nil) [1 uses])
+(code_label 275 47 48 11 84 (nil) [1 uses])
 (note 48 275 49 11 [bb 11] NOTE_INSN_BASIC_BLOCK)
 (insn 49 48 50 11 (set (reg:SI 428)
         (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
@@ -6649,7 +6668,7 @@ try_optimize_cfg iteration 2
                 (reg:DI 439)) [0 (*_11)[j_384]+0 S1 A8])
         (reg:QI 94 [ _14 ])) "/home/ant/Downloads/gol-1/gol/logic.c":172:24 -1
      (nil))
-(code_label 75 74 76 13 68 (nil) [1 uses])
+(code_label 75 74 76 13 76 (nil) [1 uses])
 (note 76 75 77 13 [bb 13] NOTE_INSN_BASIC_BLOCK)
 (insn 77 76 78 13 (set (reg:SI 441)
         (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
@@ -6772,7 +6791,7 @@ try_optimize_cfg iteration 2
                 (reg:DI 452)) [0 (*_19)[j_384]+0 S1 A8])
         (reg:QI 101 [ _22 ])) "/home/ant/Downloads/gol-1/gol/logic.c":175:24 -1
      (nil))
-(code_label 102 101 103 15 69 (nil) [1 uses])
+(code_label 102 101 103 15 77 (nil) [1 uses])
 (note 103 102 104 15 [bb 15] NOTE_INSN_BASIC_BLOCK)
 (insn 104 103 105 15 (set (reg:SI 454)
         (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
@@ -6905,7 +6924,7 @@ try_optimize_cfg iteration 2
                 (reg:DI 465)) [0 (*_28)[j_384]+0 S1 A8])
         (reg:QI 109 [ _31 ])) "/home/ant/Downloads/gol-1/gol/logic.c":178:24 -1
      (nil))
-(code_label 130 129 131 17 70 (nil) [1 uses])
+(code_label 130 129 131 17 78 (nil) [1 uses])
 (note 131 130 132 17 [bb 17] NOTE_INSN_BASIC_BLOCK)
 (insn 132 131 133 17 (set (reg:SI 467)
         (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
@@ -7028,7 +7047,7 @@ try_optimize_cfg iteration 2
                 (reg:DI 478)) [0 (*_36)[j_384]+0 S1 A8])
         (reg:QI 116 [ _39 ])) "/home/ant/Downloads/gol-1/gol/logic.c":181:24 -1
      (nil))
-(code_label 157 156 158 19 71 (nil) [1 uses])
+(code_label 157 156 158 19 79 (nil) [1 uses])
 (note 158 157 159 19 [bb 19] NOTE_INSN_BASIC_BLOCK)
 (insn 159 158 160 19 (set (reg:SI 480)
         (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
@@ -7151,7 +7170,7 @@ try_optimize_cfg iteration 2
                 (reg:DI 491)) [0 (*_44)[j_384]+0 S1 A8])
         (reg:QI 123 [ _47 ])) "/home/ant/Downloads/gol-1/gol/logic.c":184:24 -1
      (nil))
-(code_label 184 183 185 21 72 (nil) [1 uses])
+(code_label 184 183 185 21 80 (nil) [1 uses])
 (note 185 184 186 21 [bb 21] NOTE_INSN_BASIC_BLOCK)
 (insn 186 185 187 21 (set (reg:SI 493)
         (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
@@ -7284,7 +7303,7 @@ try_optimize_cfg iteration 2
                 (reg:DI 504)) [0 (*_53)[j_384]+0 S1 A8])
         (reg:QI 131 [ _56 ])) "/home/ant/Downloads/gol-1/gol/logic.c":187:24 -1
      (nil))
-(code_label 212 211 213 23 73 (nil) [1 uses])
+(code_label 212 211 213 23 81 (nil) [1 uses])
 (note 213 212 214 23 [bb 23] NOTE_INSN_BASIC_BLOCK)
 (insn 214 213 215 23 (set (reg:SI 506)
         (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
@@ -7407,7 +7426,7 @@ try_optimize_cfg iteration 2
                 (reg:DI 517)) [0 (*_61)[j_384]+0 S1 A8])
         (reg:QI 138 [ _64 ])) "/home/ant/Downloads/gol-1/gol/logic.c":190:24 -1
      (nil))
-(code_label 239 238 240 25 74 (nil) [1 uses])
+(code_label 239 238 240 25 82 (nil) [1 uses])
 (note 240 239 241 25 [bb 25] NOTE_INSN_BASIC_BLOCK)
 (insn 241 240 242 25 (set (reg:SI 519)
         (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
@@ -7540,7 +7559,7 @@ try_optimize_cfg iteration 2
                 (reg:DI 530)) [0 (*_70)[j_384]+0 S1 A8])
         (reg:QI 146 [ _73 ])) "/home/ant/Downloads/gol-1/gol/logic.c":193:24 -1
      (nil))
-(code_label 267 266 268 27 75 (nil) [1 uses])
+(code_label 267 266 268 27 83 (nil) [1 uses])
 (note 268 267 269 27 [bb 27] NOTE_INSN_BASIC_BLOCK)
 (insn 269 268 270 27 (parallel [
             (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
@@ -7551,7 +7570,7 @@ try_optimize_cfg iteration 2
             (clobber (reg:CC 17 flags))
         ]) "/home/ant/Downloads/gol-1/gol/logic.c":170:48 -1
      (nil))
-(code_label 270 269 271 28 67 (nil) [1 uses])
+(code_label 270 269 271 28 75 (nil) [1 uses])
 (note 271 270 272 28 [bb 28] NOTE_INSN_BASIC_BLOCK)
 (insn 272 271 273 28 (set (reg/f:DI 532)
         (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
@@ -7590,7 +7609,7 @@ try_optimize_cfg iteration 2
             (clobber (reg:CC 17 flags))
         ]) "/home/ant/Downloads/gol-1/gol/logic.c":169:46 -1
      (nil))
-(code_label 280 279 281 30 66 (nil) [1 uses])
+(code_label 280 279 281 30 74 (nil) [1 uses])
 (note 281 280 282 30 [bb 30] NOTE_INSN_BASIC_BLOCK)
 (insn 282 281 283 30 (set (reg/f:DI 533)
         (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
@@ -7629,7 +7648,7 @@ try_optimize_cfg iteration 2
      (nil)
  -> 396)
 (barrier 291 290 401)
-(code_label 401 291 292 32 84 (nil) [1 uses])
+(code_label 401 291 292 32 92 (nil) [1 uses])
 (note 292 401 293 32 [bb 32] NOTE_INSN_BASIC_BLOCK)
 (insn 293 292 294 32 (set (reg:SI 534)
         (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
@@ -7722,7 +7741,7 @@ try_optimize_cfg iteration 2
 (insn 310 309 311 33 (set (mem:QI (reg/f:DI 155 [ _82 ]) [0 (*_82)[0]+0 S1 A8])
         (reg:QI 157 [ _85 ])) "/home/ant/Downloads/gol-1/gol/logic.c":201:22 -1
      (nil))
-(code_label 311 310 312 34 79 (nil) [1 uses])
+(code_label 311 310 312 34 87 (nil) [1 uses])
 (note 312 311 313 34 [bb 34] NOTE_INSN_BASIC_BLOCK)
 (insn 313 312 314 34 (set (reg:SI 541)
         (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
@@ -7822,7 +7841,7 @@ try_optimize_cfg iteration 2
 (insn 331 330 332 35 (set (mem:QI (reg/f:DI 162 [ _90 ]) [0 (*_90)[0]+0 S1 A8])
         (reg:QI 164 [ _93 ])) "/home/ant/Downloads/gol-1/gol/logic.c":204:22 -1
      (nil))
-(code_label 332 331 333 36 80 (nil) [1 uses])
+(code_label 332 331 333 36 88 (nil) [1 uses])
 (note 333 332 334 36 [bb 36] NOTE_INSN_BASIC_BLOCK)
 (insn 334 333 335 36 (set (reg/f:DI 549)
         (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
@@ -7912,7 +7931,7 @@ try_optimize_cfg iteration 2
 (insn 351 350 352 37 (set (mem:QI (reg/f:DI 168 [ _97 ]) [0 (*_97)[0]+0 S1 A8])
         (reg:QI 170 [ _100 ])) "/home/ant/Downloads/gol-1/gol/logic.c":207:22 -1
      (nil))
-(code_label 352 351 353 38 81 (nil) [1 uses])
+(code_label 352 351 353 38 89 (nil) [1 uses])
 (note 353 352 354 38 [bb 38] NOTE_INSN_BASIC_BLOCK)
 (insn 354 353 355 38 (set (reg:SI 557)
         (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
@@ -8012,7 +8031,7 @@ try_optimize_cfg iteration 2
 (insn 372 371 373 39 (set (mem:QI (reg/f:DI 175 [ _105 ]) [0 (*_105)[0]+0 S1 A8])
         (reg:QI 177 [ _108 ])) "/home/ant/Downloads/gol-1/gol/logic.c":210:22 -1
      (nil))
-(code_label 373 372 374 40 82 (nil) [1 uses])
+(code_label 373 372 374 40 90 (nil) [1 uses])
 (note 374 373 375 40 [bb 40] NOTE_INSN_BASIC_BLOCK)
 (insn 375 374 376 40 (set (reg:SI 565)
         (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
@@ -8105,7 +8124,7 @@ try_optimize_cfg iteration 2
 (insn 392 391 393 41 (set (mem:QI (reg/f:DI 182 [ _113 ]) [0 (*_113)[0]+0 S1 A8])
         (reg:QI 184 [ _116 ])) "/home/ant/Downloads/gol-1/gol/logic.c":213:22 -1
      (nil))
-(code_label 393 392 394 42 83 (nil) [1 uses])
+(code_label 393 392 394 42 91 (nil) [1 uses])
 (note 394 393 395 42 [bb 42] NOTE_INSN_BASIC_BLOCK)
 (insn 395 394 396 42 (parallel [
             (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
@@ -8116,7 +8135,7 @@ try_optimize_cfg iteration 2
             (clobber (reg:CC 17 flags))
         ]) "/home/ant/Downloads/gol-1/gol/logic.c":199:46 -1
      (nil))
-(code_label 396 395 397 43 78 (nil) [1 uses])
+(code_label 396 395 397 43 86 (nil) [1 uses])
 (note 397 396 398 43 [bb 43] NOTE_INSN_BASIC_BLOCK)
 (insn 398 397 399 43 (set (reg/f:DI 572)
         (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
@@ -8155,7 +8174,7 @@ try_optimize_cfg iteration 2
      (nil)
  -> 504)
 (barrier 407 406 509)
-(code_label 509 407 408 45 91 (nil) [1 uses])
+(code_label 509 407 408 45 99 (nil) [1 uses])
 (note 408 509 409 45 [bb 45] NOTE_INSN_BASIC_BLOCK)
 (insn 409 408 410 45 (set (reg:SI 573)
         (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
@@ -8231,7 +8250,7 @@ try_optimize_cfg iteration 2
                 (reg:DI 580)) [0 (*neighbors_445(D))[j_386]+0 S1 A8])
         (reg:QI 190 [ _123 ])) "/home/ant/Downloads/gol-1/gol/logic.c":220:22 -1
      (nil))
-(code_label 426 425 427 47 86 (nil) [1 uses])
+(code_label 426 425 427 47 94 (nil) [1 uses])
 (note 427 426 428 47 [bb 47] NOTE_INSN_BASIC_BLOCK)
 (insn 428 427 429 47 (set (reg:SI 582)
         (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
@@ -8308,7 +8327,7 @@ try_optimize_cfg iteration 2
                 (reg:DI 589)) [0 (*neighbors_445(D))[j_386]+0 S1 A8])
         (reg:QI 194 [ _128 ])) "/home/ant/Downloads/gol-1/gol/logic.c":223:22 -1
      (nil))
-(code_label 445 444 446 49 87 (nil) [1 uses])
+(code_label 445 444 446 49 95 (nil) [1 uses])
 (note 446 445 447 49 [bb 49] NOTE_INSN_BASIC_BLOCK)
 (insn 447 446 448 49 (set (reg/f:DI 591)
         (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
@@ -8375,7 +8394,7 @@ try_optimize_cfg iteration 2
                 (reg:DI 598)) [0 (*neighbors_445(D))[j_386]+0 S1 A8])
         (reg:QI 197 [ _132 ])) "/home/ant/Downloads/gol-1/gol/logic.c":226:22 -1
      (nil))
-(code_label 463 462 464 51 88 (nil) [1 uses])
+(code_label 463 462 464 51 96 (nil) [1 uses])
 (note 464 463 465 51 [bb 51] NOTE_INSN_BASIC_BLOCK)
 (insn 465 464 466 51 (set (reg:SI 600)
         (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
@@ -8452,7 +8471,7 @@ try_optimize_cfg iteration 2
                 (reg:DI 607)) [0 (*neighbors_445(D))[j_386]+0 S1 A8])
         (reg:QI 201 [ _137 ])) "/home/ant/Downloads/gol-1/gol/logic.c":229:22 -1
      (nil))
-(code_label 482 481 483 53 89 (nil) [1 uses])
+(code_label 482 481 483 53 97 (nil) [1 uses])
 (note 483 482 484 53 [bb 53] NOTE_INSN_BASIC_BLOCK)
 (insn 484 483 485 53 (set (reg:SI 609)
         (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
@@ -8528,7 +8547,7 @@ try_optimize_cfg iteration 2
                 (reg:DI 616)) [0 (*neighbors_445(D))[j_386]+0 S1 A8])
         (reg:QI 205 [ _142 ])) "/home/ant/Downloads/gol-1/gol/logic.c":232:22 -1
      (nil))
-(code_label 501 500 502 55 90 (nil) [1 uses])
+(code_label 501 500 502 55 98 (nil) [1 uses])
 (note 502 501 503 55 [bb 55] NOTE_INSN_BASIC_BLOCK)
 (insn 503 502 504 55 (parallel [
             (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
@@ -8539,7 +8558,7 @@ try_optimize_cfg iteration 2
             (clobber (reg:CC 17 flags))
         ]) "/home/ant/Downloads/gol-1/gol/logic.c":218:46 -1
      (nil))
-(code_label 504 503 505 56 85 (nil) [1 uses])
+(code_label 504 503 505 56 93 (nil) [1 uses])
 (note 505 504 506 56 [bb 56] NOTE_INSN_BASIC_BLOCK)
 (insn 506 505 507 56 (set (reg/f:DI 618)
         (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
@@ -8578,7 +8597,7 @@ try_optimize_cfg iteration 2
      (nil)
  -> 667)
 (barrier 515 514 672)
-(code_label 672 515 516 58 98 (nil) [1 uses])
+(code_label 672 515 516 58 106 (nil) [1 uses])
 (note 516 672 517 58 [bb 58] NOTE_INSN_BASIC_BLOCK)
 (insn 517 516 518 58 (set (reg:SI 619)
         (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
@@ -8719,7 +8738,7 @@ try_optimize_cfg iteration 2
                 (reg:DI 630)) [0 (*_151)[_153]+0 S1 A8])
         (reg:QI 218 [ _156 ])) "/home/ant/Downloads/gol-1/gol/logic.c":239:39 -1
      (nil))
-(code_label 545 544 546 60 93 (nil) [1 uses])
+(code_label 545 544 546 60 101 (nil) [1 uses])
 (note 546 545 547 60 [bb 60] NOTE_INSN_BASIC_BLOCK)
 (insn 547 546 548 60 (set (reg:SI 631)
         (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
@@ -8860,7 +8879,7 @@ try_optimize_cfg iteration 2
                 (reg:DI 642)) [0 (*_163)[_165]+0 S1 A8])
         (reg:QI 229 [ _168 ])) "/home/ant/Downloads/gol-1/gol/logic.c":242:39 -1
      (nil))
-(code_label 575 574 576 62 94 (nil) [1 uses])
+(code_label 575 574 576 62 102 (nil) [1 uses])
 (note 576 575 577 62 [bb 62] NOTE_INSN_BASIC_BLOCK)
 (insn 577 576 578 62 (set (reg/f:DI 643)
         (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
@@ -8991,7 +9010,7 @@ try_optimize_cfg iteration 2
                 (reg:DI 654)) [0 (*_174)[_176]+0 S1 A8])
         (reg:QI 239 [ _179 ])) "/home/ant/Downloads/gol-1/gol/logic.c":245:39 -1
      (nil))
-(code_label 604 603 605 64 95 (nil) [1 uses])
+(code_label 604 603 605 64 103 (nil) [1 uses])
 (note 605 604 606 64 [bb 64] NOTE_INSN_BASIC_BLOCK)
 (insn 606 605 607 64 (set (reg:SI 655)
         (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
@@ -9132,7 +9151,7 @@ try_optimize_cfg iteration 2
                 (reg:DI 666)) [0 (*_186)[_188]+0 S1 A8])
         (reg:QI 250 [ _191 ])) "/home/ant/Downloads/gol-1/gol/logic.c":248:39 -1
      (nil))
-(code_label 634 633 635 66 96 (nil) [1 uses])
+(code_label 634 633 635 66 104 (nil) [1 uses])
 (note 635 634 636 66 [bb 66] NOTE_INSN_BASIC_BLOCK)
 (insn 636 635 637 66 (set (reg:SI 667)
         (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
@@ -9273,7 +9292,7 @@ try_optimize_cfg iteration 2
                 (reg:DI 678)) [0 (*_198)[_200]+0 S1 A8])
         (reg:QI 261 [ _203 ])) "/home/ant/Downloads/gol-1/gol/logic.c":251:39 -1
      (nil))
-(code_label 664 663 665 68 97 (nil) [1 uses])
+(code_label 664 663 665 68 105 (nil) [1 uses])
 (note 665 664 666 68 [bb 68] NOTE_INSN_BASIC_BLOCK)
 (insn 666 665 667 68 (parallel [
             (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
@@ -9284,7 +9303,7 @@ try_optimize_cfg iteration 2
             (clobber (reg:CC 17 flags))
         ]) "/home/ant/Downloads/gol-1/gol/logic.c":237:46 -1
      (nil))
-(code_label 667 666 668 69 92 (nil) [1 uses])
+(code_label 667 666 668 69 100 (nil) [1 uses])
 (note 668 667 669 69 [bb 69] NOTE_INSN_BASIC_BLOCK)
 (insn 669 668 670 69 (set (reg/f:DI 679)
         (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
@@ -9323,7 +9342,7 @@ try_optimize_cfg iteration 2
      (nil)
  -> 835)
 (barrier 678 677 840)
-(code_label 840 678 679 71 105 (nil) [1 uses])
+(code_label 840 678 679 71 113 (nil) [1 uses])
 (note 679 840 680 71 [bb 71] NOTE_INSN_BASIC_BLOCK)
 (insn 680 679 681 71 (set (reg/f:DI 680)
         (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
@@ -9468,7 +9487,7 @@ try_optimize_cfg iteration 2
                 (reg:DI 691)) [0 (*_214)[j_388]+0 S1 A8])
         (reg:QI 274 [ _217 ])) "/home/ant/Downloads/gol-1/gol/logic.c":258:39 -1
      (nil))
-(code_label 709 708 710 73 100 (nil) [1 uses])
+(code_label 709 708 710 73 108 (nil) [1 uses])
 (note 710 709 711 73 [bb 73] NOTE_INSN_BASIC_BLOCK)
 (insn 711 710 712 73 (set (reg/f:DI 693)
         (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
@@ -9613,7 +9632,7 @@ try_optimize_cfg iteration 2
                 (reg:DI 704)) [0 (*_226)[j_388]+0 S1 A8])
         (reg:QI 285 [ _229 ])) "/home/ant/Downloads/gol-1/gol/logic.c":261:39 -1
      (nil))
-(code_label 740 739 741 75 101 (nil) [1 uses])
+(code_label 740 739 741 75 109 (nil) [1 uses])
 (note 741 740 742 75 [bb 75] NOTE_INSN_BASIC_BLOCK)
 (insn 742 741 743 75 (set (reg/f:DI 706)
         (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
@@ -9748,7 +9767,7 @@ try_optimize_cfg iteration 2
                 (reg:DI 717)) [0 (*_237)[j_388]+0 S1 A8])
         (reg:QI 295 [ _240 ])) "/home/ant/Downloads/gol-1/gol/logic.c":264:39 -1
      (nil))
-(code_label 770 769 771 77 102 (nil) [1 uses])
+(code_label 770 769 771 77 110 (nil) [1 uses])
 (note 771 770 772 77 [bb 77] NOTE_INSN_BASIC_BLOCK)
 (insn 772 771 773 77 (set (reg/f:DI 719)
         (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
@@ -9893,7 +9912,7 @@ try_optimize_cfg iteration 2
                 (reg:DI 730)) [0 (*_249)[j_388]+0 S1 A8])
         (reg:QI 306 [ _252 ])) "/home/ant/Downloads/gol-1/gol/logic.c":267:39 -1
      (nil))
-(code_label 801 800 802 79 103 (nil) [1 uses])
+(code_label 801 800 802 79 111 (nil) [1 uses])
 (note 802 801 803 79 [bb 79] NOTE_INSN_BASIC_BLOCK)
 (insn 803 802 804 79 (set (reg/f:DI 732)
         (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
@@ -10038,7 +10057,7 @@ try_optimize_cfg iteration 2
                 (reg:DI 743)) [0 (*_261)[j_388]+0 S1 A8])
         (reg:QI 317 [ _264 ])) "/home/ant/Downloads/gol-1/gol/logic.c":270:39 -1
      (nil))
-(code_label 832 831 833 81 104 (nil) [1 uses])
+(code_label 832 831 833 81 112 (nil) [1 uses])
 (note 833 832 834 81 [bb 81] NOTE_INSN_BASIC_BLOCK)
 (insn 834 833 835 81 (parallel [
             (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
@@ -10049,7 +10068,7 @@ try_optimize_cfg iteration 2
             (clobber (reg:CC 17 flags))
         ]) "/home/ant/Downloads/gol-1/gol/logic.c":256:46 -1
      (nil))
-(code_label 835 834 836 82 99 (nil) [1 uses])
+(code_label 835 834 836 82 107 (nil) [1 uses])
 (note 836 835 837 82 [bb 82] NOTE_INSN_BASIC_BLOCK)
 (insn 837 836 838 82 (set (reg/f:DI 745)
         (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
@@ -10120,7 +10139,7 @@ try_optimize_cfg iteration 2
 (insn 853 852 854 84 (set (mem:QI (reg/f:DI 748) [0 (*neighbors_445(D))[0]+0 S1 A8])
         (reg:QI 322 [ _270 ])) "/home/ant/Downloads/gol-1/gol/logic.c":276:20 -1
      (nil))
-(code_label 854 853 855 85 106 (nil) [1 uses])
+(code_label 854 853 855 85 114 (nil) [1 uses])
 (note 855 854 856 85 [bb 85] NOTE_INSN_BASIC_BLOCK)
 (insn 856 855 857 85 (set (reg/f:DI 749)
         (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
@@ -10163,7 +10182,7 @@ try_optimize_cfg iteration 2
 (insn 865 864 866 86 (set (mem:QI (reg/f:DI 751) [0 (*neighbors_445(D))[0]+0 S1 A8])
         (reg:QI 325 [ _274 ])) "/home/ant/Downloads/gol-1/gol/logic.c":278:20 -1
      (nil))
-(code_label 866 865 867 87 107 (nil) [1 uses])
+(code_label 866 865 867 87 115 (nil) [1 uses])
 (note 867 866 868 87 [bb 87] NOTE_INSN_BASIC_BLOCK)
 (insn 868 867 869 87 (set (reg/f:DI 752)
         (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
@@ -10206,7 +10225,7 @@ try_optimize_cfg iteration 2
 (insn 877 876 878 88 (set (mem:QI (reg/f:DI 754) [0 (*neighbors_445(D))[0]+0 S1 A8])
         (reg:QI 328 [ _278 ])) "/home/ant/Downloads/gol-1/gol/logic.c":280:20 -1
      (nil))
-(code_label 878 877 879 89 108 (nil) [1 uses])
+(code_label 878 877 879 89 116 (nil) [1 uses])
 (note 879 878 880 89 [bb 89] NOTE_INSN_BASIC_BLOCK)
 (insn 880 879 881 89 (set (reg/f:DI 755)
         (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
@@ -10291,7 +10310,7 @@ try_optimize_cfg iteration 2
                 (reg:DI 762)) [0 (*neighbors_445(D))[_283]+0 S1 A8])
         (reg:QI 335 [ _286 ])) "/home/ant/Downloads/gol-1/gol/logic.c":284:37 -1
      (nil))
-(code_label 899 898 900 91 109 (nil) [1 uses])
+(code_label 899 898 900 91 117 (nil) [1 uses])
 (note 900 899 901 91 [bb 91] NOTE_INSN_BASIC_BLOCK)
 (insn 901 900 902 91 (set (reg/f:DI 763)
         (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
@@ -10376,7 +10395,7 @@ try_optimize_cfg iteration 2
                 (reg:DI 770)) [0 (*neighbors_445(D))[_291]+0 S1 A8])
         (reg:QI 342 [ _294 ])) "/home/ant/Downloads/gol-1/gol/logic.c":286:37 -1
      (nil))
-(code_label 920 919 921 93 110 (nil) [1 uses])
+(code_label 920 919 921 93 118 (nil) [1 uses])
 (note 921 920 922 93 [bb 93] NOTE_INSN_BASIC_BLOCK)
 (insn 922 921 923 93 (set (reg/f:DI 771)
         (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
@@ -10460,7 +10479,7 @@ try_optimize_cfg iteration 2
                 (reg:DI 778)) [0 (*neighbors_445(D))[_299]+0 S1 A8])
         (reg:QI 349 [ _302 ])) "/home/ant/Downloads/gol-1/gol/logic.c":288:37 -1
      (nil))
-(code_label 941 940 942 95 111 (nil) [1 uses])
+(code_label 941 940 942 95 119 (nil) [1 uses])
 (note 942 941 943 95 [bb 95] NOTE_INSN_BASIC_BLOCK)
 (insn 943 942 944 95 (set (reg/f:DI 779)
         (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
@@ -10613,7 +10632,7 @@ try_optimize_cfg iteration 2
                 (reg:DI 790)) [0 (*_312)[_314]+0 S1 A8])
         (reg:QI 363 [ _317 ])) "/home/ant/Downloads/gol-1/gol/logic.c":292:54 -1
      (nil))
-(code_label 974 973 975 97 112 (nil) [1 uses])
+(code_label 974 973 975 97 120 (nil) [1 uses])
 (note 975 974 976 97 [bb 97] NOTE_INSN_BASIC_BLOCK)
 (insn 976 975 977 97 (set (reg/f:DI 791)
         (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
@@ -10766,7 +10785,7 @@ try_optimize_cfg iteration 2
                 (reg:DI 802)) [0 (*_327)[_329]+0 S1 A8])
         (reg:QI 377 [ _332 ])) "/home/ant/Downloads/gol-1/gol/logic.c":294:54 -1
      (nil))
-(code_label 1007 1006 1008 99 113 (nil) [1 uses])
+(code_label 1007 1006 1008 99 121 (nil) [1 uses])
 (note 1008 1007 1009 99 [bb 99] NOTE_INSN_BASIC_BLOCK)
 (insn 1009 1008 1010 99 (set (reg/f:DI 803)
         (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
@@ -10919,7 +10938,7 @@ try_optimize_cfg iteration 2
                 (reg:DI 814)) [0 (*_342)[_344]+0 S1 A8])
         (reg:QI 391 [ _347 ])) "/home/ant/Downloads/gol-1/gol/logic.c":296:54 -1
      (nil))
-(code_label 1040 1039 1041 101 114 (nil) [1 uses])
+(code_label 1040 1039 1041 101 122 (nil) [1 uses])
 (note 1041 1040 1042 101 [bb 101] NOTE_INSN_BASIC_BLOCK)
 (insn 1042 1041 1043 101 (set (reg/f:DI 815)
         (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
@@ -11031,7 +11050,7 @@ try_optimize_cfg iteration 2
 (insn 1063 1062 1064 102 (set (mem:QI (reg/f:DI 399 [ _355 ]) [0 (*_355)[0]+0 S1 A8])
         (reg:QI 401 [ _358 ])) "/home/ant/Downloads/gol-1/gol/logic.c":300:37 -1
      (nil))
-(code_label 1064 1063 1065 103 115 (nil) [1 uses])
+(code_label 1064 1063 1065 103 123 (nil) [1 uses])
 (note 1065 1064 1066 103 [bb 103] NOTE_INSN_BASIC_BLOCK)
 (insn 1066 1065 1067 103 (set (reg/f:DI 823)
         (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
@@ -11143,7 +11162,7 @@ try_optimize_cfg iteration 2
 (insn 1087 1086 1088 104 (set (mem:QI (reg/f:DI 409 [ _366 ]) [0 (*_366)[0]+0 S1 A8])
         (reg:QI 411 [ _369 ])) "/home/ant/Downloads/gol-1/gol/logic.c":302:37 -1
      (nil))
-(code_label 1088 1087 1089 105 116 (nil) [1 uses])
+(code_label 1088 1087 1089 105 124 (nil) [1 uses])
 (note 1089 1088 1090 105 [bb 105] NOTE_INSN_BASIC_BLOCK)
 (insn 1090 1089 1091 105 (set (reg/f:DI 831)
         (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
@@ -11248,7 +11267,7 @@ try_optimize_cfg iteration 2
 (insn 1110 1109 1113 106 (set (mem:QI (reg/f:DI 419 [ _377 ]) [0 (*_377)[0]+0 S1 A8])
         (reg:QI 421 [ _380 ])) "/home/ant/Downloads/gol-1/gol/logic.c":304:37 -1
      (nil))
-(code_label 1113 1110 1114 108 61 (nil) [1 uses])
+(code_label 1113 1110 1114 108 69 (nil) [1 uses])
 (note 1114 1113 0 108 [bb 108] NOTE_INSN_BASIC_BLOCK)
 
 ;; Function evolve (evolve, funcdef_no=4, decl_uid=2381, cgraph_uid=5, symbol_order=4)
@@ -11367,7 +11386,7 @@ try_optimize_cfg iteration 2
      (nil)
  -> 149)
 (barrier 20 19 153)
-(code_label 153 20 21 4 126 (nil) [1 uses])
+(code_label 153 20 21 4 134 (nil) [1 uses])
 (note 21 153 22 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
 (insn 22 21 23 4 (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
                 (const_int -12 [0xfffffffffffffff4])) [2 j+0 S4 A32])
@@ -11378,7 +11397,7 @@ try_optimize_cfg iteration 2
      (nil)
  -> 138)
 (barrier 24 23 142)
-(code_label 142 24 25 5 125 (nil) [1 uses])
+(code_label 142 24 25 5 133 (nil) [1 uses])
 (note 25 142 26 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
 (insn 26 25 27 5 (set (reg/f:DI 100)
         (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
@@ -11488,7 +11507,7 @@ try_optimize_cfg iteration 2
      (nil)
  -> 104)
 (barrier 51 50 52)
-(code_label 52 51 53 7 122 (nil) [1 uses])
+(code_label 52 51 53 7 130 (nil) [1 uses])
 (note 53 52 54 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
 (insn 54 53 55 7 (set (reg/f:DI 116)
         (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
@@ -11598,7 +11617,7 @@ try_optimize_cfg iteration 2
      (nil)
  -> 104)
 (barrier 77 76 78)
-(code_label 78 77 79 9 124 (nil) [1 uses])
+(code_label 78 77 79 9 132 (nil) [1 uses])
 (note 79 78 80 9 [bb 9] NOTE_INSN_BASIC_BLOCK)
 (insn 80 79 81 9 (set (reg/f:DI 132)
         (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
@@ -11703,7 +11722,7 @@ try_optimize_cfg iteration 2
 (insn 103 102 104 10 (set (mem:QI (reg/f:DI 147) [0 board_29(D)->cell_state[i_17][j_18]+0 S1 A8])
         (const_int 0 [0])) "/home/ant/Downloads/gol-1/gol/logic.c":319:33 -1
      (nil))
-(code_label 104 103 105 11 123 (nil) [3 uses])
+(code_label 104 103 105 11 131 (nil) [3 uses])
 (note 105 104 106 11 [bb 11] NOTE_INSN_BASIC_BLOCK)
 (insn 106 105 107 11 (set (reg/f:DI 148)
         (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
@@ -11852,7 +11871,7 @@ try_optimize_cfg iteration 2
             (clobber (reg:CC 17 flags))
         ]) "/home/ant/Downloads/gol-1/gol/logic.c":310:42 -1
      (nil))
-(code_label 138 137 139 12 121 (nil) [1 uses])
+(code_label 138 137 139 12 129 (nil) [1 uses])
 (note 139 138 140 12 [bb 12] NOTE_INSN_BASIC_BLOCK)
 (insn 140 139 141 12 (set (reg/f:DI 167)
         (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
@@ -11893,7 +11912,7 @@ try_optimize_cfg iteration 2
             (clobber (reg:CC 17 flags))
         ]) "/home/ant/Downloads/gol-1/gol/logic.c":309:40 -1
      (nil))
-(code_label 149 148 150 14 120 (nil) [1 uses])
+(code_label 149 148 150 14 128 (nil) [1 uses])
 (note 150 149 151 14 [bb 14] NOTE_INSN_BASIC_BLOCK)
 (insn 151 150 152 14 (set (reg/f:DI 168)
         (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
@@ -12032,7 +12051,7 @@ try_optimize_cfg iteration 2
      (nil)
     (expr_list:DI (use (reg:DI 5 di))
         (nil)))
-(code_label 20 19 21 5 128 (nil) [1 uses])
+(code_label 20 19 21 5 136 (nil) [1 uses])
 (note 21 20 22 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
 (insn 22 21 23 5 (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
                 (const_int -16 [0xfffffffffffffff0])) [2 i+0 S4 A64])
@@ -12043,7 +12062,7 @@ try_optimize_cfg iteration 2
      (nil)
  -> 55)
 (barrier 24 23 59)
-(code_label 59 24 25 6 132 (nil) [1 uses])
+(code_label 59 24 25 6 140 (nil) [1 uses])
 (note 25 59 26 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
 (insn 26 25 27 6 (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
                 (const_int -12 [0xfffffffffffffff4])) [2 j+0 S4 A32])
@@ -12054,7 +12073,7 @@ try_optimize_cfg iteration 2
      (nil)
  -> 46)
 (barrier 28 27 50)
-(code_label 50 28 29 7 131 (nil) [1 uses])
+(code_label 50 28 29 7 139 (nil) [1 uses])
 (note 29 50 30 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
 (insn 30 29 31 7 (set (reg:SI 90)
         (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
@@ -12136,7 +12155,7 @@ try_optimize_cfg iteration 2
             (clobber (reg:CC 17 flags))
         ]) "/home/ant/Downloads/gol-1/gol/logic.c":356:42 -1
      (nil))
-(code_label 46 45 47 8 130 (nil) [1 uses])
+(code_label 46 45 47 8 138 (nil) [1 uses])
 (note 47 46 48 8 [bb 8] NOTE_INSN_BASIC_BLOCK)
 (insn 48 47 49 8 (set (reg/f:DI 98)
         (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
@@ -12168,7 +12187,7 @@ try_optimize_cfg iteration 2
             (clobber (reg:CC 17 flags))
         ]) "/home/ant/Downloads/gol-1/gol/logic.c":355:40 -1
      (nil))
-(code_label 55 54 56 10 129 (nil) [1 uses])
+(code_label 55 54 56 10 137 (nil) [1 uses])
 (note 56 55 57 10 [bb 10] NOTE_INSN_BASIC_BLOCK)
 (insn 57 56 58 10 (set (reg/f:DI 99)
         (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
@@ -12302,7 +12321,7 @@ try_optimize_cfg iteration 2
      (nil)
  -> 53)
 (barrier 16 15 57)
-(code_label 57 16 17 4 138 (nil) [1 uses])
+(code_label 57 16 17 4 146 (nil) [1 uses])
 (note 17 57 18 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
 (insn 18 17 19 4 (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
                 (const_int -12 [0xfffffffffffffff4])) [2 j+0 S4 A32])
@@ -12313,7 +12332,7 @@ try_optimize_cfg iteration 2
      (nil)
  -> 40)
 (barrier 20 19 44)
-(code_label 44 20 21 5 137 (nil) [1 uses])
+(code_label 44 20 21 5 145 (nil) [1 uses])
 (note 21 44 22 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
 (insn 22 21 23 5 (set (reg/f:DI 89)
         (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
@@ -12398,7 +12417,7 @@ try_optimize_cfg iteration 2
             (clobber (reg:CC 17 flags))
         ]) "/home/ant/Downloads/gol-1/gol/logic.c":394:42 -1
      (nil))
-(code_label 40 39 41 6 136 (nil) [1 uses])
+(code_label 40 39 41 6 144 (nil) [1 uses])
 (note 41 40 42 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
 (insn 42 41 43 6 (set (reg/f:DI 98)
         (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
@@ -12447,7 +12466,7 @@ try_optimize_cfg iteration 2
             (clobber (reg:CC 17 flags))
         ]) "/home/ant/Downloads/gol-1/gol/logic.c":393:40 -1
      (nil))
-(code_label 53 52 54 8 135 (nil) [1 uses])
+(code_label 53 52 54 8 143 (nil) [1 uses])
 (note 54 53 55 8 [bb 8] NOTE_INSN_BASIC_BLOCK)
 (insn 55 54 56 8 (set (reg/f:DI 100)
         (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
@@ -12696,7 +12715,7 @@ try_optimize_cfg iteration 2
 (insn 40 39 41 4 (set (mem:SI (reg/f:DI 111) [2 *seed_16(D)+0 S4 A32])
         (reg:SI 91 [ _10 ])) "/home/ant/Downloads/gol-1/gol/logic.c":454:11 -1
      (nil))
-(code_label 41 40 42 5 141 (nil) [1 uses])
+(code_label 41 40 42 5 149 (nil) [1 uses])
 (note 42 41 43 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
 (insn 43 42 44 5 (set (reg/f:DI 112)
         (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
@@ -12825,7 +12844,7 @@ Forwarding edge 11->12 to 15 failed.
      (nil)
  -> 35)
 (barrier 10 9 39)
-(code_label 39 10 11 4 147 (nil) [1 uses])
+(code_label 39 10 11 4 155 (nil) [1 uses])
 (note 11 39 12 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
 (insn 12 11 13 4 (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
                 (const_int -20 [0xffffffffffffffec])) [2 j+0 S4 A32])
@@ -12836,7 +12855,7 @@ Forwarding edge 11->12 to 15 failed.
      (nil)
  -> 26)
 (barrier 14 13 30)
-(code_label 30 14 15 5 146 (nil) [1 uses])
+(code_label 30 14 15 5 154 (nil) [1 uses])
 (note 15 30 16 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
 (insn 16 15 17 5 (set (reg/f:DI 86)
         (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
@@ -12889,7 +12908,7 @@ Forwarding edge 11->12 to 15 failed.
             (clobber (reg:CC 17 flags))
         ]) "/home/ant/Downloads/gol-1/gol/logic.c":485:42 -1
      (nil))
-(code_label 26 25 27 6 145 (nil) [1 uses])
+(code_label 26 25 27 6 153 (nil) [1 uses])
 (note 27 26 28 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
 (insn 28 27 29 6 (set (reg/f:DI 93)
         (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
@@ -12921,7 +12940,7 @@ Forwarding edge 11->12 to 15 failed.
             (clobber (reg:CC 17 flags))
         ]) "/home/ant/Downloads/gol-1/gol/logic.c":484:40 -1
      (nil))
-(code_label 35 34 36 8 144 (nil) [1 uses])
+(code_label 35 34 36 8 152 (nil) [1 uses])
 (note 36 35 37 8 [bb 8] NOTE_INSN_BASIC_BLOCK)
 (insn 37 36 38 8 (set (reg/f:DI 94)
         (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
@@ -12953,7 +12972,7 @@ Forwarding edge 11->12 to 15 failed.
      (nil)
  -> 84)
 (barrier 45 44 88)
-(code_label 88 45 46 10 153 (nil) [1 uses])
+(code_label 88 45 46 10 161 (nil) [1 uses])
 (note 46 88 47 10 [bb 10] NOTE_INSN_BASIC_BLOCK)
 (insn 47 46 48 10 (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
                 (const_int -12 [0xfffffffffffffff4])) [2 j+0 S4 A32])
@@ -12964,7 +12983,7 @@ Forwarding edge 11->12 to 15 failed.
      (nil)
  -> 75)
 (barrier 49 48 79)
-(code_label 79 49 50 11 152 (nil) [1 uses])
+(code_label 79 49 50 11 160 (nil) [1 uses])
 (note 50 79 51 11 [bb 11] NOTE_INSN_BASIC_BLOCK)
 (insn 51 50 52 11 (set (reg:DI 95)
         (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
@@ -13008,7 +13027,7 @@ Forwarding edge 11->12 to 15 failed.
      (nil)
  -> 72)
 (barrier 60 59 96)
-(code_label 96 60 62 14 154 (nil) [1 uses])
+(code_label 96 60 62 14 162 (nil) [1 uses])
 (note 62 96 63 14 [bb 14] NOTE_INSN_BASIC_BLOCK)
 (insn 63 62 64 14 (set (reg/f:DI 98)
         (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
@@ -13052,7 +13071,7 @@ Forwarding edge 11->12 to 15 failed.
 (insn 71 70 72 14 (set (mem:QI (reg/f:DI 104) [0 board_16(D)->cell_state[i_7][j_8]+0 S1 A8])
         (const_int 1 [0x1])) "/home/ant/Downloads/gol-1/gol/logic.c":496:36 -1
      (nil))
-(code_label 72 71 73 15 150 (nil) [1 uses])
+(code_label 72 71 73 15 158 (nil) [1 uses])
 (note 73 72 74 15 [bb 15] NOTE_INSN_BASIC_BLOCK)
 (insn 74 73 75 15 (parallel [
             (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
@@ -13063,7 +13082,7 @@ Forwarding edge 11->12 to 15 failed.
             (clobber (reg:CC 17 flags))
         ]) "/home/ant/Downloads/gol-1/gol/logic.c":491:42 -1
      (nil))
-(code_label 75 74 76 16 149 (nil) [1 uses])
+(code_label 75 74 76 16 157 (nil) [1 uses])
 (note 76 75 77 16 [bb 16] NOTE_INSN_BASIC_BLOCK)
 (insn 77 76 78 16 (set (reg/f:DI 105)
         (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
@@ -13095,7 +13114,7 @@ Forwarding edge 11->12 to 15 failed.
             (clobber (reg:CC 17 flags))
         ]) "/home/ant/Downloads/gol-1/gol/logic.c":490:40 -1
      (nil))
-(code_label 84 83 85 18 148 (nil) [1 uses])
+(code_label 84 83 85 18 156 (nil) [1 uses])
 (note 85 84 86 18 [bb 18] NOTE_INSN_BASIC_BLOCK)
 (insn 86 85 87 18 (set (reg/f:DI 106)
         (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
