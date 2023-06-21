@@ -260,6 +260,15 @@ int main(int argc, char** argv)
 	}
 	*/
 	
+		for(x=0;x<rows;x++){
+			for(y=0;y<M;y++){
+				neighbors[x][y]= DEAD;
+				myBoard->cell_state[x][y] = board->cell_state[startRow+x][y];
+				//if(rank==0)printf("%i, ", myBoard->cell_state[x][y]);
+			}
+			//if(rank==0)printf("\n");
+		}
+	
 	while (quit==false && (EndTime<0 || Iteration<EndTime)) 
 	{
 
@@ -359,14 +368,7 @@ int main(int argc, char** argv)
 	}
 #endif
 		//s'actualitza el tros de board a calcular
-		for(x=0;x<rows;x++){
-			for(y=0;y<M;y++){
-				neighbors[x][y]= DEAD;
-				myBoard->cell_state[x][y] = board->cell_state[startRow+x][y];
-				//if(rank==0)printf("%i, ", myBoard->cell_state[x][y]);
-			}
-			//if(rank==0)printf("\n");
-		}
+	
 		
 		//se comparteixen les files que falten per fer el calcul
 		if (rank==0) { //FIRST NODE

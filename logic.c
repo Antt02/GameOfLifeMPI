@@ -26,6 +26,8 @@ void count_neighbors(boardRowInfo* board, unsigned char neighbors[rows][M])
 
 void count_neighbors_spherical_world(boardRowInfo* board, unsigned char pop[rows][M])
 {
+
+
 	int i_prev, i_next, j_prev, j_next;
 	
   // Clear neighbors
@@ -41,12 +43,12 @@ void count_neighbors_spherical_world(boardRowInfo* board, unsigned char pop[rows
   //no de cell_state, sino de board->under/board->upper
   for (int i = 1; i < board->finalRow - board->startingRow-1; i++) {
     for (int j = 0; j < (board->COL_NUM); j++) {
-      i_prev = (1 < i) ? i - 1 : board->finalRow - board->startingRow;;
+      i_prev = (0 < i) ? i - 1 : board->finalRow - board->startingRow;;
       i_next = (i < board->finalRow - board->startingRow) ? i + 1 : 0;
-      j_prev = (1 < j) ? j - 1 : board->COL_NUM;
-      j_next = (j <  board->COL_NUM) ? j + 1 : 0;  
+      j_prev = (0 < j) ? j - 1 : board->COL_NUM-1;
+      j_next = (j <  board->COL_NUM-1) ? j + 1 : 0;  
       
-      printf("[1]Calculating %i (%i, %i),  Searching(%i)(%i)(%i)(%i)\n",board->rank ,i+board->rank*5, j,i_prev+board->rank*5,i_next+board->rank*5,j_prev,j_next);
+      printf("[1]Calculating %i (%i, %i),  Searching(%i)(%i)(%i)(%i)",board->rank ,i+board->rank*5, j,i_prev+board->rank*5,i_next+board->rank*5,j_prev,j_next);
        
 
 
@@ -74,7 +76,7 @@ void count_neighbors_spherical_world(boardRowInfo* board, unsigned char pop[rows
       if (board->cell_state[i_next][j_next] == ALIVE) {
         board->neighbors[i][j]++;
       }
-      printf(" %i ",board->neighbors[i][j]);
+      printf(" %i \n",board->neighbors[i][j]);
     }
   }
 
@@ -82,8 +84,8 @@ void count_neighbors_spherical_world(boardRowInfo* board, unsigned char pop[rows
       
       int i=0;
       
-      printf("[2]Calculating %i (%i, %i)\n",board->rank ,i+board->rank*5, j);
-
+      printf("[2]Calculating %i (%i, %i),  Searching(%i)(%i)(%i)(%i)",board->rank ,i+board->rank*5, j,i_prev+board->rank*5,i_next+board->rank*5,j_prev,j_next);
+      
       j_prev = (1 < j) ? j - 1 :  board->COL_NUM;
       j_next = (j <  board->COL_NUM) ? j + 1 : 0;    
        if(i==0 && j==0){
@@ -119,7 +121,8 @@ void count_neighbors_spherical_world(boardRowInfo* board, unsigned char pop[rows
     for (int j = 0; j < (board->COL_NUM); j++) {
       
       int i = board->finalRow-board->startingRow-1;
-      printf("[3]Calculating %i (%i, %i)\n",board->rank ,i+board->rank*5, j);
+      printf("[3]Calculating %i (%i, %i),  Searching(%i)(%i)(%i)(%i)",board->rank ,i+board->rank*5, j,i_prev+board->rank*5,i_next+board->rank*5,j_prev,j_next);
+      
 
       j_prev = (1 < j) ? j - 1 : board->COL_NUM;
       j_next = (j < board->COL_NUM) ? j + 1 : 0;    
@@ -301,23 +304,24 @@ void count_neighbors_flat_world(board_t* board, unsigned char neighbors[D_COL_NU
     neighbors[board->COL_NUM - 1][0]++;
 }
 
-void evolve(boardRowInfo* board, const unsigned char neighbors[rows][M])
+void evolve(boardRowInfo* board, const unsigned char pop[rows][M])
 {
-  for (int i = 0; i < board->COL_NUM; i++) {
-    for (int j = 0; j < board->ROW_NUM; j++) {
+  for (int i = 0; i < board->ROW_NUM; i++) {
+    for (int j = 0; j < board->COL_NUM; j++) {
       // underopulation case
-      if (neighbors[i][j] < 2)
+      if (board->neighbors[i][j] < 2)
         board->cell_state[i][j] = DEAD;
       // birth case
-      else if (neighbors[i][j] == 3)
+      else if (board->neighbors[i][j] == 3)
         board->cell_state[i][j] = ALIVE;
       // overpopulation case
-      else if (neighbors[i][j] > 3)
+      else if (board->neighbors[i][j] > 3)
         board->cell_state[i][j] = DEAD;
       // survival case is implicit, as only cells with 2 or 3 neighbors will
       // survive.
-      printf("%i",board->cell_state[i][j]);
+      printf(" [%i,%u,(%i,%i)] ",board->neighbors[i][j],board->cell_state[i][j],i,j);
     }
+    printf("\n");
   }
 }
 
