@@ -126,7 +126,18 @@ void count_neighbors_spherical_world(boardRowInfo* board, unsigned char pop[rows
        
     }
     for (int j = 0; j < (board->COL_NUM); j++) {
-      
+      printf("\n");
+      printf("LOWER->");
+      for(int k =0;k<board->COL_NUM;k++){
+        printf("%i ",board->under[k]);
+      }
+      printf("\n");
+      printf("UPPER->");
+      for(int k =0;k<board->COL_NUM;k++){
+        printf("%i ",board->upper[k]);
+      }
+      printf("\n");
+
       int i = board->finalRow-board->startingRow-1;
       i_prev = (0 < i) ? i - 1 : board->finalRow - board->startingRow;;
       i_next = (i < board->finalRow - board->startingRow) ? i + 1 : 0;
@@ -138,27 +149,35 @@ void count_neighbors_spherical_world(boardRowInfo* board, unsigned char pop[rows
       
       if (board->cell_state[i_prev][j_prev] == ALIVE) {
         board->neighbors[i][j]++;
+        printf(" 1[%i,%i]",i_prev,j_prev);
       }
       if (board->cell_state[i][j_prev] == ALIVE) {
         board->neighbors[i][j]++;
+        printf(" 2[%i,%i]",i,j_prev);
       }
       if (board->under[j_prev] == ALIVE) {
         board->neighbors[i][j]++;
+        printf(" 3[%i]",j_prev);
       }
       if (board->cell_state[i_prev][j] == ALIVE) {
         board->neighbors[i][j]++;
+        printf(" 4[%i,%i]",i_prev,j);
       }
       if (board->under[j] == ALIVE) {
         board->neighbors[i][j]++;
+        printf(" 5[%i]",j);
       }
       if (board->cell_state[i_prev][j_next] == ALIVE) {
         board->neighbors[i][j]++;
+        printf(" 6[%i,%i]",i_prev,j_next);
       }
       if (board->cell_state[i][j_next] == ALIVE) {
         board->neighbors[i][j]++;
+        printf(" 7[%i,%i]",i,j_next);
       }
       if (board->under[j_next] == ALIVE) {
         board->neighbors[i][j]++;
+        printf(" 8[%i]",j_next);
       }
       printf(" %i \n",board->neighbors[i][j]);
     }
