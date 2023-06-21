@@ -157,15 +157,15 @@ int main(int argc, char** argv)
 
 	if (LoadFile) 	
 	{
-		printf("Loading Board file %s.\n",input_file);
+		if(rank==0){printf("Loading Board file %s.\n",input_file);}
 		life_read(input_file, board);
 	}
 	else
 	{ // Rando, init file
-			printf("Init Cells\n");fflush(stdout);
-			double prob = 0.20;
-			int seed = 123456789;
-			life_init(board, prob, &seed);
+		if(rank==0){printf("Init Cells\n");fflush(stdout);}
+		double prob = 0.20;
+		int seed = 123456789;
+		life_init(board, prob, &seed);
 	}
 	
 
@@ -263,7 +263,7 @@ int main(int argc, char** argv)
 			myBoard->cell_state[x][y] = board->cell_state[startRow+x][y];
 		}
 	}	
-	
+	printf("About to start the while, i'm %i\n", rank);
 	while (quit==false && (EndTime<0 || Iteration<EndTime)) 
 	{
 
@@ -356,13 +356,12 @@ int main(int argc, char** argv)
 		}
 
 		// Draw
-		if(rank==0){
-			SDL_SetRenderDrawColor(renderer, 40, 40, 40, 1);
-			SDL_RenderClear(renderer);
-		}
+		SDL_SetRenderDrawColor(renderer, 40, 40, 40, 1);
+		SDL_RenderClear(renderer);
 	}
 #endif
-			
+		MPI_Barrier(MPI_COMM_WORLD);
+		
 		//es comparteixen les files que falten per fer el calcul
 		if (rank==0) { //FIRST NODE
 			//send my last row -> upper for the next
@@ -392,44 +391,14 @@ int main(int argc, char** argv)
 			//send my first row -> under for the previous
 			MPI_Send(&myBoard->cell_state[rows-1], M, boardRow, rank-1, 2, MPI_COMM_WORLD);
 		}
-
+		MPI_Comm_rank(MPI_COMM_WORLD, &rank);
+		myBoard->rank=rank;
 		//es realitza el calcul de la nova iteració
 #ifdef NO_SDL 
 		render_board(myBoard, neighbors, board);
 #else
 		render_board(renderer, myBoard, neighbors, board);
 #endif
-		//s'actualitzen els valors de la board per la següent iteració
-		/*
-		int sendcounts[size];
-		int tmp=D_COL_NUM*rows;
-		MPI_Allgather(&tmp, 1, MPI_INT, &sendcounts, size, MPI_INT, MPI_COMM_WORLD);
-		
-		int displ[size];
-		for (int i=0;i<size;i++){
-			displ[i]=i*D_COL_NUM*rows;
-		}
-		MPI_Allgather(&myBoard->cell_state, D_COL_NUM*rows, MPI_INT, &board->cell_state, D_COL_NUM*M, MPI_INT, MPI_COMM_WORLD);
-		//MPI_Gatherv(&myBoard->cell_state, D_COL_NUM*rows, MPI_INT, board->cell_state, sendcounts, displ, MPI_INT, 0, MPI_COMM_WORLD);
-		if(rank==1){
-			printf("\ncalculated by rank 1:\n");
-			for(x=0;x<rows;x++){
-				for(y=0;y<M;y++){
-					//board->cell_state[startRow][y] = myBoard->cell_state[x][y];
-					printf("%i, ", myBoard->cell_state[x][y]);
-				}
-				printf("\n");
-			}
-		}
-		printf("POSTGATHER\n");
-		for(x=0;x<M;x++){
-			for(y=0;y<M;y++){
-				//board->cell_state[startRow][y] = myBoard->cell_state[x][y];
-				if(rank==1)printf("%i, ", board->cell_state[x][y]);
-			}
-			if(rank==1)printf("\n");
-		}	
-		*/
 		if (Graphical_Mode && rank==0) 
 		{ 
 #ifndef NO_SDL 
@@ -443,47 +412,7 @@ int main(int argc, char** argv)
 		else{Iteration++;};
 	}
 	if(rank==0)printf("\nEnd Simulation.\n");
-	if (rank==0)printf("POSTSIMULATION\n");
-	for(x=0;x<rows;x++){
-		for(y=0;y<M;y++){
-			//board->cell_state[startRow][y] = myBoard->cell_state[x][y];
-			if(rank==0)printf("%i, ", myBoard->cell_state[x][y]);
-		}
-		if(rank==0)printf("\n");
-	}	
-	MPI_Barrier(MPI_COMM_WORLD);
-	for(x=0;x<rows;x++){
-		for(y=0;y<M;y++){
-			//board->cell_state[startRow][y] = myBoard->cell_state[x][y];
-			if(rank==1)printf("%i, ", myBoard->cell_state[x][y]);
-		}
-		if(rank==1)printf("\n");
-	}	
-	MPI_Barrier(MPI_COMM_WORLD);
-	for(x=0;x<rows;x++){
-		for(y=0;y<M;y++){
-			//board->cell_state[startRow][y] = myBoard->cell_state[x][y];
-			if(rank==2)printf("%i, ", myBoard->cell_state[x][y]);
-		}
-		if(rank==2)printf("\n");
-	}	
-	MPI_Barrier(MPI_COMM_WORLD);
-	for(x=0;x<rows;x++){
-		for(y=0;y<M;y++){
-			//board->cell_state[startRow][y] = myBoard->cell_state[x][y];
-			if(rank==3)printf("%i, ", myBoard->cell_state[x][y]);
-		}
-		if(rank==3)printf("\n");
-	}	
-	MPI_Barrier(MPI_COMM_WORLD);
-	for(x=0;x<rows;x++){
-		for(y=0;y<M;y++){
-			//board->cell_state[startRow][y] = myBoard->cell_state[x][y];
-			if(rank==4)printf("%i, ", myBoard->cell_state[x][y]);
-		}
-		if(rank==4)printf("\n");
-	}	
-	MPI_Barrier(MPI_COMM_WORLD);
+	
 	MPI_Request rq;
 	if (rank==0){
 		for (int a=0;a<rows;a++){
@@ -525,7 +454,6 @@ int main(int argc, char** argv)
 	}
 	
 	
-	
 #ifndef NO_SDL 
 	if (Graphical_Mode&&rank==0) 
 	{ 
@@ -537,13 +465,12 @@ int main(int argc, char** argv)
 #endif 
 
 	// Save board
-	// Hem de recolectar tots els resultats abans!
 	if (SaveFile&&rank==0) {
-	 	printf("Writting Board file %s.\n",output_file); fflush(stdout);	
+	 	printf("Writting Board file %s.\n",output_file); fflush(stdout);
 	 	life_write(output_file, board);
 	}
-	free(board);
-	free(myBoard);
+	//free(board);
+	//free(myBoard);
 	MPI_Finalize();
 	printf("VALE SI HE ACABAT");
 	return EXIT_SUCCESS;

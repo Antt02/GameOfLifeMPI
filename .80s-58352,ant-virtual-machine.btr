@@ -1,0 +1,6 @@
+
+:58352 terminated with signal 11 at PC=556e9fe7a481 SP=7fffebdf4420.  Backtrace:
+[0x556e9fe7a481]
+[0x556e9fe7a41d]
+[0x556e9fe7c057]
+[0x556e9fe79bb7]

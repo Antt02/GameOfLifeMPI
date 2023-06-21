@@ -1,0 +1,6 @@
+
+:59086 terminated with signal 11 at PC=563a4ca5d490 SP=7ffc5cc37830.  Backtrace:
+[0x563a4ca5d490]
+[0x563a4ca5d42c]
+[0x563a4ca5f093]
+[0x563a4ca5cbc6]

@@ -23,7 +23,7 @@ void count_neighbors(boardRowInfo* board, unsigned char neighbors[rows][M])
 {
 	count_neighbors_spherical_world(board, neighbors);
 }
-/**/
+
 void count_neighbors_spherical_world(boardRowInfo* board, unsigned char neighbors[rows][M])
 {
 	int i_prev, i_next, j_prev, j_next;
