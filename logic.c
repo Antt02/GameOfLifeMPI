@@ -39,7 +39,7 @@ void count_neighbors_spherical_world(boardRowInfo* board, unsigned char neighbor
   //no de cell_state, sino de board->under/board->upper
   for (int i = board->startingRow; i < (board->startingRow+board->ROW_NUM); i++) {
     for (int j = 0; j < (board->COL_NUM); j++) {
-      printf("[1]Calculating (%i, %i)\n", i, j);
+      //printf("[1]Calculating (%i, %i)\n", i, j);
       i_prev = (1 < i) ? i - 1 : board->COL_NUM;
       i_next = (i < board->COL_NUM ) ? i + 1 : 0;
       j_prev = (1 < j) ? j - 1 : board->ROW_NUM;

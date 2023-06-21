@@ -10,7 +10,6 @@
 #define PAUSE_STATE 1
 
 //#define GRAPHICAL_MODE
-
 typedef struct {
   unsigned char cell_state[D_COL_NUM][D_ROW_NUM];
   int game_state;
