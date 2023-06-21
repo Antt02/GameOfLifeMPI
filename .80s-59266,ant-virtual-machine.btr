@@ -1,6 +1,0 @@
-
-:59266 terminated with signal 11 at PC=5639f8e63490 SP=7fff12c464e0.  Backtrace:
-[0x5639f8e63490]
-[0x5639f8e6342c]
-[0x5639f8e650a4]
-[0x5639f8e62bc6]
