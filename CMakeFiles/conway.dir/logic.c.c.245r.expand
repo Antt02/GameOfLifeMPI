@@ -186,17 +186,17 @@ try_optimize_cfg iteration 2
         (reg:SI 102)) "/home/ant/Downloads/gol-1/gol/logic.c":11:7 -1
      (nil))
 (insn 38 37 39 5 (set (reg:DI 103)
-        (symbol_ref/f:DI ("*.LC0") [flags 0x2]  <var_decl 0x7f8064218120 *.LC0>)) "/home/ant/Downloads/gol-1/gol/logic.c":11:7 -1
+        (symbol_ref/f:DI ("*.LC0") [flags 0x2]  <var_decl 0x7f1548fd8120 *.LC0>)) "/home/ant/Downloads/gol-1/gol/logic.c":11:7 -1
      (nil))
 (insn 39 38 40 5 (set (reg:DI 5 di)
         (reg:DI 103)) "/home/ant/Downloads/gol-1/gol/logic.c":11:7 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:DI ("*.LC0") [flags 0x2]  <var_decl 0x7f8064218120 *.LC0>)
+     (expr_list:REG_EQUAL (symbol_ref/f:DI ("*.LC0") [flags 0x2]  <var_decl 0x7f1548fd8120 *.LC0>)
         (nil)))
 (insn 40 39 41 5 (set (reg:QI 0 ax)
         (const_int 0 [0])) "/home/ant/Downloads/gol-1/gol/logic.c":11:7 -1
      (nil))
 (call_insn 41 40 42 5 (set (reg:SI 0 ax)
-        (call (mem:QI (symbol_ref:DI ("printf") [flags 0x41]  <function_decl 0x7f80648be100 printf>) [0 __builtin_printf S1 A8])
+        (call (mem:QI (symbol_ref:DI ("printf") [flags 0x41]  <function_decl 0x7f15496be100 printf>) [0 __builtin_printf S1 A8])
             (const_int 0 [0]))) "/home/ant/Downloads/gol-1/gol/logic.c":11:7 -1
      (nil)
     (expr_list (use (reg:QI 0 ax))
@@ -322,17 +322,17 @@ try_optimize_cfg iteration 2
         (reg:SI 119)) "/home/ant/Downloads/gol-1/gol/logic.c":15:7 -1
      (nil))
 (insn 71 70 72 7 (set (reg:DI 120)
-        (symbol_ref/f:DI ("*.LC1") [flags 0x2]  <var_decl 0x7f8064287000 *.LC1>)) "/home/ant/Downloads/gol-1/gol/logic.c":15:7 -1
+        (symbol_ref/f:DI ("*.LC1") [flags 0x2]  <var_decl 0x7f1549047000 *.LC1>)) "/home/ant/Downloads/gol-1/gol/logic.c":15:7 -1
      (nil))
 (insn 72 71 73 7 (set (reg:DI 5 di)
         (reg:DI 120)) "/home/ant/Downloads/gol-1/gol/logic.c":15:7 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:DI ("*.LC1") [flags 0x2]  <var_decl 0x7f8064287000 *.LC1>)
+     (expr_list:REG_EQUAL (symbol_ref/f:DI ("*.LC1") [flags 0x2]  <var_decl 0x7f1549047000 *.LC1>)
         (nil)))
 (insn 73 72 74 7 (set (reg:QI 0 ax)
         (const_int 0 [0])) "/home/ant/Downloads/gol-1/gol/logic.c":15:7 -1
      (nil))
 (call_insn 74 73 75 7 (set (reg:SI 0 ax)
-        (call (mem:QI (symbol_ref:DI ("printf") [flags 0x41]  <function_decl 0x7f80648be100 printf>) [0 __builtin_printf S1 A8])
+        (call (mem:QI (symbol_ref:DI ("printf") [flags 0x41]  <function_decl 0x7f15496be100 printf>) [0 __builtin_printf S1 A8])
             (const_int 0 [0]))) "/home/ant/Downloads/gol-1/gol/logic.c":15:7 -1
      (nil)
     (expr_list (use (reg:QI 0 ax))
@@ -368,14 +368,14 @@ try_optimize_cfg iteration 2
  -> 89)
 (note 83 82 84 9 [bb 9] NOTE_INSN_BASIC_BLOCK)
 (insn 84 83 85 9 (set (reg:DI 122)
-        (symbol_ref/f:DI ("*.LC2") [flags 0x2]  <var_decl 0x7f8064287090 *.LC2>)) "/home/ant/Downloads/gol-1/gol/logic.c":19:5 -1
+        (symbol_ref/f:DI ("*.LC2") [flags 0x2]  <var_decl 0x7f1549047090 *.LC2>)) "/home/ant/Downloads/gol-1/gol/logic.c":19:5 -1
      (nil))
 (insn 85 84 86 9 (set (reg:DI 5 di)
         (reg:DI 122)) "/home/ant/Downloads/gol-1/gol/logic.c":19:5 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:DI ("*.LC2") [flags 0x2]  <var_decl 0x7f8064287090 *.LC2>)
+     (expr_list:REG_EQUAL (symbol_ref/f:DI ("*.LC2") [flags 0x2]  <var_decl 0x7f1549047090 *.LC2>)
         (nil)))
 (call_insn 86 85 89 9 (set (reg:SI 0 ax)
-        (call (mem:QI (symbol_ref:DI ("puts") [flags 0x41]  <function_decl 0x7f80648be800 __builtin_puts>) [0 __builtin_puts S1 A8])
+        (call (mem:QI (symbol_ref:DI ("puts") [flags 0x41]  <function_decl 0x7f15496be800 __builtin_puts>) [0 __builtin_puts S1 A8])
             (const_int 0 [0]))) "/home/ant/Downloads/gol-1/gol/logic.c":19:5 -1
      (nil)
     (expr_list:DI (use (reg:DI 5 di))
@@ -420,7 +420,7 @@ try_optimize_cfg iteration 2
      (nil))
 (note 4 3 7 2 NOTE_INSN_FUNCTION_BEG)
 (insn 7 4 8 2 (set (reg:SI 89 [ M.0_9 ])
-        (mem/c:SI (symbol_ref:DI ("M") [flags 0x40]  <var_decl 0x7f80661ffe10 M>) [2 M+0 S4 A32])) "/home/ant/Downloads/gol-1/gol/logic.c":22:57 -1
+        (mem/c:SI (symbol_ref:DI ("M") [flags 0x40]  <var_decl 0x7f154af92e10 M>) [2 M+0 S4 A32])) "/home/ant/Downloads/gol-1/gol/logic.c":22:57 -1
      (nil))
 (insn 8 7 9 2 (set (reg:DI 82 [ _1 ])
         (sign_extend:DI (reg:SI 89 [ M.0_9 ]))) "/home/ant/Downloads/gol-1/gol/logic.c":22:57 -1
@@ -459,7 +459,7 @@ try_optimize_cfg iteration 2
         (sign_extend:DI (reg:SI 89 [ M.0_9 ]))) "/home/ant/Downloads/gol-1/gol/logic.c":22:6 -1
      (nil))
 (insn 17 16 18 2 (set (reg:SI 90 [ rows.1_13 ])
-        (mem/c:SI (symbol_ref:DI ("rows") [flags 0x40]  <var_decl 0x7f80661ffd80 rows>) [2 rows+0 S4 A32])) "/home/ant/Downloads/gol-1/gol/logic.c":23:1 -1
+        (mem/c:SI (symbol_ref:DI ("rows") [flags 0x40]  <var_decl 0x7f154af92d80 rows>) [2 rows+0 S4 A32])) "/home/ant/Downloads/gol-1/gol/logic.c":23:1 -1
      (nil))
 (insn 18 17 19 2 (set (reg:DI 91)
         (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
@@ -475,7 +475,7 @@ try_optimize_cfg iteration 2
 (insn 21 20 22 2 (set (reg:DI 5 di)
         (reg:DI 92)) "/home/ant/Downloads/gol-1/gol/logic.c":24:2 -1
      (nil))
-(call_insn 22 21 0 2 (call (mem:QI (symbol_ref:DI ("count_neighbors_spherical_world") [flags 0x3]  <function_decl 0x7f80649a3900 count_neighbors_spherical_world>) [0 count_neighbors_spherical_world S1 A8])
+(call_insn 22 21 0 2 (call (mem:QI (symbol_ref:DI ("count_neighbors_spherical_world") [flags 0x3]  <function_decl 0x7f15497a3900 count_neighbors_spherical_world>) [0 count_neighbors_spherical_world S1 A8])
         (const_int 0 [0])) "/home/ant/Downloads/gol-1/gol/logic.c":24:2 -1
      (nil)
     (expr_list:DI (use (reg:DI 5 di))
@@ -755,7 +755,7 @@ try_optimize_cfg iteration 2
      (nil))
 (note 4 3 7 2 NOTE_INSN_FUNCTION_BEG)
 (insn 7 4 8 2 (set (reg:SI 295 [ M.2_307 ])
-        (mem/c:SI (symbol_ref:DI ("M") [flags 0x40]  <var_decl 0x7f80661ffe10 M>) [2 M+0 S4 A32])) "/home/ant/Downloads/gol-1/gol/logic.c":27:73 -1
+        (mem/c:SI (symbol_ref:DI ("M") [flags 0x40]  <var_decl 0x7f154af92e10 M>) [2 M+0 S4 A32])) "/home/ant/Downloads/gol-1/gol/logic.c":27:73 -1
      (nil))
 (insn 8 7 9 2 (set (reg:DI 82 [ _1 ])
         (sign_extend:DI (reg:SI 295 [ M.2_307 ]))) "/home/ant/Downloads/gol-1/gol/logic.c":27:73 -1
@@ -794,7 +794,7 @@ try_optimize_cfg iteration 2
         (sign_extend:DI (reg:SI 295 [ M.2_307 ]))) "/home/ant/Downloads/gol-1/gol/logic.c":27:6 -1
      (nil))
 (insn 17 16 18 2 (set (reg:SI 293 [ rows.3_295 ])
-        (mem/c:SI (symbol_ref:DI ("rows") [flags 0x40]  <var_decl 0x7f80661ffd80 rows>) [2 rows+0 S4 A32])) "/home/ant/Downloads/gol-1/gol/logic.c":28:1 -1
+        (mem/c:SI (symbol_ref:DI ("rows") [flags 0x40]  <var_decl 0x7f154af92d80 rows>) [2 rows+0 S4 A32])) "/home/ant/Downloads/gol-1/gol/logic.c":28:1 -1
      (nil))
 (insn 18 17 19 2 (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
                 (const_int -48 [0xffffffffffffffd0])) [2 i+0 S4 A128])
@@ -2129,17 +2129,17 @@ try_optimize_cfg iteration 2
         (reg:SI 158 [ _85 ])) "/home/ant/Downloads/gol-1/gol/logic.c":72:7 -1
      (nil))
 (insn 352 351 353 39 (set (reg:DI 420)
-        (symbol_ref/f:DI ("*.LC3") [flags 0x2]  <var_decl 0x7f8064287c60 *.LC3>)) "/home/ant/Downloads/gol-1/gol/logic.c":72:7 -1
+        (symbol_ref/f:DI ("*.LC3") [flags 0x2]  <var_decl 0x7f1549047c60 *.LC3>)) "/home/ant/Downloads/gol-1/gol/logic.c":72:7 -1
      (nil))
 (insn 353 352 354 39 (set (reg:DI 5 di)
         (reg:DI 420)) "/home/ant/Downloads/gol-1/gol/logic.c":72:7 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:DI ("*.LC3") [flags 0x2]  <var_decl 0x7f8064287c60 *.LC3>)
+     (expr_list:REG_EQUAL (symbol_ref/f:DI ("*.LC3") [flags 0x2]  <var_decl 0x7f1549047c60 *.LC3>)
         (nil)))
 (insn 354 353 355 39 (set (reg:QI 0 ax)
         (const_int 0 [0])) "/home/ant/Downloads/gol-1/gol/logic.c":72:7 -1
      (nil))
 (call_insn 355 354 356 39 (set (reg:SI 0 ax)
-        (call (mem:QI (symbol_ref:DI ("printf") [flags 0x41]  <function_decl 0x7f80648be100 printf>) [0 __builtin_printf S1 A8])
+        (call (mem:QI (symbol_ref:DI ("printf") [flags 0x41]  <function_decl 0x7f15496be100 printf>) [0 __builtin_printf S1 A8])
             (const_int 0 [0]))) "/home/ant/Downloads/gol-1/gol/logic.c":72:7 -1
      (nil)
     (expr_list (use (reg:QI 0 ax))
@@ -9644,7 +9644,7 @@ try_optimize_cfg iteration 2
      (nil))
 (note 4 3 7 2 NOTE_INSN_FUNCTION_BEG)
 (insn 7 4 8 2 (set (reg:SI 108 [ M.16_33 ])
-        (mem/c:SI (symbol_ref:DI ("M") [flags 0x40]  <var_decl 0x7f80661ffe10 M>) [2 M+0 S4 A32])) "/home/ant/Downloads/gol-1/gol/logic.c":408:54 -1
+        (mem/c:SI (symbol_ref:DI ("M") [flags 0x40]  <var_decl 0x7f154af92e10 M>) [2 M+0 S4 A32])) "/home/ant/Downloads/gol-1/gol/logic.c":408:54 -1
      (nil))
 (insn 8 7 9 2 (set (reg:DI 82 [ _1 ])
         (sign_extend:DI (reg:SI 108 [ M.16_33 ]))) "/home/ant/Downloads/gol-1/gol/logic.c":408:54 -1
@@ -9683,7 +9683,7 @@ try_optimize_cfg iteration 2
         (sign_extend:DI (reg:SI 108 [ M.16_33 ]))) "/home/ant/Downloads/gol-1/gol/logic.c":408:6 -1
      (nil))
 (insn 17 16 18 2 (set (reg:SI 109 [ rows.17_37 ])
-        (mem/c:SI (symbol_ref:DI ("rows") [flags 0x40]  <var_decl 0x7f80661ffd80 rows>) [2 rows+0 S4 A32])) "/home/ant/Downloads/gol-1/gol/logic.c":409:1 -1
+        (mem/c:SI (symbol_ref:DI ("rows") [flags 0x40]  <var_decl 0x7f154af92d80 rows>) [2 rows+0 S4 A32])) "/home/ant/Downloads/gol-1/gol/logic.c":409:1 -1
      (nil))
 (insn 18 17 19 2 (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
                 (const_int -16 [0xfffffffffffffff0])) [2 i+0 S4 A128])
@@ -10060,17 +10060,17 @@ try_optimize_cfg iteration 2
         (reg:SI 105 [ _24 ])) "/home/ant/Downloads/gol-1/gol/logic.c":423:7 -1
      (nil))
 (insn 114 113 115 11 (set (reg:DI 150)
-        (symbol_ref/f:DI ("*.LC3") [flags 0x2]  <var_decl 0x7f8064287c60 *.LC3>)) "/home/ant/Downloads/gol-1/gol/logic.c":423:7 -1
+        (symbol_ref/f:DI ("*.LC3") [flags 0x2]  <var_decl 0x7f1549047c60 *.LC3>)) "/home/ant/Downloads/gol-1/gol/logic.c":423:7 -1
      (nil))
 (insn 115 114 116 11 (set (reg:DI 5 di)
         (reg:DI 150)) "/home/ant/Downloads/gol-1/gol/logic.c":423:7 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:DI ("*.LC3") [flags 0x2]  <var_decl 0x7f8064287c60 *.LC3>)
+     (expr_list:REG_EQUAL (symbol_ref/f:DI ("*.LC3") [flags 0x2]  <var_decl 0x7f1549047c60 *.LC3>)
         (nil)))
 (insn 116 115 117 11 (set (reg:QI 0 ax)
         (const_int 0 [0])) "/home/ant/Downloads/gol-1/gol/logic.c":423:7 -1
      (nil))
 (call_insn 117 116 118 11 (set (reg:SI 0 ax)
-        (call (mem:QI (symbol_ref:DI ("printf") [flags 0x41]  <function_decl 0x7f80648be100 printf>) [0 __builtin_printf S1 A8])
+        (call (mem:QI (symbol_ref:DI ("printf") [flags 0x41]  <function_decl 0x7f15496be100 printf>) [0 __builtin_printf S1 A8])
             (const_int 0 [0]))) "/home/ant/Downloads/gol-1/gol/logic.c":423:7 -1
      (nil)
     (expr_list (use (reg:QI 0 ax))
@@ -10208,17 +10208,17 @@ try_optimize_cfg iteration 2
                 (const_int -24 [0xffffffffffffffe8])) [10 filename+0 S8 A64])) "/home/ant/Downloads/gol-1/gol/logic.c":449:16 -1
      (nil))
 (insn 8 7 9 2 (set (reg:DI 86)
-        (symbol_ref/f:DI ("*.LC4") [flags 0x2]  <var_decl 0x7f806432c090 *.LC4>)) "/home/ant/Downloads/gol-1/gol/logic.c":449:16 -1
+        (symbol_ref/f:DI ("*.LC4") [flags 0x2]  <var_decl 0x7f15490ec090 *.LC4>)) "/home/ant/Downloads/gol-1/gol/logic.c":449:16 -1
      (nil))
 (insn 9 8 10 2 (set (reg:DI 4 si)
         (reg:DI 86)) "/home/ant/Downloads/gol-1/gol/logic.c":449:16 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:DI ("*.LC4") [flags 0x2]  <var_decl 0x7f806432c090 *.LC4>)
+     (expr_list:REG_EQUAL (symbol_ref/f:DI ("*.LC4") [flags 0x2]  <var_decl 0x7f15490ec090 *.LC4>)
         (nil)))
 (insn 10 9 11 2 (set (reg:DI 5 di)
         (reg:DI 85)) "/home/ant/Downloads/gol-1/gol/logic.c":449:16 -1
      (nil))
 (call_insn 11 10 12 2 (set (reg:DI 0 ax)
-        (call (mem:QI (symbol_ref:DI ("fopen") [flags 0x41]  <function_decl 0x7f8064983500 fopen>) [0 fopen S1 A8])
+        (call (mem:QI (symbol_ref:DI ("fopen") [flags 0x41]  <function_decl 0x7f1549783500 fopen>) [0 fopen S1 A8])
             (const_int 0 [0]))) "/home/ant/Downloads/gol-1/gol/logic.c":449:16 -1
      (nil)
     (expr_list:DI (use (reg:DI 5 di))
@@ -10246,13 +10246,13 @@ try_optimize_cfg iteration 2
  -> 20)
 (note 16 15 17 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
 (insn 17 16 18 4 (set (reg:DI 88)
-        (symbol_ref/f:DI ("*.LC5") [flags 0x2]  <var_decl 0x7f806432c120 *.LC5>)) "/home/ant/Downloads/gol-1/gol/logic.c":451:5 -1
+        (symbol_ref/f:DI ("*.LC5") [flags 0x2]  <var_decl 0x7f15490ec120 *.LC5>)) "/home/ant/Downloads/gol-1/gol/logic.c":451:5 -1
      (nil))
 (insn 18 17 19 4 (set (reg:DI 5 di)
         (reg:DI 88)) "/home/ant/Downloads/gol-1/gol/logic.c":451:5 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:DI ("*.LC5") [flags 0x2]  <var_decl 0x7f806432c120 *.LC5>)
+     (expr_list:REG_EQUAL (symbol_ref/f:DI ("*.LC5") [flags 0x2]  <var_decl 0x7f15490ec120 *.LC5>)
         (nil)))
-(call_insn 19 18 20 4 (call (mem:QI (symbol_ref:DI ("perror") [flags 0x41]  <function_decl 0x7f80649a0c00 perror>) [0 perror S1 A8])
+(call_insn 19 18 20 4 (call (mem:QI (symbol_ref:DI ("perror") [flags 0x41]  <function_decl 0x7f15497a0c00 perror>) [0 perror S1 A8])
         (const_int 0 [0])) "/home/ant/Downloads/gol-1/gol/logic.c":451:5 -1
      (nil)
     (expr_list:DI (use (reg:DI 5 di))
@@ -10331,11 +10331,11 @@ try_optimize_cfg iteration 2
         (reg/f:DI 82 [ _1 ])) "/home/ant/Downloads/gol-1/gol/logic.c":457:7 -1
      (nil))
 (insn 40 39 41 7 (set (reg:DI 97)
-        (symbol_ref/f:DI ("*.LC6") [flags 0x2]  <var_decl 0x7f806432c1b0 *.LC6>)) "/home/ant/Downloads/gol-1/gol/logic.c":457:7 -1
+        (symbol_ref/f:DI ("*.LC6") [flags 0x2]  <var_decl 0x7f15490ec1b0 *.LC6>)) "/home/ant/Downloads/gol-1/gol/logic.c":457:7 -1
      (nil))
 (insn 41 40 42 7 (set (reg:DI 4 si)
         (reg:DI 97)) "/home/ant/Downloads/gol-1/gol/logic.c":457:7 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:DI ("*.LC6") [flags 0x2]  <var_decl 0x7f806432c1b0 *.LC6>)
+     (expr_list:REG_EQUAL (symbol_ref/f:DI ("*.LC6") [flags 0x2]  <var_decl 0x7f15490ec1b0 *.LC6>)
         (nil)))
 (insn 42 41 43 7 (set (reg:DI 5 di)
         (reg:DI 96)) "/home/ant/Downloads/gol-1/gol/logic.c":457:7 -1
@@ -10344,7 +10344,7 @@ try_optimize_cfg iteration 2
         (const_int 0 [0])) "/home/ant/Downloads/gol-1/gol/logic.c":457:7 -1
      (nil))
 (call_insn 44 43 45 7 (set (reg:SI 0 ax)
-        (call (mem:QI (symbol_ref:DI ("*__isoc99_fscanf") [flags 0x41]  <function_decl 0x7f80648bdb00 fscanf>) [0 __builtin_fscanf S1 A8])
+        (call (mem:QI (symbol_ref:DI ("*__isoc99_fscanf") [flags 0x41]  <function_decl 0x7f15496bdb00 fscanf>) [0 __builtin_fscanf S1 A8])
             (const_int 0 [0]))) "/home/ant/Downloads/gol-1/gol/logic.c":457:7 -1
      (nil)
     (expr_list (use (reg:QI 0 ax))
@@ -10424,7 +10424,7 @@ try_optimize_cfg iteration 2
         (reg:DI 100)) "/home/ant/Downloads/gol-1/gol/logic.c":463:3 -1
      (nil))
 (call_insn 65 64 70 11 (set (reg:SI 0 ax)
-        (call (mem:QI (symbol_ref:DI ("fclose") [flags 0x41]  <function_decl 0x7f8064969e00 fclose>) [0 fclose S1 A8])
+        (call (mem:QI (symbol_ref:DI ("fclose") [flags 0x41]  <function_decl 0x7f1549769e00 fclose>) [0 fclose S1 A8])
             (const_int 0 [0]))) "/home/ant/Downloads/gol-1/gol/logic.c":463:3 -1
      (nil)
     (expr_list:DI (use (reg:DI 5 di))
@@ -10494,17 +10494,17 @@ try_optimize_cfg iteration 2
                 (const_int -24 [0xffffffffffffffe8])) [10 output_filename+0 S8 A64])) "/home/ant/Downloads/gol-1/gol/logic.c":489:17 -1
      (nil))
 (insn 8 7 9 2 (set (reg:DI 87)
-        (symbol_ref/f:DI ("*.LC7") [flags 0x2]  <var_decl 0x7f806432cab0 *.LC7>)) "/home/ant/Downloads/gol-1/gol/logic.c":489:17 -1
+        (symbol_ref/f:DI ("*.LC7") [flags 0x2]  <var_decl 0x7f15490ecab0 *.LC7>)) "/home/ant/Downloads/gol-1/gol/logic.c":489:17 -1
      (nil))
 (insn 9 8 10 2 (set (reg:DI 4 si)
         (reg:DI 87)) "/home/ant/Downloads/gol-1/gol/logic.c":489:17 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:DI ("*.LC7") [flags 0x2]  <var_decl 0x7f806432cab0 *.LC7>)
+     (expr_list:REG_EQUAL (symbol_ref/f:DI ("*.LC7") [flags 0x2]  <var_decl 0x7f15490ecab0 *.LC7>)
         (nil)))
 (insn 10 9 11 2 (set (reg:DI 5 di)
         (reg:DI 86)) "/home/ant/Downloads/gol-1/gol/logic.c":489:17 -1
      (nil))
 (call_insn 11 10 12 2 (set (reg:DI 0 ax)
-        (call (mem:QI (symbol_ref:DI ("fopen") [flags 0x41]  <function_decl 0x7f8064983500 fopen>) [0 fopen S1 A8])
+        (call (mem:QI (symbol_ref:DI ("fopen") [flags 0x41]  <function_decl 0x7f1549783500 fopen>) [0 fopen S1 A8])
             (const_int 0 [0]))) "/home/ant/Downloads/gol-1/gol/logic.c":489:17 -1
      (nil)
     (expr_list:DI (use (reg:DI 5 di))
@@ -10593,11 +10593,11 @@ try_optimize_cfg iteration 2
         (reg:SI 83 [ _2 ])) "/home/ant/Downloads/gol-1/gol/logic.c":495:7 -1
      (nil))
 (insn 34 33 35 5 (set (reg:DI 97)
-        (symbol_ref/f:DI ("*.LC8") [flags 0x2]  <var_decl 0x7f806432cb40 *.LC8>)) "/home/ant/Downloads/gol-1/gol/logic.c":495:7 -1
+        (symbol_ref/f:DI ("*.LC8") [flags 0x2]  <var_decl 0x7f15490ecb40 *.LC8>)) "/home/ant/Downloads/gol-1/gol/logic.c":495:7 -1
      (nil))
 (insn 35 34 36 5 (set (reg:DI 4 si)
         (reg:DI 97)) "/home/ant/Downloads/gol-1/gol/logic.c":495:7 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:DI ("*.LC8") [flags 0x2]  <var_decl 0x7f806432cb40 *.LC8>)
+     (expr_list:REG_EQUAL (symbol_ref/f:DI ("*.LC8") [flags 0x2]  <var_decl 0x7f15490ecb40 *.LC8>)
         (nil)))
 (insn 36 35 37 5 (set (reg:DI 5 di)
         (reg:DI 96)) "/home/ant/Downloads/gol-1/gol/logic.c":495:7 -1
@@ -10606,7 +10606,7 @@ try_optimize_cfg iteration 2
         (const_int 0 [0])) "/home/ant/Downloads/gol-1/gol/logic.c":495:7 -1
      (nil))
 (call_insn 38 37 39 5 (set (reg:SI 0 ax)
-        (call (mem:QI (symbol_ref:DI ("fprintf") [flags 0x41]  <function_decl 0x7f80648bab00 fprintf>) [0 __builtin_fprintf S1 A8])
+        (call (mem:QI (symbol_ref:DI ("fprintf") [flags 0x41]  <function_decl 0x7f15496bab00 fprintf>) [0 __builtin_fprintf S1 A8])
             (const_int 0 [0]))) "/home/ant/Downloads/gol-1/gol/logic.c":495:7 -1
      (nil)
     (expr_list (use (reg:QI 0 ax))
@@ -10657,7 +10657,7 @@ try_optimize_cfg iteration 2
         (const_int 10 [0xa])) "/home/ant/Downloads/gol-1/gol/logic.c":497:5 -1
      (nil))
 (call_insn 51 50 52 7 (set (reg:SI 0 ax)
-        (call (mem:QI (symbol_ref:DI ("fputc") [flags 0x41]  <function_decl 0x7f80648bd200 __builtin_fputc>) [0 __builtin_fputc S1 A8])
+        (call (mem:QI (symbol_ref:DI ("fputc") [flags 0x41]  <function_decl 0x7f15496bd200 __builtin_fputc>) [0 __builtin_fputc S1 A8])
             (const_int 0 [0]))) "/home/ant/Downloads/gol-1/gol/logic.c":497:5 -1
      (nil)
     (expr_list:SI (use (reg:SI 5 di))
@@ -10703,7 +10703,7 @@ try_optimize_cfg iteration 2
         (reg:DI 101)) "/home/ant/Downloads/gol-1/gol/logic.c":502:3 -1
      (nil))
 (call_insn 63 62 68 9 (set (reg:SI 0 ax)
-        (call (mem:QI (symbol_ref:DI ("fclose") [flags 0x41]  <function_decl 0x7f8064969e00 fclose>) [0 fclose S1 A8])
+        (call (mem:QI (symbol_ref:DI ("fclose") [flags 0x41]  <function_decl 0x7f1549769e00 fclose>) [0 fclose S1 A8])
             (const_int 0 [0]))) "/home/ant/Downloads/gol-1/gol/logic.c":502:3 -1
      (nil)
     (expr_list:DI (use (reg:DI 5 di))
@@ -11199,7 +11199,7 @@ Forwarding edge 11->12 to 15 failed.
         (reg:DI 95)) "/home/ant/Downloads/gol-1/gol/logic.c":593:13 -1
      (nil))
 (call_insn 53 52 54 11 (set (reg:DF 20 xmm0)
-        (call (mem:QI (symbol_ref:DI ("r8_uniform_01") [flags 0x3]  <function_decl 0x7f80649a3e00 r8_uniform_01>) [0 r8_uniform_01 S1 A8])
+        (call (mem:QI (symbol_ref:DI ("r8_uniform_01") [flags 0x3]  <function_decl 0x7f15497a3e00 r8_uniform_01>) [0 r8_uniform_01 S1 A8])
             (const_int 0 [0]))) "/home/ant/Downloads/gol-1/gol/logic.c":593:13 -1
      (nil)
     (expr_list:DI (use (reg:DI 5 di))

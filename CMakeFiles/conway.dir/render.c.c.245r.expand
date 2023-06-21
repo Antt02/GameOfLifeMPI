@@ -1,8 +1,8 @@
 
-;; Function render_board (render_board, funcdef_no=4209, decl_uid=31149, cgraph_uid=4210, symbol_order=4212)
+;; Function render_board (render_board, funcdef_no=4209, decl_uid=48066, cgraph_uid=4210, symbol_order=4212)
 
 Partition 0: size 8 align 8
-	_19
+	_20
 
 ;; Generating RTL for gimple basic block 2
 
@@ -33,7 +33,7 @@ Merging block 3 into block 2...
 Merged blocks 2 and 3.
 Merged 2 and 3 without moving.
 Forwarding edge 4->5 to 14 failed.
-Redirecting jump 34 from 14 to 15.
+Redirecting jump 27 from 14 to 15.
 Edge 10->13 redirected to 14
 Edge 11->13 redirected to 14
 Merging block 13 into block 12...
@@ -52,338 +52,359 @@ try_optimize_cfg iteration 2
 (note 7 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
 (insn 2 7 3 2 (set (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
                 (const_int -24 [0xffffffffffffffe8])) [6 renderer+0 S8 A64])
-        (reg:DI 5 di [ renderer ])) "/home/ant/Downloads/gol-1/gol/render.c":12:1 -1
+        (reg:DI 5 di [ renderer ])) "/home/ant/Downloads/gol-1/gol/render.c":13:1 -1
      (nil))
 (insn 3 2 4 2 (set (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
                 (const_int -32 [0xffffffffffffffe0])) [7 board+0 S8 A64])
-        (reg:DI 4 si [ board ])) "/home/ant/Downloads/gol-1/gol/render.c":12:1 -1
+        (reg:DI 4 si [ board ])) "/home/ant/Downloads/gol-1/gol/render.c":13:1 -1
      (nil))
 (insn 4 3 5 2 (set (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
                 (const_int -40 [0xffffffffffffffd8])) [8 neighbors+0 S8 A64])
-        (reg:DI 1 dx [ neighbors ])) "/home/ant/Downloads/gol-1/gol/render.c":12:1 -1
+        (reg:DI 1 dx [ neighbors ])) "/home/ant/Downloads/gol-1/gol/render.c":13:1 -1
      (nil))
 (insn 5 4 6 2 (set (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
                 (const_int -48 [0xffffffffffffffd0])) [9 fullBoard+0 S8 A64])
-        (reg:DI 2 cx [ fullBoard ])) "/home/ant/Downloads/gol-1/gol/render.c":12:1 -1
+        (reg:DI 2 cx [ fullBoard ])) "/home/ant/Downloads/gol-1/gol/render.c":13:1 -1
      (nil))
 (note 6 5 9 2 NOTE_INSN_FUNCTION_BEG)
-(insn 9 6 10 2 (set (reg:SI 95 [ M.0_18 ])
-        (mem/c:SI (symbol_ref:DI ("M") [flags 0x2]  <var_decl 0x7fa3aebcad80 M>) [2 M+0 S4 A32])) "/home/ant/Downloads/gol-1/gol/render.c":11:33 -1
+(insn 9 6 10 2 (set (reg:SI 96 [ M.0_19 ])
+        (mem/c:SI (symbol_ref:DI ("M") [flags 0x2]  <var_decl 0x7f1e59789630 M>) [2 M+0 S4 A32])) "/home/ant/Downloads/gol-1/gol/render.c":12:33 -1
      (nil))
 (insn 10 9 11 2 (set (reg:DI 82 [ _1 ])
-        (sign_extend:DI (reg:SI 95 [ M.0_18 ]))) "/home/ant/Downloads/gol-1/gol/render.c":11:33 -1
+        (sign_extend:DI (reg:SI 96 [ M.0_19 ]))) "/home/ant/Downloads/gol-1/gol/render.c":12:33 -1
      (nil))
 (insn 11 10 12 2 (parallel [
             (set (reg:DI 83 [ _2 ])
                 (plus:DI (reg:DI 82 [ _1 ])
                     (const_int -1 [0xffffffffffffffff])))
             (clobber (reg:CC 17 flags))
-        ]) "/home/ant/Downloads/gol-1/gol/render.c":11:33 -1
+        ]) "/home/ant/Downloads/gol-1/gol/render.c":12:33 -1
      (nil))
 (insn 12 11 13 2 (set (reg:DI 84 [ _3 ])
-        (reg:DI 83 [ _2 ])) "/home/ant/Downloads/gol-1/gol/render.c":10:6 -1
+        (reg:DI 83 [ _2 ])) "/home/ant/Downloads/gol-1/gol/render.c":11:6 -1
      (nil))
 (insn 13 12 14 2 (set (mem/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
-                (const_int -8 [0xfffffffffffffff8])) [5 D.31261+0 S8 A64])
-        (reg:DI 84 [ _3 ])) "/home/ant/Downloads/gol-1/gol/render.c":10:6 -1
+                (const_int -8 [0xfffffffffffffff8])) [5 D.48178+0 S8 A64])
+        (reg:DI 84 [ _3 ])) "/home/ant/Downloads/gol-1/gol/render.c":11:6 -1
      (nil))
 (insn 14 13 15 2 (set (reg:DI 85 [ _4 ])
-        (sign_extend:DI (reg:SI 95 [ M.0_18 ]))) "/home/ant/Downloads/gol-1/gol/render.c":10:6 -1
+        (sign_extend:DI (reg:SI 96 [ M.0_19 ]))) "/home/ant/Downloads/gol-1/gol/render.c":11:6 -1
      (nil))
 (insn 15 14 16 2 (set (subreg:DI (reg:TI 86 [ _5 ]) 0)
-        (reg:DI 85 [ _4 ])) "/home/ant/Downloads/gol-1/gol/render.c":10:6 -1
+        (reg:DI 85 [ _4 ])) "/home/ant/Downloads/gol-1/gol/render.c":11:6 -1
      (nil))
 (insn 16 15 17 2 (set (subreg:DI (reg:TI 86 [ _5 ]) 8)
-        (const_int 0 [0])) "/home/ant/Downloads/gol-1/gol/render.c":10:6 -1
+        (const_int 0 [0])) "/home/ant/Downloads/gol-1/gol/render.c":11:6 -1
      (nil))
 (insn 17 16 18 2 (parallel [
             (set (reg:TI 87 [ _6 ])
                 (ashift:TI (reg:TI 86 [ _5 ])
                     (const_int 3 [0x3])))
             (clobber (reg:CC 17 flags))
-        ]) "/home/ant/Downloads/gol-1/gol/render.c":10:6 -1
+        ]) "/home/ant/Downloads/gol-1/gol/render.c":11:6 -1
      (nil))
 (insn 18 17 19 2 (set (reg:DI 88 [ _7 ])
-        (sign_extend:DI (reg:SI 95 [ M.0_18 ]))) "/home/ant/Downloads/gol-1/gol/render.c":10:6 -1
+        (sign_extend:DI (reg:SI 96 [ M.0_19 ]))) "/home/ant/Downloads/gol-1/gol/render.c":11:6 -1
      (nil))
-(insn 19 18 20 2 (set (reg:SI 96 [ rows.1_22 ])
-        (mem/c:SI (symbol_ref:DI ("rows") [flags 0x2]  <var_decl 0x7fa3aebcacf0 rows>) [2 rows+0 S4 A32])) "/home/ant/Downloads/gol-1/gol/render.c":12:1 -1
+(insn 19 18 20 2 (set (reg:SI 97 [ rows.1_23 ])
+        (mem/c:SI (symbol_ref:DI ("rows") [flags 0x2]  <var_decl 0x7f1e597895a0 rows>) [2 rows+0 S4 A32])) "/home/ant/Downloads/gol-1/gol/render.c":13:1 -1
      (nil))
-(insn 20 19 21 2 (set (reg/f:DI 97)
+(insn 20 19 21 2 (set (reg/f:DI 98)
         (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
-                (const_int -32 [0xffffffffffffffe0])) [7 board+0 S8 A64])) "/home/ant/Downloads/gol-1/gol/render.c":13:3 -1
+                (const_int -48 [0xffffffffffffffd0])) [9 fullBoard+0 S8 A64])) "/home/ant/Downloads/gol-1/gol/render.c":14:19 -1
      (nil))
 (insn 21 20 22 2 (set (reg:SI 89 [ _8 ])
-        (mem:SI (plus:DI (reg/f:DI 97)
-                (const_int 16008020 [0xf44354])) [2 board_23(D)->rank+0 S4 A32])) "/home/ant/Downloads/gol-1/gol/render.c":13:3 -1
+        (mem:SI (plus:DI (reg/f:DI 98)
+                (const_int 16000000 [0xf42400])) [2 fullBoard_24(D)->game_state+0 S4 A32])) "/home/ant/Downloads/gol-1/gol/render.c":14:19 -1
      (nil))
-(insn 22 21 23 2 (set (reg:SI 4 si)
-        (reg:SI 89 [ _8 ])) "/home/ant/Downloads/gol-1/gol/render.c":13:3 -1
+(insn 22 21 23 2 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg:SI 89 [ _8 ])
+            (const_int 0 [0]))) "/home/ant/Downloads/gol-1/gol/render.c":14:3 -1
      (nil))
-(insn 23 22 24 2 (set (reg:DI 98)
-        (symbol_ref/f:DI ("*.LC0") [flags 0x2]  <var_decl 0x7fa3aecd2000 *.LC0>)) "/home/ant/Downloads/gol-1/gol/render.c":13:3 -1
+(jump_insn 23 22 24 2 (set (pc)
+        (if_then_else (eq (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 30)
+            (pc))) "/home/ant/Downloads/gol-1/gol/render.c":14:3 -1
+     (nil)
+ -> 30)
+(note 24 23 25 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(insn 25 24 26 4 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg:SI 89 [ _8 ])
+            (const_int 1 [0x1]))) "/home/ant/Downloads/gol-1/gol/render.c":14:3 -1
      (nil))
-(insn 24 23 25 2 (set (reg:DI 5 di)
-        (reg:DI 98)) "/home/ant/Downloads/gol-1/gol/render.c":13:3 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:DI ("*.LC0") [flags 0x2]  <var_decl 0x7fa3aecd2000 *.LC0>)
+(jump_insn 26 25 29 4 (set (pc)
+        (if_then_else (eq (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 80)
+            (pc))) "/home/ant/Downloads/gol-1/gol/render.c":14:3 -1
+     (nil)
+ -> 80)
+(note 29 26 27 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+(jump_insn 27 29 28 5 (set (pc)
+        (label_ref:DI 102)) "/home/ant/Downloads/gol-1/gol/render.c":14:3 807 {jump}
+     (nil)
+ -> 102)
+(barrier 28 27 30)
+(code_label 30 28 31 6 2 (nil) [1 uses])
+(note 31 30 32 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+(insn 32 31 33 6 (set (reg:QI 90 [ Graphical_Mode.2_9 ])
+        (mem/c:QI (symbol_ref:DI ("Graphical_Mode") [flags 0x2]  <var_decl 0x7f1e59789510 Graphical_Mode>) [4 Graphical_Mode+0 S1 A8])) "/home/ant/Downloads/gol-1/gol/render.c":16:11 -1
+     (nil))
+(insn 33 32 34 6 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg:QI 90 [ Graphical_Mode.2_9 ])
+            (const_int 0 [0]))) "/home/ant/Downloads/gol-1/gol/render.c":16:10 -1
+     (nil))
+(jump_insn 34 33 35 6 (set (pc)
+        (if_then_else (eq (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 48)
+            (pc))) "/home/ant/Downloads/gol-1/gol/render.c":16:10 -1
+     (nil)
+ -> 48)
+(note 35 34 36 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
+(insn 36 35 37 7 (set (reg/f:DI 99)
+        (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -32 [0xffffffffffffffe0])) [7 board+0 S8 A64])) "/home/ant/Downloads/gol-1/gol/render.c":16:32 -1
+     (nil))
+(insn 37 36 38 7 (set (reg:SI 91 [ _10 ])
+        (mem:SI (plus:DI (reg/f:DI 99)
+                (const_int 16008020 [0xf44354])) [2 board_25(D)->rank+0 S4 A32])) "/home/ant/Downloads/gol-1/gol/render.c":16:32 -1
+     (nil))
+(insn 38 37 39 7 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg:SI 91 [ _10 ])
+            (const_int 0 [0]))) "/home/ant/Downloads/gol-1/gol/render.c":16:25 -1
+     (nil))
+(jump_insn 39 38 40 7 (set (pc)
+        (if_then_else (ne (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 48)
+            (pc))) "/home/ant/Downloads/gol-1/gol/render.c":16:25 -1
+     (nil)
+ -> 48)
+(note 40 39 41 8 [bb 8] NOTE_INSN_BASIC_BLOCK)
+(insn 41 40 42 8 (set (reg:DI 100)
+        (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -48 [0xffffffffffffffd0])) [9 fullBoard+0 S8 A64])) "/home/ant/Downloads/gol-1/gol/render.c":17:8 -1
+     (nil))
+(insn 42 41 43 8 (set (reg:DI 101)
+        (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -32 [0xffffffffffffffe0])) [7 board+0 S8 A64])) "/home/ant/Downloads/gol-1/gol/render.c":17:8 -1
+     (nil))
+(insn 43 42 44 8 (set (reg:DI 102)
+        (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -24 [0xffffffffffffffe8])) [6 renderer+0 S8 A64])) "/home/ant/Downloads/gol-1/gol/render.c":17:8 -1
+     (nil))
+(insn 44 43 45 8 (set (reg:DI 1 dx)
+        (reg:DI 100)) "/home/ant/Downloads/gol-1/gol/render.c":17:8 -1
+     (nil))
+(insn 45 44 46 8 (set (reg:DI 4 si)
+        (reg:DI 101)) "/home/ant/Downloads/gol-1/gol/render.c":17:8 -1
+     (nil))
+(insn 46 45 47 8 (set (reg:DI 5 di)
+        (reg:DI 102)) "/home/ant/Downloads/gol-1/gol/render.c":17:8 -1
+     (nil))
+(call_insn 47 46 48 8 (call (mem:QI (symbol_ref:DI ("render_running_state") [flags 0x3]  <function_decl 0x7f1e58e22f00 render_running_state>) [0 render_running_state S1 A8])
+        (const_int 0 [0])) "/home/ant/Downloads/gol-1/gol/render.c":17:8 -1
+     (nil)
+    (expr_list:DI (use (reg:DI 5 di))
+        (expr_list:DI (use (reg:DI 4 si))
+            (expr_list:DI (use (reg:DI 1 dx))
+                (nil)))))
+(code_label 48 47 49 9 5 (nil) [2 uses])
+(note 49 48 50 9 [bb 9] NOTE_INSN_BASIC_BLOCK)
+(insn 50 49 51 9 (set (reg:SI 5 di)
+        (const_int 1140850688 [0x44000000])) "/home/ant/Downloads/gol-1/gol/render.c":19:7 -1
+     (nil))
+(call_insn 51 50 52 9 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("MPI_Barrier") [flags 0x41]  <function_decl 0x7f1e5979f800 MPI_Barrier>) [0 MPI_Barrier S1 A8])
+            (const_int 0 [0]))) "/home/ant/Downloads/gol-1/gol/render.c":19:7 -1
+     (nil)
+    (expr_list:SI (use (reg:SI 5 di))
         (nil)))
-(insn 25 24 26 2 (set (reg:QI 0 ax)
-        (const_int 0 [0])) "/home/ant/Downloads/gol-1/gol/render.c":13:3 -1
+(insn 52 51 53 9 (set (reg/f:DI 103)
+        (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -32 [0xffffffffffffffe0])) [7 board+0 S8 A64])) "/home/ant/Downloads/gol-1/gol/render.c":20:7 -1
      (nil))
-(call_insn 26 25 27 2 (set (reg:SI 0 ax)
-        (call (mem:QI (symbol_ref:DI ("printf") [flags 0x41]  <function_decl 0x7fa3b18be100 printf>) [0 __builtin_printf S1 A8])
-            (const_int 0 [0]))) "/home/ant/Downloads/gol-1/gol/render.c":13:3 -1
+(insn 53 52 54 9 (set (reg:SI 92 [ _11 ])
+        (mem:SI (plus:DI (reg/f:DI 103)
+                (const_int 16008020 [0xf44354])) [2 board_25(D)->rank+0 S4 A32])) "/home/ant/Downloads/gol-1/gol/render.c":20:7 -1
+     (nil))
+(insn 54 53 55 9 (set (reg:SI 4 si)
+        (reg:SI 92 [ _11 ])) "/home/ant/Downloads/gol-1/gol/render.c":20:7 -1
+     (nil))
+(insn 55 54 56 9 (set (reg:DI 104)
+        (symbol_ref/f:DI ("*.LC0") [flags 0x2]  <var_decl 0x7f1e58e3b7e0 *.LC0>)) "/home/ant/Downloads/gol-1/gol/render.c":20:7 -1
+     (nil))
+(insn 56 55 57 9 (set (reg:DI 5 di)
+        (reg:DI 104)) "/home/ant/Downloads/gol-1/gol/render.c":20:7 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:DI ("*.LC0") [flags 0x2]  <var_decl 0x7f1e58e3b7e0 *.LC0>)
+        (nil)))
+(insn 57 56 58 9 (set (reg:QI 0 ax)
+        (const_int 0 [0])) "/home/ant/Downloads/gol-1/gol/render.c":20:7 -1
+     (nil))
+(call_insn 58 57 59 9 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("printf") [flags 0x41]  <function_decl 0x7f1e5c4be100 printf>) [0 __builtin_printf S1 A8])
+            (const_int 0 [0]))) "/home/ant/Downloads/gol-1/gol/render.c":20:7 -1
      (nil)
     (expr_list (use (reg:QI 0 ax))
         (expr_list:DI (use (reg:DI 5 di))
             (expr_list:SI (use (reg:SI 4 si))
                 (nil)))))
-(insn 27 26 28 2 (set (reg/f:DI 99)
-        (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
-                (const_int -48 [0xffffffffffffffd0])) [9 fullBoard+0 S8 A64])) "/home/ant/Downloads/gol-1/gol/render.c":14:19 -1
-     (nil))
-(insn 28 27 29 2 (set (reg:SI 90 [ _9 ])
-        (mem:SI (plus:DI (reg/f:DI 99)
-                (const_int 16000000 [0xf42400])) [2 fullBoard_25(D)->game_state+0 S4 A32])) "/home/ant/Downloads/gol-1/gol/render.c":14:19 -1
-     (nil))
-(insn 29 28 30 2 (set (reg:CCZ 17 flags)
-        (compare:CCZ (reg:SI 90 [ _9 ])
-            (const_int 0 [0]))) "/home/ant/Downloads/gol-1/gol/render.c":14:3 -1
-     (nil))
-(jump_insn 30 29 31 2 (set (pc)
-        (if_then_else (eq (reg:CCZ 17 flags)
-                (const_int 0 [0]))
-            (label_ref 37)
-            (pc))) "/home/ant/Downloads/gol-1/gol/render.c":14:3 -1
-     (nil)
- -> 37)
-(note 31 30 32 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
-(insn 32 31 33 4 (set (reg:CCZ 17 flags)
-        (compare:CCZ (reg:SI 90 [ _9 ])
-            (const_int 1 [0x1]))) "/home/ant/Downloads/gol-1/gol/render.c":14:3 -1
-     (nil))
-(jump_insn 33 32 36 4 (set (pc)
-        (if_then_else (eq (reg:CCZ 17 flags)
-                (const_int 0 [0]))
-            (label_ref 75)
-            (pc))) "/home/ant/Downloads/gol-1/gol/render.c":14:3 -1
-     (nil)
- -> 75)
-(note 36 33 34 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
-(jump_insn 34 36 35 5 (set (pc)
-        (label_ref:DI 97)) "/home/ant/Downloads/gol-1/gol/render.c":14:3 807 {jump}
-     (nil)
- -> 97)
-(barrier 35 34 37)
-(code_label 37 35 38 6 2 (nil) [1 uses])
-(note 38 37 39 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
-(insn 39 38 40 6 (set (reg:QI 91 [ Graphical_Mode.2_10 ])
-        (mem/c:QI (symbol_ref:DI ("Graphical_Mode") [flags 0x2]  <var_decl 0x7fa3aebcac60 Graphical_Mode>) [4 Graphical_Mode+0 S1 A8])) "/home/ant/Downloads/gol-1/gol/render.c":16:11 -1
-     (nil))
-(insn 40 39 41 6 (set (reg:CCZ 17 flags)
-        (compare:CCZ (reg:QI 91 [ Graphical_Mode.2_10 ])
-            (const_int 0 [0]))) "/home/ant/Downloads/gol-1/gol/render.c":16:10 -1
-     (nil))
-(jump_insn 41 40 42 6 (set (pc)
-        (if_then_else (eq (reg:CCZ 17 flags)
-                (const_int 0 [0]))
-            (label_ref 58)
-            (pc))) "/home/ant/Downloads/gol-1/gol/render.c":16:10 -1
-     (nil)
- -> 58)
-(note 42 41 43 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
-(insn 43 42 44 7 (set (reg/f:DI 100)
-        (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
-                (const_int -32 [0xffffffffffffffe0])) [7 board+0 S8 A64])) "/home/ant/Downloads/gol-1/gol/render.c":16:32 -1
-     (nil))
-(insn 44 43 45 7 (set (reg:SI 92 [ _11 ])
-        (mem:SI (plus:DI (reg/f:DI 100)
-                (const_int 16008020 [0xf44354])) [2 board_23(D)->rank+0 S4 A32])) "/home/ant/Downloads/gol-1/gol/render.c":16:32 -1
-     (nil))
-(insn 45 44 46 7 (set (reg:CCZ 17 flags)
-        (compare:CCZ (reg:SI 92 [ _11 ])
-            (const_int 0 [0]))) "/home/ant/Downloads/gol-1/gol/render.c":16:25 -1
-     (nil))
-(jump_insn 46 45 47 7 (set (pc)
-        (if_then_else (ne (reg:CCZ 17 flags)
-                (const_int 0 [0]))
-            (label_ref 58)
-            (pc))) "/home/ant/Downloads/gol-1/gol/render.c":16:25 -1
-     (nil)
- -> 58)
-(note 47 46 48 8 [bb 8] NOTE_INSN_BASIC_BLOCK)
-(insn 48 47 49 8 (set (reg:DI 101)
-        (symbol_ref/f:DI ("*.LC1") [flags 0x2]  <var_decl 0x7fa3aecd2090 *.LC1>)) "/home/ant/Downloads/gol-1/gol/render.c":17:9 -1
-     (nil))
-(insn 49 48 50 8 (set (reg:DI 5 di)
-        (reg:DI 101)) "/home/ant/Downloads/gol-1/gol/render.c":17:9 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:DI ("*.LC1") [flags 0x2]  <var_decl 0x7fa3aecd2090 *.LC1>)
-        (nil)))
-(call_insn 50 49 51 8 (set (reg:SI 0 ax)
-        (call (mem:QI (symbol_ref:DI ("puts") [flags 0x41]  <function_decl 0x7fa3b18be800 __builtin_puts>) [0 __builtin_puts S1 A8])
-            (const_int 0 [0]))) "/home/ant/Downloads/gol-1/gol/render.c":17:9 -1
-     (nil)
-    (expr_list:DI (use (reg:DI 5 di))
-        (nil)))
-(insn 51 50 52 8 (set (reg:DI 102)
-        (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
-                (const_int -48 [0xffffffffffffffd0])) [9 fullBoard+0 S8 A64])) "/home/ant/Downloads/gol-1/gol/render.c":18:8 -1
-     (nil))
-(insn 52 51 53 8 (set (reg:DI 103)
-        (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
-                (const_int -32 [0xffffffffffffffe0])) [7 board+0 S8 A64])) "/home/ant/Downloads/gol-1/gol/render.c":18:8 -1
-     (nil))
-(insn 53 52 54 8 (set (reg:DI 104)
-        (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
-                (const_int -24 [0xffffffffffffffe8])) [6 renderer+0 S8 A64])) "/home/ant/Downloads/gol-1/gol/render.c":18:8 -1
-     (nil))
-(insn 54 53 55 8 (set (reg:DI 1 dx)
-        (reg:DI 102)) "/home/ant/Downloads/gol-1/gol/render.c":18:8 -1
-     (nil))
-(insn 55 54 56 8 (set (reg:DI 4 si)
-        (reg:DI 103)) "/home/ant/Downloads/gol-1/gol/render.c":18:8 -1
-     (nil))
-(insn 56 55 57 8 (set (reg:DI 5 di)
-        (reg:DI 104)) "/home/ant/Downloads/gol-1/gol/render.c":18:8 -1
-     (nil))
-(call_insn 57 56 58 8 (call (mem:QI (symbol_ref:DI ("render_running_state") [flags 0x3]  <function_decl 0x7fa3aeca0d00 render_running_state>) [0 render_running_state S1 A8])
-        (const_int 0 [0])) "/home/ant/Downloads/gol-1/gol/render.c":18:8 -1
-     (nil)
-    (expr_list:DI (use (reg:DI 5 di))
-        (expr_list:DI (use (reg:DI 4 si))
-            (expr_list:DI (use (reg:DI 1 dx))
-                (nil)))))
-(code_label 58 57 59 9 5 (nil) [2 uses])
-(note 59 58 60 9 [bb 9] NOTE_INSN_BASIC_BLOCK)
-(insn 60 59 61 9 (set (reg:DI 105)
-        (symbol_ref/f:DI ("*.LC2") [flags 0x2]  <var_decl 0x7fa3aecd2120 *.LC2>)) "/home/ant/Downloads/gol-1/gol/render.c":20:7 -1
-     (nil))
-(insn 61 60 62 9 (set (reg:DI 5 di)
-        (reg:DI 105)) "/home/ant/Downloads/gol-1/gol/render.c":20:7 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:DI ("*.LC2") [flags 0x2]  <var_decl 0x7fa3aecd2120 *.LC2>)
-        (nil)))
-(call_insn 62 61 63 9 (set (reg:SI 0 ax)
-        (call (mem:QI (symbol_ref:DI ("puts") [flags 0x41]  <function_decl 0x7fa3b18be800 __builtin_puts>) [0 __builtin_puts S1 A8])
-            (const_int 0 [0]))) "/home/ant/Downloads/gol-1/gol/render.c":20:7 -1
-     (nil)
-    (expr_list:DI (use (reg:DI 5 di))
-        (nil)))
-(insn 63 62 64 9 (set (reg:DI 106)
+(insn 59 58 60 9 (set (reg:DI 105)
         (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
                 (const_int -40 [0xffffffffffffffd8])) [8 neighbors+0 S8 A64])) "/home/ant/Downloads/gol-1/gol/render.c":21:7 -1
      (nil))
-(insn 64 63 65 9 (set (reg:DI 107)
+(insn 60 59 61 9 (set (reg:DI 106)
         (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
                 (const_int -32 [0xffffffffffffffe0])) [7 board+0 S8 A64])) "/home/ant/Downloads/gol-1/gol/render.c":21:7 -1
      (nil))
-(insn 65 64 66 9 (set (reg:DI 4 si)
+(insn 61 60 62 9 (set (reg:DI 4 si)
+        (reg:DI 105)) "/home/ant/Downloads/gol-1/gol/render.c":21:7 -1
+     (nil))
+(insn 62 61 63 9 (set (reg:DI 5 di)
         (reg:DI 106)) "/home/ant/Downloads/gol-1/gol/render.c":21:7 -1
      (nil))
-(insn 66 65 67 9 (set (reg:DI 5 di)
-        (reg:DI 107)) "/home/ant/Downloads/gol-1/gol/render.c":21:7 -1
-     (nil))
-(call_insn 67 66 68 9 (call (mem:QI (symbol_ref:DI ("count_neighbors") [flags 0x41]  <function_decl 0x7fa3aecaa200 count_neighbors>) [0 count_neighbors S1 A8])
+(call_insn 63 62 64 9 (call (mem:QI (symbol_ref:DI ("count_neighbors") [flags 0x41]  <function_decl 0x7f1e58e2b400 count_neighbors>) [0 count_neighbors S1 A8])
         (const_int 0 [0])) "/home/ant/Downloads/gol-1/gol/render.c":21:7 -1
      (nil)
     (expr_list:DI (use (reg:DI 5 di))
         (expr_list:DI (use (reg:DI 4 si))
             (nil))))
-(insn 68 67 69 9 (set (reg:DI 108)
+(insn 64 63 65 9 (set (reg:SI 5 di)
+        (const_int 1140850688 [0x44000000])) "/home/ant/Downloads/gol-1/gol/render.c":22:7 -1
+     (nil))
+(call_insn 65 64 66 9 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("MPI_Barrier") [flags 0x41]  <function_decl 0x7f1e5979f800 MPI_Barrier>) [0 MPI_Barrier S1 A8])
+            (const_int 0 [0]))) "/home/ant/Downloads/gol-1/gol/render.c":22:7 -1
+     (nil)
+    (expr_list:SI (use (reg:SI 5 di))
+        (nil)))
+(insn 66 65 67 9 (set (reg/f:DI 107)
         (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
-                (const_int -40 [0xffffffffffffffd8])) [8 neighbors+0 S8 A64])) "/home/ant/Downloads/gol-1/gol/render.c":22:7 -1
+                (const_int -32 [0xffffffffffffffe0])) [7 board+0 S8 A64])) "/home/ant/Downloads/gol-1/gol/render.c":23:7 -1
      (nil))
-(insn 69 68 70 9 (set (reg:DI 109)
+(insn 67 66 68 9 (set (reg:SI 93 [ _12 ])
+        (mem:SI (plus:DI (reg/f:DI 107)
+                (const_int 16008020 [0xf44354])) [2 board_25(D)->rank+0 S4 A32])) "/home/ant/Downloads/gol-1/gol/render.c":23:7 -1
+     (nil))
+(insn 68 67 69 9 (set (reg:SI 4 si)
+        (reg:SI 93 [ _12 ])) "/home/ant/Downloads/gol-1/gol/render.c":23:7 -1
+     (nil))
+(insn 69 68 70 9 (set (reg:DI 108)
+        (symbol_ref/f:DI ("*.LC1") [flags 0x2]  <var_decl 0x7f1e58e3b870 *.LC1>)) "/home/ant/Downloads/gol-1/gol/render.c":23:7 -1
+     (nil))
+(insn 70 69 71 9 (set (reg:DI 5 di)
+        (reg:DI 108)) "/home/ant/Downloads/gol-1/gol/render.c":23:7 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:DI ("*.LC1") [flags 0x2]  <var_decl 0x7f1e58e3b870 *.LC1>)
+        (nil)))
+(insn 71 70 72 9 (set (reg:QI 0 ax)
+        (const_int 0 [0])) "/home/ant/Downloads/gol-1/gol/render.c":23:7 -1
+     (nil))
+(call_insn 72 71 73 9 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("printf") [flags 0x41]  <function_decl 0x7f1e5c4be100 printf>) [0 __builtin_printf S1 A8])
+            (const_int 0 [0]))) "/home/ant/Downloads/gol-1/gol/render.c":23:7 -1
+     (nil)
+    (expr_list (use (reg:QI 0 ax))
+        (expr_list:DI (use (reg:DI 5 di))
+            (expr_list:SI (use (reg:SI 4 si))
+                (nil)))))
+(insn 73 72 74 9 (set (reg:DI 109)
         (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
-                (const_int -32 [0xffffffffffffffe0])) [7 board+0 S8 A64])) "/home/ant/Downloads/gol-1/gol/render.c":22:7 -1
+                (const_int -40 [0xffffffffffffffd8])) [8 neighbors+0 S8 A64])) "/home/ant/Downloads/gol-1/gol/render.c":24:7 -1
      (nil))
-(insn 70 69 71 9 (set (reg:DI 4 si)
-        (reg:DI 108)) "/home/ant/Downloads/gol-1/gol/render.c":22:7 -1
+(insn 74 73 75 9 (set (reg:DI 110)
+        (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -32 [0xffffffffffffffe0])) [7 board+0 S8 A64])) "/home/ant/Downloads/gol-1/gol/render.c":24:7 -1
      (nil))
-(insn 71 70 72 9 (set (reg:DI 5 di)
-        (reg:DI 109)) "/home/ant/Downloads/gol-1/gol/render.c":22:7 -1
+(insn 75 74 76 9 (set (reg:DI 4 si)
+        (reg:DI 109)) "/home/ant/Downloads/gol-1/gol/render.c":24:7 -1
      (nil))
-(call_insn 72 71 73 9 (call (mem:QI (symbol_ref:DI ("evolve") [flags 0x41]  <function_decl 0x7fa3aecaa500 evolve>) [0 evolve S1 A8])
-        (const_int 0 [0])) "/home/ant/Downloads/gol-1/gol/render.c":22:7 -1
+(insn 76 75 77 9 (set (reg:DI 5 di)
+        (reg:DI 110)) "/home/ant/Downloads/gol-1/gol/render.c":24:7 -1
+     (nil))
+(call_insn 77 76 78 9 (call (mem:QI (symbol_ref:DI ("evolve") [flags 0x41]  <function_decl 0x7f1e58e2b700 evolve>) [0 evolve S1 A8])
+        (const_int 0 [0])) "/home/ant/Downloads/gol-1/gol/render.c":24:7 -1
      (nil)
     (expr_list:DI (use (reg:DI 5 di))
         (expr_list:DI (use (reg:DI 4 si))
             (nil))))
-(jump_insn 73 72 74 9 (set (pc)
-        (label_ref 95)) "/home/ant/Downloads/gol-1/gol/render.c":23:7 -1
+(jump_insn 78 77 79 9 (set (pc)
+        (label_ref 100)) "/home/ant/Downloads/gol-1/gol/render.c":25:7 -1
      (nil)
- -> 95)
-(barrier 74 73 75)
-(code_label 75 74 76 10 3 (nil) [1 uses])
-(note 76 75 77 10 [bb 10] NOTE_INSN_BASIC_BLOCK)
-(insn 77 76 78 10 (set (reg:QI 93 [ Graphical_Mode.3_12 ])
-        (mem/c:QI (symbol_ref:DI ("Graphical_Mode") [flags 0x2]  <var_decl 0x7fa3aebcac60 Graphical_Mode>) [4 Graphical_Mode+0 S1 A8])) "/home/ant/Downloads/gol-1/gol/render.c":25:11 -1
+ -> 100)
+(barrier 79 78 80)
+(code_label 80 79 81 10 3 (nil) [1 uses])
+(note 81 80 82 10 [bb 10] NOTE_INSN_BASIC_BLOCK)
+(insn 82 81 83 10 (set (reg:QI 94 [ Graphical_Mode.3_13 ])
+        (mem/c:QI (symbol_ref:DI ("Graphical_Mode") [flags 0x2]  <var_decl 0x7f1e59789510 Graphical_Mode>) [4 Graphical_Mode+0 S1 A8])) "/home/ant/Downloads/gol-1/gol/render.c":27:11 -1
      (nil))
-(insn 78 77 79 10 (set (reg:CCZ 17 flags)
-        (compare:CCZ (reg:QI 93 [ Graphical_Mode.3_12 ])
-            (const_int 0 [0]))) "/home/ant/Downloads/gol-1/gol/render.c":25:10 -1
+(insn 83 82 84 10 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg:QI 94 [ Graphical_Mode.3_13 ])
+            (const_int 0 [0]))) "/home/ant/Downloads/gol-1/gol/render.c":27:10 -1
      (nil))
-(jump_insn 79 78 80 10 (set (pc)
+(jump_insn 84 83 85 10 (set (pc)
         (if_then_else (eq (reg:CCZ 17 flags)
                 (const_int 0 [0]))
-            (label_ref:DI 95)
-            (pc))) "/home/ant/Downloads/gol-1/gol/render.c":25:10 806 {*jcc}
+            (label_ref:DI 100)
+            (pc))) "/home/ant/Downloads/gol-1/gol/render.c":27:10 806 {*jcc}
      (nil)
- -> 95)
-(note 80 79 81 11 [bb 11] NOTE_INSN_BASIC_BLOCK)
-(insn 81 80 82 11 (set (reg/f:DI 110)
+ -> 100)
+(note 85 84 86 11 [bb 11] NOTE_INSN_BASIC_BLOCK)
+(insn 86 85 87 11 (set (reg/f:DI 111)
         (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
-                (const_int -32 [0xffffffffffffffe0])) [7 board+0 S8 A64])) "/home/ant/Downloads/gol-1/gol/render.c":25:32 -1
+                (const_int -32 [0xffffffffffffffe0])) [7 board+0 S8 A64])) "/home/ant/Downloads/gol-1/gol/render.c":27:32 -1
      (nil))
-(insn 82 81 83 11 (set (reg:SI 94 [ _13 ])
-        (mem:SI (plus:DI (reg/f:DI 110)
-                (const_int 16008020 [0xf44354])) [2 board_23(D)->rank+0 S4 A32])) "/home/ant/Downloads/gol-1/gol/render.c":25:32 -1
+(insn 87 86 88 11 (set (reg:SI 95 [ _14 ])
+        (mem:SI (plus:DI (reg/f:DI 111)
+                (const_int 16008020 [0xf44354])) [2 board_25(D)->rank+0 S4 A32])) "/home/ant/Downloads/gol-1/gol/render.c":27:32 -1
      (nil))
-(insn 83 82 84 11 (set (reg:CCZ 17 flags)
-        (compare:CCZ (reg:SI 94 [ _13 ])
-            (const_int 0 [0]))) "/home/ant/Downloads/gol-1/gol/render.c":25:25 -1
+(insn 88 87 89 11 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg:SI 95 [ _14 ])
+            (const_int 0 [0]))) "/home/ant/Downloads/gol-1/gol/render.c":27:25 -1
      (nil))
-(jump_insn 84 83 85 11 (set (pc)
+(jump_insn 89 88 90 11 (set (pc)
         (if_then_else (ne (reg:CCZ 17 flags)
                 (const_int 0 [0]))
-            (label_ref:DI 95)
-            (pc))) "/home/ant/Downloads/gol-1/gol/render.c":25:25 806 {*jcc}
+            (label_ref:DI 100)
+            (pc))) "/home/ant/Downloads/gol-1/gol/render.c":27:25 806 {*jcc}
      (nil)
- -> 95)
-(note 85 84 86 12 [bb 12] NOTE_INSN_BASIC_BLOCK)
-(insn 86 85 87 12 (set (reg:DI 111)
+ -> 100)
+(note 90 89 91 12 [bb 12] NOTE_INSN_BASIC_BLOCK)
+(insn 91 90 92 12 (set (reg:DI 112)
         (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
-                (const_int -48 [0xffffffffffffffd0])) [9 fullBoard+0 S8 A64])) "/home/ant/Downloads/gol-1/gol/render.c":26:9 -1
+                (const_int -48 [0xffffffffffffffd0])) [9 fullBoard+0 S8 A64])) "/home/ant/Downloads/gol-1/gol/render.c":28:9 -1
      (nil))
-(insn 87 86 88 12 (set (reg:DI 112)
+(insn 92 91 93 12 (set (reg:DI 113)
         (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
-                (const_int -32 [0xffffffffffffffe0])) [7 board+0 S8 A64])) "/home/ant/Downloads/gol-1/gol/render.c":26:9 -1
+                (const_int -32 [0xffffffffffffffe0])) [7 board+0 S8 A64])) "/home/ant/Downloads/gol-1/gol/render.c":28:9 -1
      (nil))
-(insn 88 87 89 12 (set (reg:DI 113)
+(insn 93 92 94 12 (set (reg:DI 114)
         (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
-                (const_int -24 [0xffffffffffffffe8])) [6 renderer+0 S8 A64])) "/home/ant/Downloads/gol-1/gol/render.c":26:9 -1
+                (const_int -24 [0xffffffffffffffe8])) [6 renderer+0 S8 A64])) "/home/ant/Downloads/gol-1/gol/render.c":28:9 -1
      (nil))
-(insn 89 88 90 12 (set (reg:DI 1 dx)
-        (reg:DI 111)) "/home/ant/Downloads/gol-1/gol/render.c":26:9 -1
+(insn 94 93 95 12 (set (reg:DI 1 dx)
+        (reg:DI 112)) "/home/ant/Downloads/gol-1/gol/render.c":28:9 -1
      (nil))
-(insn 90 89 91 12 (set (reg:DI 4 si)
-        (reg:DI 112)) "/home/ant/Downloads/gol-1/gol/render.c":26:9 -1
+(insn 95 94 96 12 (set (reg:DI 4 si)
+        (reg:DI 113)) "/home/ant/Downloads/gol-1/gol/render.c":28:9 -1
      (nil))
-(insn 91 90 92 12 (set (reg:DI 5 di)
-        (reg:DI 113)) "/home/ant/Downloads/gol-1/gol/render.c":26:9 -1
+(insn 96 95 97 12 (set (reg:DI 5 di)
+        (reg:DI 114)) "/home/ant/Downloads/gol-1/gol/render.c":28:9 -1
      (nil))
-(call_insn 92 91 95 12 (call (mem:QI (symbol_ref:DI ("render_pause_state") [flags 0x3]  <function_decl 0x7fa3aeca0f00 render_pause_state>) [0 render_pause_state S1 A8])
-        (const_int 0 [0])) "/home/ant/Downloads/gol-1/gol/render.c":26:9 -1
+(call_insn 97 96 100 12 (call (mem:QI (symbol_ref:DI ("render_pause_state") [flags 0x3]  <function_decl 0x7f1e58e2b100 render_pause_state>) [0 render_pause_state S1 A8])
+        (const_int 0 [0])) "/home/ant/Downloads/gol-1/gol/render.c":28:9 -1
      (nil)
     (expr_list:DI (use (reg:DI 5 di))
         (expr_list:DI (use (reg:DI 4 si))
             (expr_list:DI (use (reg:DI 1 dx))
                 (nil)))))
-(code_label 95 92 96 14 4 (nil) [3 uses])
-(note 96 95 97 14 [bb 14] NOTE_INSN_BASIC_BLOCK)
-(code_label 97 96 98 15 1 (nil) [1 uses])
-(note 98 97 0 15 [bb 15] NOTE_INSN_BASIC_BLOCK)
+(code_label 100 97 101 14 4 (nil) [3 uses])
+(note 101 100 102 14 [bb 14] NOTE_INSN_BASIC_BLOCK)
+(code_label 102 101 103 15 1 (nil) [1 uses])
+(note 103 102 0 15 [bb 15] NOTE_INSN_BASIC_BLOCK)
 
-;; Function render_running_state (render_running_state, funcdef_no=4210, decl_uid=31153, cgraph_uid=4211, symbol_order=4213)
+;; Function render_running_state (render_running_state, funcdef_no=4210, decl_uid=48070, cgraph_uid=4211, symbol_order=4213)
 
 Partition 3: size 4 align 4
 	pos_y_13
@@ -437,31 +458,31 @@ try_optimize_cfg iteration 2
 (note 6 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
 (insn 2 6 3 2 (set (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
                 (const_int -24 [0xffffffffffffffe8])) [6 renderer+0 S8 A64])
-        (reg:DI 5 di [ renderer ])) "/home/ant/Downloads/gol-1/gol/render.c":33:1 -1
+        (reg:DI 5 di [ renderer ])) "/home/ant/Downloads/gol-1/gol/render.c":35:1 -1
      (nil))
 (insn 3 2 4 2 (set (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
                 (const_int -32 [0xffffffffffffffe0])) [7 board+0 S8 A64])
-        (reg:DI 4 si [ board ])) "/home/ant/Downloads/gol-1/gol/render.c":33:1 -1
+        (reg:DI 4 si [ board ])) "/home/ant/Downloads/gol-1/gol/render.c":35:1 -1
      (nil))
 (insn 4 3 5 2 (set (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
                 (const_int -40 [0xffffffffffffffd8])) [9 fullBoard+0 S8 A64])
-        (reg:DI 1 dx [ fullBoard ])) "/home/ant/Downloads/gol-1/gol/render.c":33:1 -1
+        (reg:DI 1 dx [ fullBoard ])) "/home/ant/Downloads/gol-1/gol/render.c":35:1 -1
      (nil))
 (note 5 4 8 2 NOTE_INSN_FUNCTION_BEG)
 (insn 8 5 9 2 (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
                 (const_int -8 [0xfffffffffffffff8])) [2 pos_x+0 S4 A64])
-        (const_int 0 [0])) "/home/ant/Downloads/gol-1/gol/render.c":34:7 -1
+        (const_int 0 [0])) "/home/ant/Downloads/gol-1/gol/render.c":36:7 -1
      (nil))
 (insn 9 8 10 2 (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
                 (const_int -4 [0xfffffffffffffffc])) [2 pos_y+0 S4 A32])
-        (const_int 0 [0])) "/home/ant/Downloads/gol-1/gol/render.c":35:7 -1
+        (const_int 0 [0])) "/home/ant/Downloads/gol-1/gol/render.c":37:7 -1
      (nil))
 (insn 10 9 11 2 (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
                 (const_int -16 [0xfffffffffffffff0])) [2 i+0 S4 A64])
-        (const_int 0 [0])) "/home/ant/Downloads/gol-1/gol/render.c":37:12 -1
+        (const_int 0 [0])) "/home/ant/Downloads/gol-1/gol/render.c":39:12 -1
      (nil))
 (jump_insn 11 10 12 2 (set (pc)
-        (label_ref 66)) "/home/ant/Downloads/gol-1/gol/render.c":37:3 -1
+        (label_ref 66)) "/home/ant/Downloads/gol-1/gol/render.c":39:3 -1
      (nil)
  -> 66)
 (barrier 12 11 70)
@@ -469,10 +490,10 @@ try_optimize_cfg iteration 2
 (note 13 70 14 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
 (insn 14 13 15 4 (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
                 (const_int -12 [0xfffffffffffffff4])) [2 j+0 S4 A32])
-        (const_int 0 [0])) "/home/ant/Downloads/gol-1/gol/render.c":38:14 -1
+        (const_int 0 [0])) "/home/ant/Downloads/gol-1/gol/render.c":40:14 -1
      (nil))
 (jump_insn 15 14 16 4 (set (pc)
-        (label_ref 57)) "/home/ant/Downloads/gol-1/gol/render.c":38:5 -1
+        (label_ref 57)) "/home/ant/Downloads/gol-1/gol/render.c":40:5 -1
      (nil)
  -> 57)
 (barrier 16 15 61)
@@ -480,154 +501,154 @@ try_optimize_cfg iteration 2
 (note 17 61 18 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
 (insn 18 17 19 5 (set (reg/f:DI 88)
         (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
-                (const_int -40 [0xffffffffffffffd8])) [9 fullBoard+0 S8 A64])) "/home/ant/Downloads/gol-1/gol/render.c":39:28 -1
+                (const_int -40 [0xffffffffffffffd8])) [9 fullBoard+0 S8 A64])) "/home/ant/Downloads/gol-1/gol/render.c":41:28 -1
      (nil))
 (insn 19 18 20 5 (set (reg:SI 82 [ _1 ])
         (mem:SI (plus:DI (reg/f:DI 88)
-                (const_int 16000012 [0xf4240c])) [2 fullBoard_19(D)->CELL_WIDTH+0 S4 A32])) "/home/ant/Downloads/gol-1/gol/render.c":39:28 -1
+                (const_int 16000012 [0xf4240c])) [2 fullBoard_19(D)->CELL_WIDTH+0 S4 A32])) "/home/ant/Downloads/gol-1/gol/render.c":41:28 -1
      (nil))
 (insn 20 19 21 5 (set (reg:SI 90)
         (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
-                (const_int -16 [0xfffffffffffffff0])) [2 i+0 S4 A64])) "/home/ant/Downloads/gol-1/gol/render.c":39:13 -1
+                (const_int -16 [0xfffffffffffffff0])) [2 i+0 S4 A64])) "/home/ant/Downloads/gol-1/gol/render.c":41:13 -1
      (nil))
 (insn 21 20 22 5 (parallel [
             (set (reg:SI 89)
                 (mult:SI (reg:SI 90)
                     (reg:SI 82 [ _1 ])))
             (clobber (reg:CC 17 flags))
-        ]) "/home/ant/Downloads/gol-1/gol/render.c":39:13 -1
+        ]) "/home/ant/Downloads/gol-1/gol/render.c":41:13 -1
      (nil))
 (insn 22 21 23 5 (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
                 (const_int -8 [0xfffffffffffffff8])) [2 pos_x+0 S4 A64])
-        (reg:SI 89)) "/home/ant/Downloads/gol-1/gol/render.c":39:13 -1
+        (reg:SI 89)) "/home/ant/Downloads/gol-1/gol/render.c":41:13 -1
      (nil))
 (insn 23 22 24 5 (set (reg/f:DI 91)
         (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
-                (const_int -40 [0xffffffffffffffd8])) [9 fullBoard+0 S8 A64])) "/home/ant/Downloads/gol-1/gol/render.c":40:28 -1
+                (const_int -40 [0xffffffffffffffd8])) [9 fullBoard+0 S8 A64])) "/home/ant/Downloads/gol-1/gol/render.c":42:28 -1
      (nil))
 (insn 24 23 25 5 (set (reg:SI 83 [ _2 ])
         (mem:SI (plus:DI (reg/f:DI 91)
-                (const_int 16000016 [0xf42410])) [2 fullBoard_19(D)->CELL_HEIGHT+0 S4 A32])) "/home/ant/Downloads/gol-1/gol/render.c":40:28 -1
+                (const_int 16000016 [0xf42410])) [2 fullBoard_19(D)->CELL_HEIGHT+0 S4 A32])) "/home/ant/Downloads/gol-1/gol/render.c":42:28 -1
      (nil))
 (insn 25 24 26 5 (set (reg:SI 93)
         (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
-                (const_int -12 [0xfffffffffffffff4])) [2 j+0 S4 A32])) "/home/ant/Downloads/gol-1/gol/render.c":40:13 -1
+                (const_int -12 [0xfffffffffffffff4])) [2 j+0 S4 A32])) "/home/ant/Downloads/gol-1/gol/render.c":42:13 -1
      (nil))
 (insn 26 25 27 5 (parallel [
             (set (reg:SI 92)
                 (mult:SI (reg:SI 93)
                     (reg:SI 83 [ _2 ])))
             (clobber (reg:CC 17 flags))
-        ]) "/home/ant/Downloads/gol-1/gol/render.c":40:13 -1
+        ]) "/home/ant/Downloads/gol-1/gol/render.c":42:13 -1
      (nil))
 (insn 27 26 28 5 (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
                 (const_int -4 [0xfffffffffffffffc])) [2 pos_y+0 S4 A32])
-        (reg:SI 92)) "/home/ant/Downloads/gol-1/gol/render.c":40:13 -1
+        (reg:SI 92)) "/home/ant/Downloads/gol-1/gol/render.c":42:13 -1
      (nil))
 (insn 28 27 29 5 (set (reg/f:DI 94)
         (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
-                (const_int -32 [0xffffffffffffffe0])) [7 board+0 S8 A64])) "/home/ant/Downloads/gol-1/gol/render.c":41:31 -1
+                (const_int -32 [0xffffffffffffffe0])) [7 board+0 S8 A64])) "/home/ant/Downloads/gol-1/gol/render.c":43:31 -1
      (nil))
 (insn 29 28 30 5 (set (reg:SI 96)
         (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
-                (const_int -12 [0xfffffffffffffff4])) [2 j+0 S4 A32])) "/home/ant/Downloads/gol-1/gol/render.c":41:31 -1
+                (const_int -12 [0xfffffffffffffff4])) [2 j+0 S4 A32])) "/home/ant/Downloads/gol-1/gol/render.c":43:31 -1
      (nil))
 (insn 30 29 31 5 (set (reg:DI 95)
-        (sign_extend:DI (reg:SI 96))) "/home/ant/Downloads/gol-1/gol/render.c":41:31 -1
+        (sign_extend:DI (reg:SI 96))) "/home/ant/Downloads/gol-1/gol/render.c":43:31 -1
      (nil))
 (insn 31 30 32 5 (set (reg:SI 98)
         (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
-                (const_int -16 [0xfffffffffffffff0])) [2 i+0 S4 A64])) "/home/ant/Downloads/gol-1/gol/render.c":41:31 -1
+                (const_int -16 [0xfffffffffffffff0])) [2 i+0 S4 A64])) "/home/ant/Downloads/gol-1/gol/render.c":43:31 -1
      (nil))
 (insn 32 31 33 5 (set (reg:DI 97)
-        (sign_extend:DI (reg:SI 98))) "/home/ant/Downloads/gol-1/gol/render.c":41:31 -1
+        (sign_extend:DI (reg:SI 98))) "/home/ant/Downloads/gol-1/gol/render.c":43:31 -1
      (nil))
 (insn 33 32 34 5 (parallel [
             (set (reg:DI 99)
                 (mult:DI (reg:DI 97)
                     (const_int 4000 [0xfa0])))
             (clobber (reg:CC 17 flags))
-        ]) "/home/ant/Downloads/gol-1/gol/render.c":41:31 -1
+        ]) "/home/ant/Downloads/gol-1/gol/render.c":43:31 -1
      (nil))
 (insn 34 33 35 5 (parallel [
             (set (reg:DI 99)
                 (plus:DI (reg:DI 99)
                     (reg/f:DI 94)))
             (clobber (reg:CC 17 flags))
-        ]) "/home/ant/Downloads/gol-1/gol/render.c":41:31 -1
+        ]) "/home/ant/Downloads/gol-1/gol/render.c":43:31 -1
      (nil))
 (insn 35 34 36 5 (parallel [
             (set (reg/f:DI 100)
                 (plus:DI (reg:DI 99)
                     (reg:DI 95)))
             (clobber (reg:CC 17 flags))
-        ]) "/home/ant/Downloads/gol-1/gol/render.c":41:31 -1
+        ]) "/home/ant/Downloads/gol-1/gol/render.c":43:31 -1
      (nil))
 (insn 36 35 37 5 (set (reg:QI 84 [ _3 ])
-        (mem:QI (reg/f:DI 100) [0 board_16(D)->cell_state[i_7][j_8]+0 S1 A8])) "/home/ant/Downloads/gol-1/gol/render.c":41:31 -1
+        (mem:QI (reg/f:DI 100) [0 board_16(D)->cell_state[i_7][j_8]+0 S1 A8])) "/home/ant/Downloads/gol-1/gol/render.c":43:31 -1
      (nil))
 (insn 37 36 38 5 (set (reg:CCZ 17 flags)
         (compare:CCZ (reg:QI 84 [ _3 ])
-            (const_int 1 [0x1]))) "/home/ant/Downloads/gol-1/gol/render.c":41:10 -1
+            (const_int 1 [0x1]))) "/home/ant/Downloads/gol-1/gol/render.c":43:10 -1
      (nil))
 (jump_insn 38 37 39 5 (set (pc)
         (if_then_else (ne (reg:CCZ 17 flags)
                 (const_int 0 [0]))
             (label_ref 54)
-            (pc))) "/home/ant/Downloads/gol-1/gol/render.c":41:10 -1
+            (pc))) "/home/ant/Downloads/gol-1/gol/render.c":43:10 -1
      (nil)
  -> 54)
 (note 39 38 40 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
 (insn 40 39 41 6 (set (reg/f:DI 101)
         (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
-                (const_int -32 [0xffffffffffffffe0])) [7 board+0 S8 A64])) "/home/ant/Downloads/gol-1/gol/render.c":41:51 -1
+                (const_int -32 [0xffffffffffffffe0])) [7 board+0 S8 A64])) "/home/ant/Downloads/gol-1/gol/render.c":43:51 -1
      (nil))
 (insn 41 40 42 6 (set (reg:SI 85 [ _4 ])
         (mem:SI (plus:DI (reg/f:DI 101)
-                (const_int 16008020 [0xf44354])) [2 board_16(D)->rank+0 S4 A32])) "/home/ant/Downloads/gol-1/gol/render.c":41:51 -1
+                (const_int 16008020 [0xf44354])) [2 board_16(D)->rank+0 S4 A32])) "/home/ant/Downloads/gol-1/gol/render.c":43:51 -1
      (nil))
 (insn 42 41 43 6 (set (reg:CCZ 17 flags)
         (compare:CCZ (reg:SI 85 [ _4 ])
-            (const_int 0 [0]))) "/home/ant/Downloads/gol-1/gol/render.c":41:44 -1
+            (const_int 0 [0]))) "/home/ant/Downloads/gol-1/gol/render.c":43:44 -1
      (nil))
 (jump_insn 43 42 44 6 (set (pc)
         (if_then_else (ne (reg:CCZ 17 flags)
                 (const_int 0 [0]))
             (label_ref 54)
-            (pc))) "/home/ant/Downloads/gol-1/gol/render.c":41:44 -1
+            (pc))) "/home/ant/Downloads/gol-1/gol/render.c":43:44 -1
      (nil)
  -> 54)
 (note 44 43 45 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
 (insn 45 44 46 7 (set (reg:DI 102)
         (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
-                (const_int -40 [0xffffffffffffffd8])) [9 fullBoard+0 S8 A64])) "/home/ant/Downloads/gol-1/gol/render.c":42:9 -1
+                (const_int -40 [0xffffffffffffffd8])) [9 fullBoard+0 S8 A64])) "/home/ant/Downloads/gol-1/gol/render.c":44:9 -1
      (nil))
 (insn 46 45 47 7 (set (reg:SI 103)
         (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
-                (const_int -4 [0xfffffffffffffffc])) [2 pos_y+0 S4 A32])) "/home/ant/Downloads/gol-1/gol/render.c":42:9 -1
+                (const_int -4 [0xfffffffffffffffc])) [2 pos_y+0 S4 A32])) "/home/ant/Downloads/gol-1/gol/render.c":44:9 -1
      (nil))
 (insn 47 46 48 7 (set (reg:SI 104)
         (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
-                (const_int -8 [0xfffffffffffffff8])) [2 pos_x+0 S4 A64])) "/home/ant/Downloads/gol-1/gol/render.c":42:9 -1
+                (const_int -8 [0xfffffffffffffff8])) [2 pos_x+0 S4 A64])) "/home/ant/Downloads/gol-1/gol/render.c":44:9 -1
      (nil))
 (insn 48 47 49 7 (set (reg:DI 105)
         (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
-                (const_int -24 [0xffffffffffffffe8])) [6 renderer+0 S8 A64])) "/home/ant/Downloads/gol-1/gol/render.c":42:9 -1
+                (const_int -24 [0xffffffffffffffe8])) [6 renderer+0 S8 A64])) "/home/ant/Downloads/gol-1/gol/render.c":44:9 -1
      (nil))
 (insn 49 48 50 7 (set (reg:DI 2 cx)
-        (reg:DI 102)) "/home/ant/Downloads/gol-1/gol/render.c":42:9 -1
+        (reg:DI 102)) "/home/ant/Downloads/gol-1/gol/render.c":44:9 -1
      (nil))
 (insn 50 49 51 7 (set (reg:SI 1 dx)
-        (reg:SI 103)) "/home/ant/Downloads/gol-1/gol/render.c":42:9 -1
+        (reg:SI 103)) "/home/ant/Downloads/gol-1/gol/render.c":44:9 -1
      (nil))
 (insn 51 50 52 7 (set (reg:SI 4 si)
-        (reg:SI 104)) "/home/ant/Downloads/gol-1/gol/render.c":42:9 -1
+        (reg:SI 104)) "/home/ant/Downloads/gol-1/gol/render.c":44:9 -1
      (nil))
 (insn 52 51 53 7 (set (reg:DI 5 di)
-        (reg:DI 105)) "/home/ant/Downloads/gol-1/gol/render.c":42:9 -1
+        (reg:DI 105)) "/home/ant/Downloads/gol-1/gol/render.c":44:9 -1
      (nil))
-(call_insn 53 52 54 7 (call (mem:QI (symbol_ref:DI ("render_square") [flags 0x3]  <function_decl 0x7fa3aeca0e00 render_square>) [0 render_square S1 A8])
-        (const_int 0 [0])) "/home/ant/Downloads/gol-1/gol/render.c":42:9 -1
+(call_insn 53 52 54 7 (call (mem:QI (symbol_ref:DI ("render_square") [flags 0x3]  <function_decl 0x7f1e58e2b000 render_square>) [0 render_square S1 A8])
+        (const_int 0 [0])) "/home/ant/Downloads/gol-1/gol/render.c":44:9 -1
      (nil)
     (expr_list:DI (use (reg:DI 5 di))
         (expr_list:SI (use (reg:SI 4 si))
@@ -643,28 +664,28 @@ try_optimize_cfg iteration 2
                             (const_int -12 [0xfffffffffffffff4])) [2 j+0 S4 A32])
                     (const_int 1 [0x1])))
             (clobber (reg:CC 17 flags))
-        ]) "/home/ant/Downloads/gol-1/gol/render.c":38:42 -1
+        ]) "/home/ant/Downloads/gol-1/gol/render.c":40:42 -1
      (nil))
 (code_label 57 56 58 9 11 (nil) [1 uses])
 (note 58 57 59 9 [bb 9] NOTE_INSN_BASIC_BLOCK)
 (insn 59 58 60 9 (set (reg/f:DI 106)
         (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
-                (const_int -32 [0xffffffffffffffe0])) [7 board+0 S8 A64])) "/home/ant/Downloads/gol-1/gol/render.c":38:30 -1
+                (const_int -32 [0xffffffffffffffe0])) [7 board+0 S8 A64])) "/home/ant/Downloads/gol-1/gol/render.c":40:30 -1
      (nil))
 (insn 60 59 62 9 (set (reg:SI 86 [ _5 ])
         (mem:SI (plus:DI (reg/f:DI 106)
-                (const_int 16008008 [0xf44348])) [2 board_16(D)->ROW_NUM+0 S4 A32])) "/home/ant/Downloads/gol-1/gol/render.c":38:30 -1
+                (const_int 16008008 [0xf44348])) [2 board_16(D)->ROW_NUM+0 S4 A32])) "/home/ant/Downloads/gol-1/gol/render.c":40:30 -1
      (nil))
 (insn 62 60 63 9 (set (reg:CCGC 17 flags)
         (compare:CCGC (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
                     (const_int -12 [0xfffffffffffffff4])) [2 j+0 S4 A32])
-            (reg:SI 86 [ _5 ]))) "/home/ant/Downloads/gol-1/gol/render.c":38:23 -1
+            (reg:SI 86 [ _5 ]))) "/home/ant/Downloads/gol-1/gol/render.c":40:23 -1
      (nil))
 (jump_insn 63 62 64 9 (set (pc)
         (if_then_else (lt (reg:CCGC 17 flags)
                 (const_int 0 [0]))
             (label_ref 61)
-            (pc))) "/home/ant/Downloads/gol-1/gol/render.c":38:23 -1
+            (pc))) "/home/ant/Downloads/gol-1/gol/render.c":40:23 -1
      (nil)
  -> 61)
 (note 64 63 65 10 [bb 10] NOTE_INSN_BASIC_BLOCK)
@@ -675,33 +696,33 @@ try_optimize_cfg iteration 2
                             (const_int -16 [0xfffffffffffffff0])) [2 i+0 S4 A64])
                     (const_int 1 [0x1])))
             (clobber (reg:CC 17 flags))
-        ]) "/home/ant/Downloads/gol-1/gol/render.c":37:40 -1
+        ]) "/home/ant/Downloads/gol-1/gol/render.c":39:40 -1
      (nil))
 (code_label 66 65 67 11 10 (nil) [1 uses])
 (note 67 66 68 11 [bb 11] NOTE_INSN_BASIC_BLOCK)
 (insn 68 67 69 11 (set (reg/f:DI 107)
         (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
-                (const_int -32 [0xffffffffffffffe0])) [7 board+0 S8 A64])) "/home/ant/Downloads/gol-1/gol/render.c":37:28 -1
+                (const_int -32 [0xffffffffffffffe0])) [7 board+0 S8 A64])) "/home/ant/Downloads/gol-1/gol/render.c":39:28 -1
      (nil))
 (insn 69 68 71 11 (set (reg:SI 87 [ _6 ])
         (mem:SI (plus:DI (reg/f:DI 107)
-                (const_int 16008004 [0xf44344])) [2 board_16(D)->COL_NUM+0 S4 A32])) "/home/ant/Downloads/gol-1/gol/render.c":37:28 -1
+                (const_int 16008004 [0xf44344])) [2 board_16(D)->COL_NUM+0 S4 A32])) "/home/ant/Downloads/gol-1/gol/render.c":39:28 -1
      (nil))
 (insn 71 69 72 11 (set (reg:CCGC 17 flags)
         (compare:CCGC (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
                     (const_int -16 [0xfffffffffffffff0])) [2 i+0 S4 A64])
-            (reg:SI 87 [ _6 ]))) "/home/ant/Downloads/gol-1/gol/render.c":37:21 -1
+            (reg:SI 87 [ _6 ]))) "/home/ant/Downloads/gol-1/gol/render.c":39:21 -1
      (nil))
 (jump_insn 72 71 73 11 (set (pc)
         (if_then_else (lt (reg:CCGC 17 flags)
                 (const_int 0 [0]))
             (label_ref 70)
-            (pc))) "/home/ant/Downloads/gol-1/gol/render.c":37:21 -1
+            (pc))) "/home/ant/Downloads/gol-1/gol/render.c":39:21 -1
      (nil)
  -> 70)
 (note 73 72 0 12 [bb 12] NOTE_INSN_BASIC_BLOCK)
 
-;; Function render_pause_state (render_pause_state, funcdef_no=4211, decl_uid=31162, cgraph_uid=4212, symbol_order=4214)
+;; Function render_pause_state (render_pause_state, funcdef_no=4211, decl_uid=48079, cgraph_uid=4212, symbol_order=4214)
 
 Partition 3: size 4 align 4
 	pos_y_13
@@ -755,31 +776,31 @@ try_optimize_cfg iteration 2
 (note 6 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
 (insn 2 6 3 2 (set (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
                 (const_int -24 [0xffffffffffffffe8])) [6 renderer+0 S8 A64])
-        (reg:DI 5 di [ renderer ])) "/home/ant/Downloads/gol-1/gol/render.c":48:1 -1
+        (reg:DI 5 di [ renderer ])) "/home/ant/Downloads/gol-1/gol/render.c":50:1 -1
      (nil))
 (insn 3 2 4 2 (set (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
                 (const_int -32 [0xffffffffffffffe0])) [7 board+0 S8 A64])
-        (reg:DI 4 si [ board ])) "/home/ant/Downloads/gol-1/gol/render.c":48:1 -1
+        (reg:DI 4 si [ board ])) "/home/ant/Downloads/gol-1/gol/render.c":50:1 -1
      (nil))
 (insn 4 3 5 2 (set (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
                 (const_int -40 [0xffffffffffffffd8])) [9 fullBoard+0 S8 A64])
-        (reg:DI 1 dx [ fullBoard ])) "/home/ant/Downloads/gol-1/gol/render.c":48:1 -1
+        (reg:DI 1 dx [ fullBoard ])) "/home/ant/Downloads/gol-1/gol/render.c":50:1 -1
      (nil))
 (note 5 4 8 2 NOTE_INSN_FUNCTION_BEG)
 (insn 8 5 9 2 (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
                 (const_int -8 [0xfffffffffffffff8])) [2 pos_x+0 S4 A64])
-        (const_int 0 [0])) "/home/ant/Downloads/gol-1/gol/render.c":49:7 -1
+        (const_int 0 [0])) "/home/ant/Downloads/gol-1/gol/render.c":51:7 -1
      (nil))
 (insn 9 8 10 2 (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
                 (const_int -4 [0xfffffffffffffffc])) [2 pos_y+0 S4 A32])
-        (const_int 0 [0])) "/home/ant/Downloads/gol-1/gol/render.c":50:7 -1
+        (const_int 0 [0])) "/home/ant/Downloads/gol-1/gol/render.c":52:7 -1
      (nil))
 (insn 10 9 11 2 (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
                 (const_int -16 [0xfffffffffffffff0])) [2 i+0 S4 A64])
-        (const_int 0 [0])) "/home/ant/Downloads/gol-1/gol/render.c":52:12 -1
+        (const_int 0 [0])) "/home/ant/Downloads/gol-1/gol/render.c":54:12 -1
      (nil))
 (jump_insn 11 10 12 2 (set (pc)
-        (label_ref 66)) "/home/ant/Downloads/gol-1/gol/render.c":52:3 -1
+        (label_ref 66)) "/home/ant/Downloads/gol-1/gol/render.c":54:3 -1
      (nil)
  -> 66)
 (barrier 12 11 70)
@@ -787,10 +808,10 @@ try_optimize_cfg iteration 2
 (note 13 70 14 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
 (insn 14 13 15 4 (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
                 (const_int -12 [0xfffffffffffffff4])) [2 j+0 S4 A32])
-        (const_int 0 [0])) "/home/ant/Downloads/gol-1/gol/render.c":53:14 -1
+        (const_int 0 [0])) "/home/ant/Downloads/gol-1/gol/render.c":55:14 -1
      (nil))
 (jump_insn 15 14 16 4 (set (pc)
-        (label_ref 57)) "/home/ant/Downloads/gol-1/gol/render.c":53:5 -1
+        (label_ref 57)) "/home/ant/Downloads/gol-1/gol/render.c":55:5 -1
      (nil)
  -> 57)
 (barrier 16 15 61)
@@ -798,154 +819,154 @@ try_optimize_cfg iteration 2
 (note 17 61 18 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
 (insn 18 17 19 5 (set (reg/f:DI 88)
         (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
-                (const_int -40 [0xffffffffffffffd8])) [9 fullBoard+0 S8 A64])) "/home/ant/Downloads/gol-1/gol/render.c":54:28 -1
+                (const_int -40 [0xffffffffffffffd8])) [9 fullBoard+0 S8 A64])) "/home/ant/Downloads/gol-1/gol/render.c":56:28 -1
      (nil))
 (insn 19 18 20 5 (set (reg:SI 82 [ _1 ])
         (mem:SI (plus:DI (reg/f:DI 88)
-                (const_int 16000012 [0xf4240c])) [2 fullBoard_19(D)->CELL_WIDTH+0 S4 A32])) "/home/ant/Downloads/gol-1/gol/render.c":54:28 -1
+                (const_int 16000012 [0xf4240c])) [2 fullBoard_19(D)->CELL_WIDTH+0 S4 A32])) "/home/ant/Downloads/gol-1/gol/render.c":56:28 -1
      (nil))
 (insn 20 19 21 5 (set (reg:SI 90)
         (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
-                (const_int -16 [0xfffffffffffffff0])) [2 i+0 S4 A64])) "/home/ant/Downloads/gol-1/gol/render.c":54:13 -1
+                (const_int -16 [0xfffffffffffffff0])) [2 i+0 S4 A64])) "/home/ant/Downloads/gol-1/gol/render.c":56:13 -1
      (nil))
 (insn 21 20 22 5 (parallel [
             (set (reg:SI 89)
                 (mult:SI (reg:SI 90)
                     (reg:SI 82 [ _1 ])))
             (clobber (reg:CC 17 flags))
-        ]) "/home/ant/Downloads/gol-1/gol/render.c":54:13 -1
+        ]) "/home/ant/Downloads/gol-1/gol/render.c":56:13 -1
      (nil))
 (insn 22 21 23 5 (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
                 (const_int -8 [0xfffffffffffffff8])) [2 pos_x+0 S4 A64])
-        (reg:SI 89)) "/home/ant/Downloads/gol-1/gol/render.c":54:13 -1
+        (reg:SI 89)) "/home/ant/Downloads/gol-1/gol/render.c":56:13 -1
      (nil))
 (insn 23 22 24 5 (set (reg/f:DI 91)
         (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
-                (const_int -40 [0xffffffffffffffd8])) [9 fullBoard+0 S8 A64])) "/home/ant/Downloads/gol-1/gol/render.c":55:28 -1
+                (const_int -40 [0xffffffffffffffd8])) [9 fullBoard+0 S8 A64])) "/home/ant/Downloads/gol-1/gol/render.c":57:28 -1
      (nil))
 (insn 24 23 25 5 (set (reg:SI 83 [ _2 ])
         (mem:SI (plus:DI (reg/f:DI 91)
-                (const_int 16000016 [0xf42410])) [2 fullBoard_19(D)->CELL_HEIGHT+0 S4 A32])) "/home/ant/Downloads/gol-1/gol/render.c":55:28 -1
+                (const_int 16000016 [0xf42410])) [2 fullBoard_19(D)->CELL_HEIGHT+0 S4 A32])) "/home/ant/Downloads/gol-1/gol/render.c":57:28 -1
      (nil))
 (insn 25 24 26 5 (set (reg:SI 93)
         (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
-                (const_int -12 [0xfffffffffffffff4])) [2 j+0 S4 A32])) "/home/ant/Downloads/gol-1/gol/render.c":55:13 -1
+                (const_int -12 [0xfffffffffffffff4])) [2 j+0 S4 A32])) "/home/ant/Downloads/gol-1/gol/render.c":57:13 -1
      (nil))
 (insn 26 25 27 5 (parallel [
             (set (reg:SI 92)
                 (mult:SI (reg:SI 93)
                     (reg:SI 83 [ _2 ])))
             (clobber (reg:CC 17 flags))
-        ]) "/home/ant/Downloads/gol-1/gol/render.c":55:13 -1
+        ]) "/home/ant/Downloads/gol-1/gol/render.c":57:13 -1
      (nil))
 (insn 27 26 28 5 (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
                 (const_int -4 [0xfffffffffffffffc])) [2 pos_y+0 S4 A32])
-        (reg:SI 92)) "/home/ant/Downloads/gol-1/gol/render.c":55:13 -1
+        (reg:SI 92)) "/home/ant/Downloads/gol-1/gol/render.c":57:13 -1
      (nil))
 (insn 28 27 29 5 (set (reg/f:DI 94)
         (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
-                (const_int -32 [0xffffffffffffffe0])) [7 board+0 S8 A64])) "/home/ant/Downloads/gol-1/gol/render.c":56:31 -1
+                (const_int -32 [0xffffffffffffffe0])) [7 board+0 S8 A64])) "/home/ant/Downloads/gol-1/gol/render.c":58:31 -1
      (nil))
 (insn 29 28 30 5 (set (reg:SI 96)
         (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
-                (const_int -12 [0xfffffffffffffff4])) [2 j+0 S4 A32])) "/home/ant/Downloads/gol-1/gol/render.c":56:31 -1
+                (const_int -12 [0xfffffffffffffff4])) [2 j+0 S4 A32])) "/home/ant/Downloads/gol-1/gol/render.c":58:31 -1
      (nil))
 (insn 30 29 31 5 (set (reg:DI 95)
-        (sign_extend:DI (reg:SI 96))) "/home/ant/Downloads/gol-1/gol/render.c":56:31 -1
+        (sign_extend:DI (reg:SI 96))) "/home/ant/Downloads/gol-1/gol/render.c":58:31 -1
      (nil))
 (insn 31 30 32 5 (set (reg:SI 98)
         (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
-                (const_int -16 [0xfffffffffffffff0])) [2 i+0 S4 A64])) "/home/ant/Downloads/gol-1/gol/render.c":56:31 -1
+                (const_int -16 [0xfffffffffffffff0])) [2 i+0 S4 A64])) "/home/ant/Downloads/gol-1/gol/render.c":58:31 -1
      (nil))
 (insn 32 31 33 5 (set (reg:DI 97)
-        (sign_extend:DI (reg:SI 98))) "/home/ant/Downloads/gol-1/gol/render.c":56:31 -1
+        (sign_extend:DI (reg:SI 98))) "/home/ant/Downloads/gol-1/gol/render.c":58:31 -1
      (nil))
 (insn 33 32 34 5 (parallel [
             (set (reg:DI 99)
                 (mult:DI (reg:DI 97)
                     (const_int 4000 [0xfa0])))
             (clobber (reg:CC 17 flags))
-        ]) "/home/ant/Downloads/gol-1/gol/render.c":56:31 -1
+        ]) "/home/ant/Downloads/gol-1/gol/render.c":58:31 -1
      (nil))
 (insn 34 33 35 5 (parallel [
             (set (reg:DI 99)
                 (plus:DI (reg:DI 99)
                     (reg/f:DI 94)))
             (clobber (reg:CC 17 flags))
-        ]) "/home/ant/Downloads/gol-1/gol/render.c":56:31 -1
+        ]) "/home/ant/Downloads/gol-1/gol/render.c":58:31 -1
      (nil))
 (insn 35 34 36 5 (parallel [
             (set (reg/f:DI 100)
                 (plus:DI (reg:DI 99)
                     (reg:DI 95)))
             (clobber (reg:CC 17 flags))
-        ]) "/home/ant/Downloads/gol-1/gol/render.c":56:31 -1
+        ]) "/home/ant/Downloads/gol-1/gol/render.c":58:31 -1
      (nil))
 (insn 36 35 37 5 (set (reg:QI 84 [ _3 ])
-        (mem:QI (reg/f:DI 100) [0 board_16(D)->cell_state[i_7][j_8]+0 S1 A8])) "/home/ant/Downloads/gol-1/gol/render.c":56:31 -1
+        (mem:QI (reg/f:DI 100) [0 board_16(D)->cell_state[i_7][j_8]+0 S1 A8])) "/home/ant/Downloads/gol-1/gol/render.c":58:31 -1
      (nil))
 (insn 37 36 38 5 (set (reg:CCZ 17 flags)
         (compare:CCZ (reg:QI 84 [ _3 ])
-            (const_int 1 [0x1]))) "/home/ant/Downloads/gol-1/gol/render.c":56:10 -1
+            (const_int 1 [0x1]))) "/home/ant/Downloads/gol-1/gol/render.c":58:10 -1
      (nil))
 (jump_insn 38 37 39 5 (set (pc)
         (if_then_else (ne (reg:CCZ 17 flags)
                 (const_int 0 [0]))
             (label_ref 54)
-            (pc))) "/home/ant/Downloads/gol-1/gol/render.c":56:10 -1
+            (pc))) "/home/ant/Downloads/gol-1/gol/render.c":58:10 -1
      (nil)
  -> 54)
 (note 39 38 40 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
 (insn 40 39 41 6 (set (reg/f:DI 101)
         (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
-                (const_int -32 [0xffffffffffffffe0])) [7 board+0 S8 A64])) "/home/ant/Downloads/gol-1/gol/render.c":56:50 -1
+                (const_int -32 [0xffffffffffffffe0])) [7 board+0 S8 A64])) "/home/ant/Downloads/gol-1/gol/render.c":58:50 -1
      (nil))
 (insn 41 40 42 6 (set (reg:SI 85 [ _4 ])
         (mem:SI (plus:DI (reg/f:DI 101)
-                (const_int 16008020 [0xf44354])) [2 board_16(D)->rank+0 S4 A32])) "/home/ant/Downloads/gol-1/gol/render.c":56:50 -1
+                (const_int 16008020 [0xf44354])) [2 board_16(D)->rank+0 S4 A32])) "/home/ant/Downloads/gol-1/gol/render.c":58:50 -1
      (nil))
 (insn 42 41 43 6 (set (reg:CCZ 17 flags)
         (compare:CCZ (reg:SI 85 [ _4 ])
-            (const_int 0 [0]))) "/home/ant/Downloads/gol-1/gol/render.c":56:43 -1
+            (const_int 0 [0]))) "/home/ant/Downloads/gol-1/gol/render.c":58:43 -1
      (nil))
 (jump_insn 43 42 44 6 (set (pc)
         (if_then_else (ne (reg:CCZ 17 flags)
                 (const_int 0 [0]))
             (label_ref 54)
-            (pc))) "/home/ant/Downloads/gol-1/gol/render.c":56:43 -1
+            (pc))) "/home/ant/Downloads/gol-1/gol/render.c":58:43 -1
      (nil)
  -> 54)
 (note 44 43 45 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
 (insn 45 44 46 7 (set (reg:DI 102)
         (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
-                (const_int -40 [0xffffffffffffffd8])) [9 fullBoard+0 S8 A64])) "/home/ant/Downloads/gol-1/gol/render.c":57:9 -1
+                (const_int -40 [0xffffffffffffffd8])) [9 fullBoard+0 S8 A64])) "/home/ant/Downloads/gol-1/gol/render.c":59:9 -1
      (nil))
 (insn 46 45 47 7 (set (reg:SI 103)
         (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
-                (const_int -4 [0xfffffffffffffffc])) [2 pos_y+0 S4 A32])) "/home/ant/Downloads/gol-1/gol/render.c":57:9 -1
+                (const_int -4 [0xfffffffffffffffc])) [2 pos_y+0 S4 A32])) "/home/ant/Downloads/gol-1/gol/render.c":59:9 -1
      (nil))
 (insn 47 46 48 7 (set (reg:SI 104)
         (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
-                (const_int -8 [0xfffffffffffffff8])) [2 pos_x+0 S4 A64])) "/home/ant/Downloads/gol-1/gol/render.c":57:9 -1
+                (const_int -8 [0xfffffffffffffff8])) [2 pos_x+0 S4 A64])) "/home/ant/Downloads/gol-1/gol/render.c":59:9 -1
      (nil))
 (insn 48 47 49 7 (set (reg:DI 105)
         (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
-                (const_int -24 [0xffffffffffffffe8])) [6 renderer+0 S8 A64])) "/home/ant/Downloads/gol-1/gol/render.c":57:9 -1
+                (const_int -24 [0xffffffffffffffe8])) [6 renderer+0 S8 A64])) "/home/ant/Downloads/gol-1/gol/render.c":59:9 -1
      (nil))
 (insn 49 48 50 7 (set (reg:DI 2 cx)
-        (reg:DI 102)) "/home/ant/Downloads/gol-1/gol/render.c":57:9 -1
+        (reg:DI 102)) "/home/ant/Downloads/gol-1/gol/render.c":59:9 -1
      (nil))
 (insn 50 49 51 7 (set (reg:SI 1 dx)
-        (reg:SI 103)) "/home/ant/Downloads/gol-1/gol/render.c":57:9 -1
+        (reg:SI 103)) "/home/ant/Downloads/gol-1/gol/render.c":59:9 -1
      (nil))
 (insn 51 50 52 7 (set (reg:SI 4 si)
-        (reg:SI 104)) "/home/ant/Downloads/gol-1/gol/render.c":57:9 -1
+        (reg:SI 104)) "/home/ant/Downloads/gol-1/gol/render.c":59:9 -1
      (nil))
 (insn 52 51 53 7 (set (reg:DI 5 di)
-        (reg:DI 105)) "/home/ant/Downloads/gol-1/gol/render.c":57:9 -1
+        (reg:DI 105)) "/home/ant/Downloads/gol-1/gol/render.c":59:9 -1
      (nil))
-(call_insn 53 52 54 7 (call (mem:QI (symbol_ref:DI ("pause_square") [flags 0x3]  <function_decl 0x7fa3aecaa000 pause_square>) [0 pause_square S1 A8])
-        (const_int 0 [0])) "/home/ant/Downloads/gol-1/gol/render.c":57:9 -1
+(call_insn 53 52 54 7 (call (mem:QI (symbol_ref:DI ("pause_square") [flags 0x3]  <function_decl 0x7f1e58e2b200 pause_square>) [0 pause_square S1 A8])
+        (const_int 0 [0])) "/home/ant/Downloads/gol-1/gol/render.c":59:9 -1
      (nil)
     (expr_list:DI (use (reg:DI 5 di))
         (expr_list:SI (use (reg:SI 4 si))
@@ -961,28 +982,28 @@ try_optimize_cfg iteration 2
                             (const_int -12 [0xfffffffffffffff4])) [2 j+0 S4 A32])
                     (const_int 1 [0x1])))
             (clobber (reg:CC 17 flags))
-        ]) "/home/ant/Downloads/gol-1/gol/render.c":53:42 -1
+        ]) "/home/ant/Downloads/gol-1/gol/render.c":55:42 -1
      (nil))
 (code_label 57 56 58 9 17 (nil) [1 uses])
 (note 58 57 59 9 [bb 9] NOTE_INSN_BASIC_BLOCK)
 (insn 59 58 60 9 (set (reg/f:DI 106)
         (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
-                (const_int -32 [0xffffffffffffffe0])) [7 board+0 S8 A64])) "/home/ant/Downloads/gol-1/gol/render.c":53:30 -1
+                (const_int -32 [0xffffffffffffffe0])) [7 board+0 S8 A64])) "/home/ant/Downloads/gol-1/gol/render.c":55:30 -1
      (nil))
 (insn 60 59 62 9 (set (reg:SI 86 [ _5 ])
         (mem:SI (plus:DI (reg/f:DI 106)
-                (const_int 16008008 [0xf44348])) [2 board_16(D)->ROW_NUM+0 S4 A32])) "/home/ant/Downloads/gol-1/gol/render.c":53:30 -1
+                (const_int 16008008 [0xf44348])) [2 board_16(D)->ROW_NUM+0 S4 A32])) "/home/ant/Downloads/gol-1/gol/render.c":55:30 -1
      (nil))
 (insn 62 60 63 9 (set (reg:CCGC 17 flags)
         (compare:CCGC (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
                     (const_int -12 [0xfffffffffffffff4])) [2 j+0 S4 A32])
-            (reg:SI 86 [ _5 ]))) "/home/ant/Downloads/gol-1/gol/render.c":53:23 -1
+            (reg:SI 86 [ _5 ]))) "/home/ant/Downloads/gol-1/gol/render.c":55:23 -1
      (nil))
 (jump_insn 63 62 64 9 (set (pc)
         (if_then_else (lt (reg:CCGC 17 flags)
                 (const_int 0 [0]))
             (label_ref 61)
-            (pc))) "/home/ant/Downloads/gol-1/gol/render.c":53:23 -1
+            (pc))) "/home/ant/Downloads/gol-1/gol/render.c":55:23 -1
      (nil)
  -> 61)
 (note 64 63 65 10 [bb 10] NOTE_INSN_BASIC_BLOCK)
@@ -993,33 +1014,33 @@ try_optimize_cfg iteration 2
                             (const_int -16 [0xfffffffffffffff0])) [2 i+0 S4 A64])
                     (const_int 1 [0x1])))
             (clobber (reg:CC 17 flags))
-        ]) "/home/ant/Downloads/gol-1/gol/render.c":52:40 -1
+        ]) "/home/ant/Downloads/gol-1/gol/render.c":54:40 -1
      (nil))
 (code_label 66 65 67 11 16 (nil) [1 uses])
 (note 67 66 68 11 [bb 11] NOTE_INSN_BASIC_BLOCK)
 (insn 68 67 69 11 (set (reg/f:DI 107)
         (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
-                (const_int -32 [0xffffffffffffffe0])) [7 board+0 S8 A64])) "/home/ant/Downloads/gol-1/gol/render.c":52:28 -1
+                (const_int -32 [0xffffffffffffffe0])) [7 board+0 S8 A64])) "/home/ant/Downloads/gol-1/gol/render.c":54:28 -1
      (nil))
 (insn 69 68 71 11 (set (reg:SI 87 [ _6 ])
         (mem:SI (plus:DI (reg/f:DI 107)
-                (const_int 16008004 [0xf44344])) [2 board_16(D)->COL_NUM+0 S4 A32])) "/home/ant/Downloads/gol-1/gol/render.c":52:28 -1
+                (const_int 16008004 [0xf44344])) [2 board_16(D)->COL_NUM+0 S4 A32])) "/home/ant/Downloads/gol-1/gol/render.c":54:28 -1
      (nil))
 (insn 71 69 72 11 (set (reg:CCGC 17 flags)
         (compare:CCGC (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
                     (const_int -16 [0xfffffffffffffff0])) [2 i+0 S4 A64])
-            (reg:SI 87 [ _6 ]))) "/home/ant/Downloads/gol-1/gol/render.c":52:21 -1
+            (reg:SI 87 [ _6 ]))) "/home/ant/Downloads/gol-1/gol/render.c":54:21 -1
      (nil))
 (jump_insn 72 71 73 11 (set (pc)
         (if_then_else (lt (reg:CCGC 17 flags)
                 (const_int 0 [0]))
             (label_ref 70)
-            (pc))) "/home/ant/Downloads/gol-1/gol/render.c":52:21 -1
+            (pc))) "/home/ant/Downloads/gol-1/gol/render.c":54:21 -1
      (nil)
  -> 70)
 (note 73 72 0 12 [bb 12] NOTE_INSN_BASIC_BLOCK)
 
-;; Function render_square (render_square, funcdef_no=4212, decl_uid=31158, cgraph_uid=4213, symbol_order=4215)
+;; Function render_square (render_square, funcdef_no=4212, decl_uid=48075, cgraph_uid=4213, symbol_order=4215)
 
 Partition 0: size 16 align 16
 	cell
@@ -1048,108 +1069,108 @@ try_optimize_cfg iteration 2
 (note 8 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
 (insn 2 8 3 2 (set (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
                 (const_int -40 [0xffffffffffffffd8])) [6 renderer+0 S8 A64])
-        (reg:DI 5 di [ renderer ])) "/home/ant/Downloads/gol-1/gol/render.c":63:1 -1
+        (reg:DI 5 di [ renderer ])) "/home/ant/Downloads/gol-1/gol/render.c":65:1 -1
      (nil))
 (insn 3 2 4 2 (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
                 (const_int -44 [0xffffffffffffffd4])) [2 pos_x+0 S4 A32])
-        (reg:SI 4 si [ pos_x ])) "/home/ant/Downloads/gol-1/gol/render.c":63:1 -1
+        (reg:SI 4 si [ pos_x ])) "/home/ant/Downloads/gol-1/gol/render.c":65:1 -1
      (nil))
 (insn 4 3 5 2 (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
                 (const_int -48 [0xffffffffffffffd0])) [2 pos_y+0 S4 A32])
-        (reg:SI 1 dx [ pos_y ])) "/home/ant/Downloads/gol-1/gol/render.c":63:1 -1
+        (reg:SI 1 dx [ pos_y ])) "/home/ant/Downloads/gol-1/gol/render.c":65:1 -1
      (nil))
 (insn 5 4 6 2 (set (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
                 (const_int -56 [0xffffffffffffffc8])) [9 board+0 S8 A64])
-        (reg:DI 2 cx [ board ])) "/home/ant/Downloads/gol-1/gol/render.c":63:1 -1
+        (reg:DI 2 cx [ board ])) "/home/ant/Downloads/gol-1/gol/render.c":65:1 -1
      (nil))
 (note 6 5 7 2 NOTE_INSN_FUNCTION_BEG)
 (insn 7 6 10 2 (parallel [
             (set (mem/v/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
-                        (const_int -8 [0xfffffffffffffff8])) [11 D.31289+0 S8 A64])
+                        (const_int -8 [0xfffffffffffffff8])) [11 D.48205+0 S8 A64])
                 (unspec:DI [
                         (mem/v/f:DI (const_int 40 [0x28]) [0 MEM[(<address-space-1> long unsigned int *)40B]+0 S8 A64 AS1])
                     ] UNSPEC_SP_SET))
             (set (scratch:DI)
                 (const_int 0 [0]))
             (clobber (reg:CC 17 flags))
-        ]) "/home/ant/Downloads/gol-1/gol/render.c":63:1 -1
+        ]) "/home/ant/Downloads/gol-1/gol/render.c":65:1 -1
      (nil))
 (insn 10 7 11 2 (set (reg:SI 86)
         (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
-                (const_int -44 [0xffffffffffffffd4])) [2 pos_x+0 S4 A32])) "/home/ant/Downloads/gol-1/gol/render.c":65:10 -1
+                (const_int -44 [0xffffffffffffffd4])) [2 pos_x+0 S4 A32])) "/home/ant/Downloads/gol-1/gol/render.c":67:10 -1
      (nil))
 (insn 11 10 12 2 (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
                 (const_int -32 [0xffffffffffffffe0])) [2 cell.x+0 S4 A128])
-        (reg:SI 86)) "/home/ant/Downloads/gol-1/gol/render.c":65:10 -1
+        (reg:SI 86)) "/home/ant/Downloads/gol-1/gol/render.c":67:10 -1
      (nil))
 (insn 12 11 13 2 (set (reg:SI 87)
         (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
-                (const_int -48 [0xffffffffffffffd0])) [2 pos_y+0 S4 A32])) "/home/ant/Downloads/gol-1/gol/render.c":66:10 -1
+                (const_int -48 [0xffffffffffffffd0])) [2 pos_y+0 S4 A32])) "/home/ant/Downloads/gol-1/gol/render.c":68:10 -1
      (nil))
 (insn 13 12 14 2 (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
                 (const_int -28 [0xffffffffffffffe4])) [2 cell.y+0 S4 A32])
-        (reg:SI 87)) "/home/ant/Downloads/gol-1/gol/render.c":66:10 -1
+        (reg:SI 87)) "/home/ant/Downloads/gol-1/gol/render.c":68:10 -1
      (nil))
 (insn 14 13 15 2 (set (reg/f:DI 88)
         (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
-                (const_int -56 [0xffffffffffffffc8])) [9 board+0 S8 A64])) "/home/ant/Downloads/gol-1/gol/render.c":67:17 -1
+                (const_int -56 [0xffffffffffffffc8])) [9 board+0 S8 A64])) "/home/ant/Downloads/gol-1/gol/render.c":69:17 -1
      (nil))
 (insn 15 14 16 2 (set (reg:SI 82 [ _1 ])
         (mem:SI (plus:DI (reg/f:DI 88)
-                (const_int 16000012 [0xf4240c])) [2 board_10(D)->CELL_WIDTH+0 S4 A32])) "/home/ant/Downloads/gol-1/gol/render.c":67:17 -1
+                (const_int 16000012 [0xf4240c])) [2 board_10(D)->CELL_WIDTH+0 S4 A32])) "/home/ant/Downloads/gol-1/gol/render.c":69:17 -1
      (nil))
 (insn 16 15 17 2 (parallel [
             (set (reg:SI 83 [ _2 ])
                 (plus:SI (reg:SI 82 [ _1 ])
                     (const_int -1 [0xffffffffffffffff])))
             (clobber (reg:CC 17 flags))
-        ]) "/home/ant/Downloads/gol-1/gol/render.c":67:30 -1
+        ]) "/home/ant/Downloads/gol-1/gol/render.c":69:30 -1
      (nil))
 (insn 17 16 18 2 (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
                 (const_int -24 [0xffffffffffffffe8])) [2 cell.w+0 S4 A64])
-        (reg:SI 83 [ _2 ])) "/home/ant/Downloads/gol-1/gol/render.c":67:10 -1
+        (reg:SI 83 [ _2 ])) "/home/ant/Downloads/gol-1/gol/render.c":69:10 -1
      (nil))
 (insn 18 17 19 2 (set (reg/f:DI 89)
         (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
-                (const_int -56 [0xffffffffffffffc8])) [9 board+0 S8 A64])) "/home/ant/Downloads/gol-1/gol/render.c":68:17 -1
+                (const_int -56 [0xffffffffffffffc8])) [9 board+0 S8 A64])) "/home/ant/Downloads/gol-1/gol/render.c":70:17 -1
      (nil))
 (insn 19 18 20 2 (set (reg:SI 84 [ _3 ])
         (mem:SI (plus:DI (reg/f:DI 89)
-                (const_int 16000016 [0xf42410])) [2 board_10(D)->CELL_HEIGHT+0 S4 A32])) "/home/ant/Downloads/gol-1/gol/render.c":68:17 -1
+                (const_int 16000016 [0xf42410])) [2 board_10(D)->CELL_HEIGHT+0 S4 A32])) "/home/ant/Downloads/gol-1/gol/render.c":70:17 -1
      (nil))
 (insn 20 19 21 2 (parallel [
             (set (reg:SI 85 [ _4 ])
                 (plus:SI (reg:SI 84 [ _3 ])
                     (const_int -1 [0xffffffffffffffff])))
             (clobber (reg:CC 17 flags))
-        ]) "/home/ant/Downloads/gol-1/gol/render.c":68:31 -1
+        ]) "/home/ant/Downloads/gol-1/gol/render.c":70:31 -1
      (nil))
 (insn 21 20 22 2 (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
                 (const_int -20 [0xffffffffffffffec])) [2 cell.h+0 S4 A32])
-        (reg:SI 85 [ _4 ])) "/home/ant/Downloads/gol-1/gol/render.c":68:10 -1
+        (reg:SI 85 [ _4 ])) "/home/ant/Downloads/gol-1/gol/render.c":70:10 -1
      (nil))
 (insn 22 21 23 2 (set (reg:DI 90)
         (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
-                (const_int -40 [0xffffffffffffffd8])) [6 renderer+0 S8 A64])) "/home/ant/Downloads/gol-1/gol/render.c":69:3 -1
+                (const_int -40 [0xffffffffffffffd8])) [6 renderer+0 S8 A64])) "/home/ant/Downloads/gol-1/gol/render.c":71:3 -1
      (nil))
 (insn 23 22 24 2 (set (reg:SI 36 r8)
-        (const_int 1 [0x1])) "/home/ant/Downloads/gol-1/gol/render.c":69:3 -1
+        (const_int 1 [0x1])) "/home/ant/Downloads/gol-1/gol/render.c":71:3 -1
      (nil))
 (insn 24 23 25 2 (set (reg:SI 2 cx)
-        (const_int 124 [0x7c])) "/home/ant/Downloads/gol-1/gol/render.c":69:3 -1
+        (const_int 124 [0x7c])) "/home/ant/Downloads/gol-1/gol/render.c":71:3 -1
      (nil))
 (insn 25 24 26 2 (set (reg:SI 1 dx)
-        (const_int 192 [0xc0])) "/home/ant/Downloads/gol-1/gol/render.c":69:3 -1
+        (const_int 192 [0xc0])) "/home/ant/Downloads/gol-1/gol/render.c":71:3 -1
      (nil))
 (insn 26 25 27 2 (set (reg:SI 4 si)
-        (const_int 142 [0x8e])) "/home/ant/Downloads/gol-1/gol/render.c":69:3 -1
+        (const_int 142 [0x8e])) "/home/ant/Downloads/gol-1/gol/render.c":71:3 -1
      (nil))
 (insn 27 26 28 2 (set (reg:DI 5 di)
-        (reg:DI 90)) "/home/ant/Downloads/gol-1/gol/render.c":69:3 -1
+        (reg:DI 90)) "/home/ant/Downloads/gol-1/gol/render.c":71:3 -1
      (nil))
 (call_insn 28 27 29 2 (set (reg:SI 0 ax)
-        (call (mem:QI (symbol_ref:DI ("SDL_SetRenderDrawColor") [flags 0x41]  <function_decl 0x7fa3aec87800 SDL_SetRenderDrawColor>) [0 SDL_SetRenderDrawColor S1 A8])
-            (const_int 0 [0]))) "/home/ant/Downloads/gol-1/gol/render.c":69:3 -1
+        (call (mem:QI (symbol_ref:DI ("SDL_SetRenderDrawColor") [flags 0x41]  <function_decl 0x7f1e59744800 SDL_SetRenderDrawColor>) [0 SDL_SetRenderDrawColor S1 A8])
+            (const_int 0 [0]))) "/home/ant/Downloads/gol-1/gol/render.c":71:3 -1
      (nil)
     (expr_list:DI (use (reg:DI 5 di))
         (expr_list:SI (use (reg:SI 4 si))
@@ -1162,47 +1183,47 @@ try_optimize_cfg iteration 2
                 (plus:DI (reg/f:DI 77 virtual-stack-vars)
                     (const_int -32 [0xffffffffffffffe0])))
             (clobber (reg:CC 17 flags))
-        ]) "/home/ant/Downloads/gol-1/gol/render.c":70:3 -1
+        ]) "/home/ant/Downloads/gol-1/gol/render.c":72:3 -1
      (nil))
 (insn 30 29 31 2 (set (reg:DI 92)
         (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
-                (const_int -40 [0xffffffffffffffd8])) [6 renderer+0 S8 A64])) "/home/ant/Downloads/gol-1/gol/render.c":70:3 -1
+                (const_int -40 [0xffffffffffffffd8])) [6 renderer+0 S8 A64])) "/home/ant/Downloads/gol-1/gol/render.c":72:3 -1
      (nil))
 (insn 31 30 32 2 (set (reg:DI 4 si)
-        (reg:DI 91)) "/home/ant/Downloads/gol-1/gol/render.c":70:3 -1
+        (reg:DI 91)) "/home/ant/Downloads/gol-1/gol/render.c":72:3 -1
      (nil))
 (insn 32 31 33 2 (set (reg:DI 5 di)
-        (reg:DI 92)) "/home/ant/Downloads/gol-1/gol/render.c":70:3 -1
+        (reg:DI 92)) "/home/ant/Downloads/gol-1/gol/render.c":72:3 -1
      (nil))
 (call_insn 33 32 43 2 (set (reg:SI 0 ax)
-        (call (mem:QI (symbol_ref:DI ("SDL_RenderFillRect") [flags 0x41]  <function_decl 0x7fa3aec8d300 SDL_RenderFillRect>) [0 SDL_RenderFillRect S1 A8])
-            (const_int 0 [0]))) "/home/ant/Downloads/gol-1/gol/render.c":70:3 -1
+        (call (mem:QI (symbol_ref:DI ("SDL_RenderFillRect") [flags 0x41]  <function_decl 0x7f1e5974a300 SDL_RenderFillRect>) [0 SDL_RenderFillRect S1 A8])
+            (const_int 0 [0]))) "/home/ant/Downloads/gol-1/gol/render.c":72:3 -1
      (nil)
     (expr_list:DI (use (reg:DI 5 di))
         (expr_list:DI (use (reg:DI 4 si))
             (nil))))
-(insn 43 33 35 2 (const_int 0 [0]) "/home/ant/Downloads/gol-1/gol/render.c":71:1 -1
+(insn 43 33 35 2 (const_int 0 [0]) "/home/ant/Downloads/gol-1/gol/render.c":73:1 -1
      (nil))
 (insn 35 43 36 2 (parallel [
             (set (reg:CCZ 17 flags)
                 (unspec:CCZ [
                         (mem/v/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
-                                (const_int -8 [0xfffffffffffffff8])) [11 D.31289+0 S8 A64])
+                                (const_int -8 [0xfffffffffffffff8])) [11 D.48205+0 S8 A64])
                         (mem/v/f:DI (const_int 40 [0x28]) [0 MEM[(<address-space-1> long unsigned int *)40B]+0 S8 A64 AS1])
                     ] UNSPEC_SP_TEST))
             (clobber (scratch:DI))
-        ]) "/home/ant/Downloads/gol-1/gol/render.c":71:1 -1
+        ]) "/home/ant/Downloads/gol-1/gol/render.c":73:1 -1
      (nil))
 (jump_insn 36 35 41 2 (set (pc)
         (if_then_else (eq (reg:CCZ 17 flags)
                 (const_int 0 [0]))
             (label_ref 39)
-            (pc))) "/home/ant/Downloads/gol-1/gol/render.c":71:1 -1
+            (pc))) "/home/ant/Downloads/gol-1/gol/render.c":73:1 -1
      (nil)
  -> 39)
 (note 41 36 37 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
-(call_insn 37 41 38 5 (call (mem:QI (symbol_ref:DI ("__stack_chk_fail") [flags 0x41]  <function_decl 0x7fa3aeccb600 __stack_chk_fail>) [0 __stack_chk_fail S1 A8])
-        (const_int 0 [0])) "/home/ant/Downloads/gol-1/gol/render.c":71:1 -1
+(call_insn 37 41 38 5 (call (mem:QI (symbol_ref:DI ("__stack_chk_fail") [flags 0x41]  <function_decl 0x7f1e58e66000 __stack_chk_fail>) [0 __stack_chk_fail S1 A8])
+        (const_int 0 [0])) "/home/ant/Downloads/gol-1/gol/render.c":73:1 -1
      (expr_list:REG_ARGS_SIZE (const_int 0 [0])
         (expr_list:REG_NORETURN (const_int 0 [0])
             (expr_list:REG_EH_REGION (const_int 0 [0])
@@ -1212,7 +1233,7 @@ try_optimize_cfg iteration 2
 (code_label 39 38 42 6 22 (nil) [1 uses])
 (note 42 39 0 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
 
-;; Function pause_square (pause_square, funcdef_no=4213, decl_uid=31167, cgraph_uid=4214, symbol_order=4216)
+;; Function pause_square (pause_square, funcdef_no=4213, decl_uid=48084, cgraph_uid=4214, symbol_order=4216)
 
 Partition 0: size 16 align 16
 	cell
@@ -1241,108 +1262,108 @@ try_optimize_cfg iteration 2
 (note 8 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
 (insn 2 8 3 2 (set (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
                 (const_int -40 [0xffffffffffffffd8])) [6 renderer+0 S8 A64])
-        (reg:DI 5 di [ renderer ])) "/home/ant/Downloads/gol-1/gol/render.c":74:1 -1
+        (reg:DI 5 di [ renderer ])) "/home/ant/Downloads/gol-1/gol/render.c":76:1 -1
      (nil))
 (insn 3 2 4 2 (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
                 (const_int -44 [0xffffffffffffffd4])) [2 pos_x+0 S4 A32])
-        (reg:SI 4 si [ pos_x ])) "/home/ant/Downloads/gol-1/gol/render.c":74:1 -1
+        (reg:SI 4 si [ pos_x ])) "/home/ant/Downloads/gol-1/gol/render.c":76:1 -1
      (nil))
 (insn 4 3 5 2 (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
                 (const_int -48 [0xffffffffffffffd0])) [2 pos_y+0 S4 A32])
-        (reg:SI 1 dx [ pos_y ])) "/home/ant/Downloads/gol-1/gol/render.c":74:1 -1
+        (reg:SI 1 dx [ pos_y ])) "/home/ant/Downloads/gol-1/gol/render.c":76:1 -1
      (nil))
 (insn 5 4 6 2 (set (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
                 (const_int -56 [0xffffffffffffffc8])) [9 board+0 S8 A64])
-        (reg:DI 2 cx [ board ])) "/home/ant/Downloads/gol-1/gol/render.c":74:1 -1
+        (reg:DI 2 cx [ board ])) "/home/ant/Downloads/gol-1/gol/render.c":76:1 -1
      (nil))
 (note 6 5 7 2 NOTE_INSN_FUNCTION_BEG)
 (insn 7 6 10 2 (parallel [
             (set (mem/v/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
-                        (const_int -8 [0xfffffffffffffff8])) [11 D.31291+0 S8 A64])
+                        (const_int -8 [0xfffffffffffffff8])) [11 D.48207+0 S8 A64])
                 (unspec:DI [
                         (mem/v/f:DI (const_int 40 [0x28]) [0 MEM[(<address-space-1> long unsigned int *)40B]+0 S8 A64 AS1])
                     ] UNSPEC_SP_SET))
             (set (scratch:DI)
                 (const_int 0 [0]))
             (clobber (reg:CC 17 flags))
-        ]) "/home/ant/Downloads/gol-1/gol/render.c":74:1 -1
+        ]) "/home/ant/Downloads/gol-1/gol/render.c":76:1 -1
      (nil))
 (insn 10 7 11 2 (set (reg:SI 86)
         (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
-                (const_int -44 [0xffffffffffffffd4])) [2 pos_x+0 S4 A32])) "/home/ant/Downloads/gol-1/gol/render.c":76:10 -1
+                (const_int -44 [0xffffffffffffffd4])) [2 pos_x+0 S4 A32])) "/home/ant/Downloads/gol-1/gol/render.c":78:10 -1
      (nil))
 (insn 11 10 12 2 (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
                 (const_int -32 [0xffffffffffffffe0])) [2 cell.x+0 S4 A128])
-        (reg:SI 86)) "/home/ant/Downloads/gol-1/gol/render.c":76:10 -1
+        (reg:SI 86)) "/home/ant/Downloads/gol-1/gol/render.c":78:10 -1
      (nil))
 (insn 12 11 13 2 (set (reg:SI 87)
         (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
-                (const_int -48 [0xffffffffffffffd0])) [2 pos_y+0 S4 A32])) "/home/ant/Downloads/gol-1/gol/render.c":77:10 -1
+                (const_int -48 [0xffffffffffffffd0])) [2 pos_y+0 S4 A32])) "/home/ant/Downloads/gol-1/gol/render.c":79:10 -1
      (nil))
 (insn 13 12 14 2 (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
                 (const_int -28 [0xffffffffffffffe4])) [2 cell.y+0 S4 A32])
-        (reg:SI 87)) "/home/ant/Downloads/gol-1/gol/render.c":77:10 -1
+        (reg:SI 87)) "/home/ant/Downloads/gol-1/gol/render.c":79:10 -1
      (nil))
 (insn 14 13 15 2 (set (reg/f:DI 88)
         (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
-                (const_int -56 [0xffffffffffffffc8])) [9 board+0 S8 A64])) "/home/ant/Downloads/gol-1/gol/render.c":78:17 -1
+                (const_int -56 [0xffffffffffffffc8])) [9 board+0 S8 A64])) "/home/ant/Downloads/gol-1/gol/render.c":80:17 -1
      (nil))
 (insn 15 14 16 2 (set (reg:SI 82 [ _1 ])
         (mem:SI (plus:DI (reg/f:DI 88)
-                (const_int 16000012 [0xf4240c])) [2 board_10(D)->CELL_WIDTH+0 S4 A32])) "/home/ant/Downloads/gol-1/gol/render.c":78:17 -1
+                (const_int 16000012 [0xf4240c])) [2 board_10(D)->CELL_WIDTH+0 S4 A32])) "/home/ant/Downloads/gol-1/gol/render.c":80:17 -1
      (nil))
 (insn 16 15 17 2 (parallel [
             (set (reg:SI 83 [ _2 ])
                 (plus:SI (reg:SI 82 [ _1 ])
                     (const_int -1 [0xffffffffffffffff])))
             (clobber (reg:CC 17 flags))
-        ]) "/home/ant/Downloads/gol-1/gol/render.c":78:30 -1
+        ]) "/home/ant/Downloads/gol-1/gol/render.c":80:30 -1
      (nil))
 (insn 17 16 18 2 (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
                 (const_int -24 [0xffffffffffffffe8])) [2 cell.w+0 S4 A64])
-        (reg:SI 83 [ _2 ])) "/home/ant/Downloads/gol-1/gol/render.c":78:10 -1
+        (reg:SI 83 [ _2 ])) "/home/ant/Downloads/gol-1/gol/render.c":80:10 -1
      (nil))
 (insn 18 17 19 2 (set (reg/f:DI 89)
         (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
-                (const_int -56 [0xffffffffffffffc8])) [9 board+0 S8 A64])) "/home/ant/Downloads/gol-1/gol/render.c":79:17 -1
+                (const_int -56 [0xffffffffffffffc8])) [9 board+0 S8 A64])) "/home/ant/Downloads/gol-1/gol/render.c":81:17 -1
      (nil))
 (insn 19 18 20 2 (set (reg:SI 84 [ _3 ])
         (mem:SI (plus:DI (reg/f:DI 89)
-                (const_int 16000016 [0xf42410])) [2 board_10(D)->CELL_HEIGHT+0 S4 A32])) "/home/ant/Downloads/gol-1/gol/render.c":79:17 -1
+                (const_int 16000016 [0xf42410])) [2 board_10(D)->CELL_HEIGHT+0 S4 A32])) "/home/ant/Downloads/gol-1/gol/render.c":81:17 -1
      (nil))
 (insn 20 19 21 2 (parallel [
             (set (reg:SI 85 [ _4 ])
                 (plus:SI (reg:SI 84 [ _3 ])
                     (const_int -1 [0xffffffffffffffff])))
             (clobber (reg:CC 17 flags))
-        ]) "/home/ant/Downloads/gol-1/gol/render.c":79:31 -1
+        ]) "/home/ant/Downloads/gol-1/gol/render.c":81:31 -1
      (nil))
 (insn 21 20 22 2 (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
                 (const_int -20 [0xffffffffffffffec])) [2 cell.h+0 S4 A32])
-        (reg:SI 85 [ _4 ])) "/home/ant/Downloads/gol-1/gol/render.c":79:10 -1
+        (reg:SI 85 [ _4 ])) "/home/ant/Downloads/gol-1/gol/render.c":81:10 -1
      (nil))
 (insn 22 21 23 2 (set (reg:DI 90)
         (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
-                (const_int -40 [0xffffffffffffffd8])) [6 renderer+0 S8 A64])) "/home/ant/Downloads/gol-1/gol/render.c":80:3 -1
+                (const_int -40 [0xffffffffffffffd8])) [6 renderer+0 S8 A64])) "/home/ant/Downloads/gol-1/gol/render.c":82:3 -1
      (nil))
 (insn 23 22 24 2 (set (reg:SI 36 r8)
-        (const_int 1 [0x1])) "/home/ant/Downloads/gol-1/gol/render.c":80:3 -1
+        (const_int 1 [0x1])) "/home/ant/Downloads/gol-1/gol/render.c":82:3 -1
      (nil))
 (insn 24 23 25 2 (set (reg:SI 2 cx)
-        (const_int 116 [0x74])) "/home/ant/Downloads/gol-1/gol/render.c":80:3 -1
+        (const_int 116 [0x74])) "/home/ant/Downloads/gol-1/gol/render.c":82:3 -1
      (nil))
 (insn 25 24 26 2 (set (reg:SI 1 dx)
-        (const_int 131 [0x83])) "/home/ant/Downloads/gol-1/gol/render.c":80:3 -1
+        (const_int 131 [0x83])) "/home/ant/Downloads/gol-1/gol/render.c":82:3 -1
      (nil))
 (insn 26 25 27 2 (set (reg:SI 4 si)
-        (const_int 146 [0x92])) "/home/ant/Downloads/gol-1/gol/render.c":80:3 -1
+        (const_int 146 [0x92])) "/home/ant/Downloads/gol-1/gol/render.c":82:3 -1
      (nil))
 (insn 27 26 28 2 (set (reg:DI 5 di)
-        (reg:DI 90)) "/home/ant/Downloads/gol-1/gol/render.c":80:3 -1
+        (reg:DI 90)) "/home/ant/Downloads/gol-1/gol/render.c":82:3 -1
      (nil))
 (call_insn 28 27 29 2 (set (reg:SI 0 ax)
-        (call (mem:QI (symbol_ref:DI ("SDL_SetRenderDrawColor") [flags 0x41]  <function_decl 0x7fa3aec87800 SDL_SetRenderDrawColor>) [0 SDL_SetRenderDrawColor S1 A8])
-            (const_int 0 [0]))) "/home/ant/Downloads/gol-1/gol/render.c":80:3 -1
+        (call (mem:QI (symbol_ref:DI ("SDL_SetRenderDrawColor") [flags 0x41]  <function_decl 0x7f1e59744800 SDL_SetRenderDrawColor>) [0 SDL_SetRenderDrawColor S1 A8])
+            (const_int 0 [0]))) "/home/ant/Downloads/gol-1/gol/render.c":82:3 -1
      (nil)
     (expr_list:DI (use (reg:DI 5 di))
         (expr_list:SI (use (reg:SI 4 si))
@@ -1355,47 +1376,47 @@ try_optimize_cfg iteration 2
                 (plus:DI (reg/f:DI 77 virtual-stack-vars)
                     (const_int -32 [0xffffffffffffffe0])))
             (clobber (reg:CC 17 flags))
-        ]) "/home/ant/Downloads/gol-1/gol/render.c":81:3 -1
+        ]) "/home/ant/Downloads/gol-1/gol/render.c":83:3 -1
      (nil))
 (insn 30 29 31 2 (set (reg:DI 92)
         (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
-                (const_int -40 [0xffffffffffffffd8])) [6 renderer+0 S8 A64])) "/home/ant/Downloads/gol-1/gol/render.c":81:3 -1
+                (const_int -40 [0xffffffffffffffd8])) [6 renderer+0 S8 A64])) "/home/ant/Downloads/gol-1/gol/render.c":83:3 -1
      (nil))
 (insn 31 30 32 2 (set (reg:DI 4 si)
-        (reg:DI 91)) "/home/ant/Downloads/gol-1/gol/render.c":81:3 -1
+        (reg:DI 91)) "/home/ant/Downloads/gol-1/gol/render.c":83:3 -1
      (nil))
 (insn 32 31 33 2 (set (reg:DI 5 di)
-        (reg:DI 92)) "/home/ant/Downloads/gol-1/gol/render.c":81:3 -1
+        (reg:DI 92)) "/home/ant/Downloads/gol-1/gol/render.c":83:3 -1
      (nil))
 (call_insn 33 32 43 2 (set (reg:SI 0 ax)
-        (call (mem:QI (symbol_ref:DI ("SDL_RenderFillRect") [flags 0x41]  <function_decl 0x7fa3aec8d300 SDL_RenderFillRect>) [0 SDL_RenderFillRect S1 A8])
-            (const_int 0 [0]))) "/home/ant/Downloads/gol-1/gol/render.c":81:3 -1
+        (call (mem:QI (symbol_ref:DI ("SDL_RenderFillRect") [flags 0x41]  <function_decl 0x7f1e5974a300 SDL_RenderFillRect>) [0 SDL_RenderFillRect S1 A8])
+            (const_int 0 [0]))) "/home/ant/Downloads/gol-1/gol/render.c":83:3 -1
      (nil)
     (expr_list:DI (use (reg:DI 5 di))
         (expr_list:DI (use (reg:DI 4 si))
             (nil))))
-(insn 43 33 35 2 (const_int 0 [0]) "/home/ant/Downloads/gol-1/gol/render.c":82:1 -1
+(insn 43 33 35 2 (const_int 0 [0]) "/home/ant/Downloads/gol-1/gol/render.c":84:1 -1
      (nil))
 (insn 35 43 36 2 (parallel [
             (set (reg:CCZ 17 flags)
                 (unspec:CCZ [
                         (mem/v/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
-                                (const_int -8 [0xfffffffffffffff8])) [11 D.31291+0 S8 A64])
+                                (const_int -8 [0xfffffffffffffff8])) [11 D.48207+0 S8 A64])
                         (mem/v/f:DI (const_int 40 [0x28]) [0 MEM[(<address-space-1> long unsigned int *)40B]+0 S8 A64 AS1])
                     ] UNSPEC_SP_TEST))
             (clobber (scratch:DI))
-        ]) "/home/ant/Downloads/gol-1/gol/render.c":82:1 -1
+        ]) "/home/ant/Downloads/gol-1/gol/render.c":84:1 -1
      (nil))
 (jump_insn 36 35 41 2 (set (pc)
         (if_then_else (eq (reg:CCZ 17 flags)
                 (const_int 0 [0]))
             (label_ref 39)
-            (pc))) "/home/ant/Downloads/gol-1/gol/render.c":82:1 -1
+            (pc))) "/home/ant/Downloads/gol-1/gol/render.c":84:1 -1
      (nil)
  -> 39)
 (note 41 36 37 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
-(call_insn 37 41 38 5 (call (mem:QI (symbol_ref:DI ("__stack_chk_fail") [flags 0x41]  <function_decl 0x7fa3aeccb600 __stack_chk_fail>) [0 __stack_chk_fail S1 A8])
-        (const_int 0 [0])) "/home/ant/Downloads/gol-1/gol/render.c":82:1 -1
+(call_insn 37 41 38 5 (call (mem:QI (symbol_ref:DI ("__stack_chk_fail") [flags 0x41]  <function_decl 0x7f1e58e66000 __stack_chk_fail>) [0 __stack_chk_fail S1 A8])
+        (const_int 0 [0])) "/home/ant/Downloads/gol-1/gol/render.c":84:1 -1
      (expr_list:REG_ARGS_SIZE (const_int 0 [0])
         (expr_list:REG_NORETURN (const_int 0 [0])
             (expr_list:REG_EH_REGION (const_int 0 [0])
