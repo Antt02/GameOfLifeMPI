@@ -29,6 +29,14 @@ void usage(void)
 
 int main(int argc, char** argv)
 {
+	
+	//iniciem MPI
+	int rank, size;
+	MPI_Init(&argc, &argv);
+	//MPI_Errhandler_set(MPI_COMM_WORLD, MPI_ERRORS_RETURN); // -> for -debug option
+	MPI_Comm_rank(MPI_COMM_WORLD, &rank);
+	MPI_Comm_size(MPI_COMM_WORLD, &size);
+	
 	// Set default rate of ticks.
 	int TICKS = 50000;
 	bool LoadFile = false, SaveFile = false; 
@@ -52,6 +60,7 @@ int main(int argc, char** argv)
 	// This will store window dimension information.
 	int window_width;
 	int window_height;
+	
 #endif
 
 	board_t *board = (board_t*) malloc(sizeof(board_t));
@@ -75,7 +84,7 @@ int main(int argc, char** argv)
 	// Command line options.
 	int opt;
 	while((opt = getopt(argc, argv, "t:c:h:i:o:w:H:e:g")) != -1) {
-		switch (opt) {
+		switch (opt) { 
 			case 't':
 				TICKS = atoi(optarg);
 				break;
@@ -86,18 +95,18 @@ int main(int argc, char** argv)
 			case 'o':
 				SaveFile=true;
 				strcpy(output_file,optarg);
-				printf("Output Board file %s.\n",optarg);
+				if(rank==0){printf("Output Board file %s.\n",optarg);}
 				break;
 			case 'w':
 				board->COL_NUM = atoi(optarg);
-				printf("Board width %d.\n",board->COL_NUM);
+				if(rank==0){printf("Board width %d.\n",board->COL_NUM);}
 				break;	
 			case 'h':
 				board->ROW_NUM = atoi(optarg);
-				printf("Board height %d.\n",board->ROW_NUM);
+				if(rank==0){printf("Board height %d.\n",board->ROW_NUM);}
 				break;	
 			case 'e':
-				printf("End Time: %s.\n",optarg);
+				if(rank==0){printf("End Time: %s.\n",optarg);}
 				EndTime = atoi(optarg);
 				break;	 	
 			case 'g':
@@ -122,22 +131,26 @@ int main(int argc, char** argv)
 				}
 				break;
 			case 'H':
-				usage();
+				if(rank==0){usage();}
 				exit(EXIT_SUCCESS);
 				break;
 			case '?':
-				if ((optopt == 't' || optopt == 's' || optopt == 'c' || optopt == 'i' || optopt == 'o' || optopt == 'w' || optopt == 'h' || optopt == 'e' ))
-					fprintf(stderr, "Option -%c requires an argument.\n", optopt);
-				else if (isprint (optopt))
-					fprintf (stderr, "Unknown option `-%c'.\n", optopt);
-				else
-					fprintf (stderr, "Unknown option character `\\x%x'.\n", optopt);
-				printf("Setting default options.\n");
-				usage();
+				if(rank==0){
+					if ((optopt == 't' || optopt == 's' || optopt == 'c' || optopt == 'i' || optopt == 'o' || optopt == 'w' || optopt == 'h' || optopt == 'e' ))
+						fprintf(stderr, "Option -%c requires an argument.\n", optopt);
+					else if (isprint (optopt))
+						fprintf (stderr, "Unknown option `-%c'.\n", optopt);
+					else
+						fprintf (stderr, "Unknown option character `\\x%x'.\n", optopt);
+					printf("Setting default options.\n");
+					usage();
+				}
 				break;
 			default:
-				printf("Setting default options.\n");
-				usage();
+				if(rank==0){
+					printf("Setting default options.\n");
+					usage();
+				}
 				break;
 		}
 	}
@@ -154,12 +167,7 @@ int main(int argc, char** argv)
 			int seed = 123456789;
 			life_init(board, prob, &seed);
 	}
-	//iniciem MPI
-	int rank, size;
-	MPI_Init(&argc, &argv);
-	//MPI_Errhandler_set(MPI_COMM_WORLD, MPI_ERRORS_RETURN); // -> for -debug option
-	MPI_Comm_rank(MPI_COMM_WORLD, &rank);
-	MPI_Comm_size(MPI_COMM_WORLD, &size);
+	
 
 #ifndef NO_SDL 
 	if (Graphical_Mode&&rank==0) 
@@ -230,7 +238,7 @@ int main(int argc, char** argv)
 	int rows=finalRow-startRow;
 	unsigned char neighbors[rows][M];
 	int x, y;
-	printf("Rank %i: from %i to %i (%i rows)\n", rank, startRow, finalRow, rows);
+	
 	
 	myBoard->ROW_NUM = rows;
 	myBoard->COL_NUM = M;
@@ -238,6 +246,7 @@ int main(int argc, char** argv)
 	myBoard->finalRow = finalRow-1;
 	myBoard->game_state=board->game_state;
 	myBoard->rank=rank;
+	printf("Rank %i: from %i to %i (%i rows)\n", rank, myBoard->startingRow, myBoard->finalRow, rows);
 	
 	//definició objecte tipus vector per enviar les rows extra
 	MPI_Datatype boardRow;
@@ -276,12 +285,12 @@ int main(int argc, char** argv)
 				if (e.key.keysym.sym == SDLK_SPACE) {
 					if (board->game_state == RUNNING_STATE) {
 						board->game_state = PAUSE_STATE;
-						if(rank==0){printf("Game paused: editing enabled.\n");}
+						printf("Game paused: editing enabled.\n");
 						break;
 					}
 					else if (board->game_state == PAUSE_STATE) {
 						board->game_state = RUNNING_STATE;
-						if(rank==0){printf("Game running.\n");}
+						printf("Game running.\n");
 						break;
 					}
 				}
@@ -297,7 +306,7 @@ int main(int argc, char** argv)
 				click_on_cell(board,
 							(e.button.y + PEEPER_OFFSET) / board->CELL_HEIGHT,
 							(e.button.x + PEEPER_OFFSET) / board->CELL_WIDTH);
-				if(rank==0){printf("%d, %d\n", e.button.x, e.button.y);}
+				printf("%d, %d\n", e.button.x, e.button.y);
 				break;
 			default: {}
 			}
@@ -308,7 +317,7 @@ int main(int argc, char** argv)
 		peeper.y = -PEEPER_OFFSET;
 		peeper.w = PEEPER_SIZE;
 		peeper.h = PEEPER_SIZE;
-		if(rank==0){SDL_RenderSetViewport(renderer, &peeper);}
+		SDL_RenderSetViewport(renderer, &peeper);
 
 		// printf("Peeper OFFSET: (%d, %d).\n",-PEEPER_OFFSET, -PEEPER_OFFSET); fflush(stdout);	 
 		// printf("Peeper position: (%d, %d).\n",peeper.x, peeper.y); fflush(stdout); 
@@ -434,7 +443,7 @@ int main(int argc, char** argv)
 		else{Iteration++;};
 	}
 	if(rank==0)printf("\nEnd Simulation.\n");
-	printf("POSTSIMULATION\n");
+	if (rank==0)printf("POSTSIMULATION\n");
 	for(x=0;x<rows;x++){
 		for(y=0;y<M;y++){
 			//board->cell_state[startRow][y] = myBoard->cell_state[x][y];
@@ -451,6 +460,31 @@ int main(int argc, char** argv)
 		if(rank==1)printf("\n");
 	}	
 	MPI_Barrier(MPI_COMM_WORLD);
+	for(x=0;x<rows;x++){
+		for(y=0;y<M;y++){
+			//board->cell_state[startRow][y] = myBoard->cell_state[x][y];
+			if(rank==2)printf("%i, ", myBoard->cell_state[x][y]);
+		}
+		if(rank==2)printf("\n");
+	}	
+	MPI_Barrier(MPI_COMM_WORLD);
+	for(x=0;x<rows;x++){
+		for(y=0;y<M;y++){
+			//board->cell_state[startRow][y] = myBoard->cell_state[x][y];
+			if(rank==3)printf("%i, ", myBoard->cell_state[x][y]);
+		}
+		if(rank==3)printf("\n");
+	}	
+	MPI_Barrier(MPI_COMM_WORLD);
+	for(x=0;x<rows;x++){
+		for(y=0;y<M;y++){
+			//board->cell_state[startRow][y] = myBoard->cell_state[x][y];
+			if(rank==4)printf("%i, ", myBoard->cell_state[x][y]);
+		}
+		if(rank==4)printf("\n");
+	}	
+	MPI_Barrier(MPI_COMM_WORLD);
+	MPI_Request rq;
 	if (rank==0){
 		for (int a=0;a<rows;a++){
 			for (int b = 0; b<M;b++){
@@ -466,11 +500,11 @@ int main(int argc, char** argv)
 			unsigned char recvBuff[M];
 			unsigned char recieved[measure][M];
 			MPI_Request rq;
-			for(int abc=0;abc<measure;abc++){
+			for(int c=0;c<measure;c++){
 				MPI_Irecv(&recvBuff, measure, boardRow, x, x+1 , MPI_COMM_WORLD, &rq);
 				MPI_Wait(&rq, &stat);
 				for (int d=0;d<M;d++){
-					recieved[abc][d] = recvBuff[d];
+					recieved[c][d] = recvBuff[d];
 				}
 			}
 			
@@ -482,22 +516,12 @@ int main(int argc, char** argv)
 			}
 		}
 	}else{
-		MPI_Request rq;
 		MPI_Status stat;
 		int measure = rows;
-			if(x+1==size){
-				measure+=M%size;
-			}
-		printf("BEFORE SENDING IT, I HAVE: ");
 		for (int y=0;y<measure;y++){
 			MPI_Isend(&myBoard->cell_state[y], 1, boardRow, 0, rank+1, MPI_COMM_WORLD, &rq);
 			MPI_Wait(&rq, &stat);
-			/*for (int z = 0; z<M;z++){
-				printf("%i, ", myBoard->cell_state[y][z]);
-			}
-			printf("\n");*/
 		}
-		
 	}
 	
 	
@@ -521,5 +545,6 @@ int main(int argc, char** argv)
 	free(board);
 	free(myBoard);
 	MPI_Finalize();
+	printf("VALE SI HE ACABAT");
 	return EXIT_SUCCESS;
 }

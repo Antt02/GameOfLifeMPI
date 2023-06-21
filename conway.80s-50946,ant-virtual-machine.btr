@@ -1,0 +1,10 @@
+
+conway:50946 terminated with signal 11 at PC=7fd444d295d0 SP=7ffd366d4208.  Backtrace:
+/lib/x86_64-linux-gnu/libSDL2-2.0.so.0(+0x5a5d0)[0x7fd444d295d0]
+./conway(+0x6639)[0x555a13d5d639]
+./conway(+0x64d0)[0x555a13d5d4d0]
+./conway(+0x63eb)[0x555a13d5d3eb]
+./conway(main+0x1408)[0x555a13d5aba8]
+/lib/x86_64-linux-gnu/libc.so.6(+0x29d90)[0x7fd442229d90]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0x80)[0x7fd442229e40]
+./conway(+0x2645)[0x555a13d59645]

@@ -29,8 +29,8 @@ void count_neighbors_spherical_world(boardRowInfo* board, unsigned char neighbor
 	int i_prev, i_next, j_prev, j_next;
 	
   // Clear neighbors
-  for (int i = 0; i < board->COL_NUM; i++) {
-    for (int j = 0; j < board->ROW_NUM; j++) {
+  for (int i = 0; i < board->ROW_NUM; i++) {
+    for (int j = 0; j < board->COL_NUM; j++) {
       neighbors[i][j] = DEAD;
     }
   }
@@ -38,7 +38,7 @@ void count_neighbors_spherical_world(boardRowInfo* board, unsigned char neighbor
   // Inner cells
   //ara mateix això fa el càlcul de TOTES les rows de la sub board, hauriem de fer que en cas de ser fila 0 o COL_NUM - 1 ho miri
   //no de cell_state, sino de board->under/board->upper
-  for (int i = board->startingRow+1; i < (board->startingRow+board->ROW_NUM)-1; i++) {
+  for (int i = board->startingRow; i < (board->startingRow+board->ROW_NUM)-1; i++) {
     for (int j = 0; j < (board->COL_NUM); j++) {
       //printf("[1]Calculating %i (%i, %i)\n",board->rank ,i, j);
       i_prev = (1 < i) ? i - 1 : board->COL_NUM;
@@ -71,41 +71,6 @@ void count_neighbors_spherical_world(boardRowInfo* board, unsigned char neighbor
       }
       printf("%i",neighbors[i][j]);
     }
-  }
-    for (int i = board->startingRow+1; i < (board->startingRow+board->ROW_NUM-1); i++) {
-      for (int j = 0; j < (board->COL_NUM); j++) {
-        
-        
-        //printf("[1]Calculating %i (%i, %i)\n",board->rank ,i, j);
-        i_prev = (1 < i) ? i - 1 : board->COL_NUM;
-        i_next = (i < board->COL_NUM ) ? i + 1 : 0;
-        j_prev = (1 < j) ? j - 1 : board->ROW_NUM;
-        j_next = (j < board->ROW_NUM) ? j + 1 : 0;    
-        if (board->cell_state[i_prev][j_prev] == ALIVE) {
-          neighbors[i][j]++;
-        }
-        if (board->cell_state[i][j_prev] == ALIVE) {
-          neighbors[i][j]++;
-        }
-        if (board->cell_state[i_next][j_prev] == ALIVE) {
-          neighbors[i][j]++;
-        }
-        if (board->cell_state[i_prev][j] == ALIVE) {
-          neighbors[i][j]++;
-        }
-        if (board->cell_state[i_next][j] == ALIVE) {
-          neighbors[i][j]++;
-        }
-        if (board->cell_state[i_prev][j_next] == ALIVE) {
-          neighbors[i][j]++;
-        }
-        if (board->cell_state[i][j_next] == ALIVE) {
-          neighbors[i][j]++;
-        }
-        if (board->cell_state[i_next][j_next] == ALIVE) {
-          neighbors[i][j]++;
-        }
-      }
   }
 
     for (int j = 0; j < (board->COL_NUM); j++) {
