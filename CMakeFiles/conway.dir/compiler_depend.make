@@ -477,10 +477,6 @@ CMakeFiles/conway.dir/render.c.o: render.c \
   /usr/include/SDL2/SDL_version.h \
   /usr/include/SDL2/SDL_locale.h \
   /usr/include/SDL2/SDL_misc.h \
-  /usr/include/x86_64-linux-gnu/mpich/mpi.h \
-  /usr/include/x86_64-linux-gnu/mpich/mpi_proto.h \
-  /usr/include/x86_64-linux-gnu/mpich/mpio.h \
-  /usr/include/x86_64-linux-gnu/mpich/mpi.h \
   game.h \
   render.h \
   /usr/lib/gcc/x86_64-linux-gnu/11/include/stdbool.h \

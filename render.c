@@ -1,5 +1,4 @@
 #include <SDL2/SDL.h>
-#include <mpi.h>
 
 #include "./game.h"
 #include "./render.h"
@@ -11,14 +10,15 @@ int rows, M;
 void render_board(SDL_Renderer* renderer, boardRowInfo *board,
                   unsigned char neighbors[rows][M], board_t* fullBoard)
 { 
+  printf("Amo a renderiar, %i\n", board->rank);
   switch(fullBoard->game_state) { 
     case RUNNING_STATE:
       if (Graphical_Mode&&board->rank==0){
+        printf("Amo a renderiar de veritat\n");
       	render_running_state(renderer, board, fullBoard);
       }
-      MPI_Barrier(MPI_COMM_WORLD);
+      printf("Amo a contar\n");
       count_neighbors(board, neighbors);
-      printf("[%i]postEvolve\n", board->rank);
       evolve(board, neighbors);
       break;
     case PAUSE_STATE:
