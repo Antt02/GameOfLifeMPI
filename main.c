@@ -230,7 +230,6 @@ int main(int argc, char** argv)
 	int rows=finalRow-startRow;
 	unsigned char neighbors[rows][M];
 	int x, y;
-	
 	printf("Rank %i: from %i to %i (%i rows)\n", rank, startRow, finalRow, rows);
 	
 	myBoard->ROW_NUM = rows;
@@ -243,15 +242,18 @@ int main(int argc, char** argv)
 	//definició objecte tipus vector per enviar les rows extra
 	MPI_Datatype boardRow;
 	MPI_Status st;
-	MPI_Type_vector(1, M, sizeof(int)*M, MPI_INT, &boardRow); //matriz
+	MPI_Type_vector(1, M, sizeof(unsigned char)*M, MPI_UNSIGNED_CHAR, &boardRow); //matriz
 	MPI_Type_commit(&boardRow);
-	/*
-	int recvcounts[size], disp[size], i;
-	for (i=0;i<size;i++){
-		recvcounts[i]=M;
-		disp[i]=i*M;
-	}
-	*/
+	MPI_Datatype boardRows;
+	MPI_Type_vector(rows, M, sizeof(unsigned char)*M*rows, MPI_UNSIGNED_CHAR, &boardRows); //matriz
+	MPI_Type_commit(&boardRows);
+	//s'agafa el tros de board a calcular
+	for(x=0;x<rows;x++){
+		for(y=0;y<M;y++){
+			neighbors[x][y]= DEAD;
+			myBoard->cell_state[x][y] = board->cell_state[startRow+x][y];
+		}
+	}	
 	
 	while (quit==false && (EndTime<0 || Iteration<EndTime)) 
 	{
@@ -351,44 +353,8 @@ int main(int argc, char** argv)
 		}
 	}
 #endif
-		//s'actualitza el tros de board a calcular
-		for(x=0;x<rows;x++){
-			for(y=0;y<M;y++){
-				neighbors[x][y]= DEAD;
-				//myBoard->cell_state[x][y] = board->cell_state[startRow+x][y];
-				//if(rank==0)printf("%i, ", myBoard->cell_state[x][y]);
-			}
-			//if(rank==0)printf("\n");
-		}
-		int sendcounts[size];
-		int adapt = rows*M;
-		MPI_Allgather(&adapt, 1, MPI_INT, &sendcounts, 1, MPI_INT, MPI_COMM_WORLD);
-		int displ[size];
-		for (int i =0;i<size; i++){
-			displ[i]=sizeof(int)*M*rows*i;
-			//printf("displ %i = %i\n", i, displ[i]);
-		}
-		MPI_Scatterv(&board->cell_state, sendcounts, displ, MPI_INT, &myBoard->cell_state, rows*M, MPI_INT, 0, MPI_COMM_WORLD);
-		if(rank==0)printf("POSTSCATTER\n");
-		for(x=0;x<rows;x++){
-			for(y=0;y<M;y++){
-				//board->cell_state[startRow][y] = myBoard->cell_state[x][y];
-				if(rank==0)printf("%i", myBoard->cell_state[x][y]);
-				if(rank==0)printf("(%i), ", board->cell_state[x][y]);
-			}
-			if(rank==0)printf("\n");
-		}	
-		MPI_Barrier(MPI_COMM_WORLD);
-		for(x=0;x<rows;x++){
-			for(y=0;y<M;y++){
-				//board->cell_state[startRow][y] = myBoard->cell_state[x][y];
-				if(rank==1)printf("%i", myBoard->cell_state[x][y]);
-				if(rank==1)printf("(%i), ", board->cell_state[x+startRow][y]);
-			}
-			if(rank==1)printf("\n");
-		}	
-		MPI_Barrier(MPI_COMM_WORLD);	
-		//se comparteixen les files que falten per fer el calcul
+			
+		//es comparteixen les files que falten per fer el calcul
 		if (rank==0) { //FIRST NODE
 			//send my last row -> upper for the next
 			MPI_Send(&myBoard->cell_state[rows-1], M, boardRow, 1, 1, MPI_COMM_WORLD);
@@ -417,24 +383,44 @@ int main(int argc, char** argv)
 			//send my first row -> under for the previous
 			MPI_Send(&myBoard->cell_state[rows-1], M, boardRow, rank-1, 2, MPI_COMM_WORLD);
 		}
-		
+
+		//es realitza el calcul de la nova iteració
 #ifdef NO_SDL 
 		render_board(myBoard, neighbors, board);
 #else
 		render_board(renderer, myBoard, neighbors, board);
 #endif
-		//després del render_board s'hauria d'actualitzar la board general com a tal!!!!!
-		//actualitza la seva part de la board
-		MPI_Gatherv(&myBoard->cell_state, rows*M, MPI_INT, &board->cell_state, sendcounts, displ, MPI_INT, 0, MPI_COMM_WORLD);
-		if(rank==0){
-			printf("POSTGATHER\n");
-			for (int i=0;i<M;i++){
-				for (int j=0;j<M;j++){
-					printf("%i, ", board->cell_state[i][j]);
+		//s'actualitzen els valors de la board per la següent iteració
+		/*
+		int sendcounts[size];
+		int tmp=D_COL_NUM*rows;
+		MPI_Allgather(&tmp, 1, MPI_INT, &sendcounts, size, MPI_INT, MPI_COMM_WORLD);
+		
+		int displ[size];
+		for (int i=0;i<size;i++){
+			displ[i]=i*D_COL_NUM*rows;
+		}
+		MPI_Allgather(&myBoard->cell_state, D_COL_NUM*rows, MPI_INT, &board->cell_state, D_COL_NUM*M, MPI_INT, MPI_COMM_WORLD);
+		//MPI_Gatherv(&myBoard->cell_state, D_COL_NUM*rows, MPI_INT, board->cell_state, sendcounts, displ, MPI_INT, 0, MPI_COMM_WORLD);
+		if(rank==1){
+			printf("\ncalculated by rank 1:\n");
+			for(x=0;x<rows;x++){
+				for(y=0;y<M;y++){
+					//board->cell_state[startRow][y] = myBoard->cell_state[x][y];
+					printf("%i, ", myBoard->cell_state[x][y]);
 				}
 				printf("\n");
 			}
 		}
+		printf("POSTGATHER\n");
+		for(x=0;x<M;x++){
+			for(y=0;y<M;y++){
+				//board->cell_state[startRow][y] = myBoard->cell_state[x][y];
+				if(rank==1)printf("%i, ", board->cell_state[x][y]);
+			}
+			if(rank==1)printf("\n");
+		}	
+		*/
 		if (Graphical_Mode && rank==0) 
 		{ 
 #ifndef NO_SDL 
@@ -448,7 +434,74 @@ int main(int argc, char** argv)
 		else{Iteration++;};
 	}
 	if(rank==0)printf("\nEnd Simulation.\n");
-
+	printf("POSTSIMULATION\n");
+	for(x=0;x<rows;x++){
+		for(y=0;y<M;y++){
+			//board->cell_state[startRow][y] = myBoard->cell_state[x][y];
+			if(rank==0)printf("%i, ", myBoard->cell_state[x][y]);
+		}
+		if(rank==0)printf("\n");
+	}	
+	MPI_Barrier(MPI_COMM_WORLD);
+	for(x=0;x<rows;x++){
+		for(y=0;y<M;y++){
+			//board->cell_state[startRow][y] = myBoard->cell_state[x][y];
+			if(rank==1)printf("%i, ", myBoard->cell_state[x][y]);
+		}
+		if(rank==1)printf("\n");
+	}	
+	MPI_Barrier(MPI_COMM_WORLD);
+	if (rank==0){
+		for (int a=0;a<rows;a++){
+			for (int b = 0; b<M;b++){
+				board->cell_state[a][b] = myBoard->cell_state[a][b];
+			}
+		}
+		MPI_Status stat;
+		for(int x=1; x<size;x++){
+			int measure = rows;
+			if(x+1==size){
+				measure+=M%size;
+			}
+			unsigned char recvBuff[M];
+			unsigned char recieved[measure][M];
+			MPI_Request rq;
+			for(int abc=0;abc<measure;abc++){
+				MPI_Irecv(&recvBuff, measure, boardRow, x, x+1 , MPI_COMM_WORLD, &rq);
+				MPI_Wait(&rq, &stat);
+				for (int d=0;d<M;d++){
+					recieved[abc][d] = recvBuff[d];
+				}
+			}
+			
+			int recvRank = stat.MPI_SOURCE;
+			for (int y=0;y<measure;y++){
+				for (int z = 0; z<M;z++){
+					board->cell_state[recvRank*measure + y][z] = recieved[y][z];
+				}
+			}
+		}
+	}else{
+		MPI_Request rq;
+		MPI_Status stat;
+		int measure = rows;
+			if(x+1==size){
+				measure+=M%size;
+			}
+		printf("BEFORE SENDING IT, I HAVE: ");
+		for (int y=0;y<measure;y++){
+			MPI_Isend(&myBoard->cell_state[y], 1, boardRow, 0, rank+1, MPI_COMM_WORLD, &rq);
+			MPI_Wait(&rq, &stat);
+			/*for (int z = 0; z<M;z++){
+				printf("%i, ", myBoard->cell_state[y][z]);
+			}
+			printf("\n");*/
+		}
+		
+	}
+	
+	
+	
 #ifndef NO_SDL 
 	if (Graphical_Mode&&rank==0) 
 	{ 

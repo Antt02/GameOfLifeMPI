@@ -23,4 +23,12 @@ CMakeFiles/conway.dir/logic.c.o: /home/ant/Downloads/gol-1/gol/logic.c \
  /usr/include/x86_64-linux-gnu/bits/floatn.h \
  /usr/include/x86_64-linux-gnu/bits/floatn-common.h \
  /home/ant/Downloads/gol-1/gol/./game.h \
- /home/ant/Downloads/gol-1/gol/./logic.h
+ /home/ant/Downloads/gol-1/gol/./logic.h \
+ /usr/include/x86_64-linux-gnu/mpich/mpi.h \
+ /usr/lib/gcc/x86_64-linux-gnu/11/include/stdint.h /usr/include/stdint.h \
+ /usr/include/x86_64-linux-gnu/bits/wchar.h \
+ /usr/include/x86_64-linux-gnu/bits/stdint-intn.h \
+ /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
+ /usr/include/x86_64-linux-gnu/mpich/mpi_proto.h \
+ /usr/include/x86_64-linux-gnu/mpich/mpio.h \
+ /usr/include/x86_64-linux-gnu/mpich/mpi.h

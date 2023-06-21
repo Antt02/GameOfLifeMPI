@@ -23,7 +23,7 @@ void count_neighbors(boardRowInfo* board, unsigned char neighbors[rows][M])
 {
 	count_neighbors_spherical_world(board, neighbors);
 }
-
+/**/
 void count_neighbors_spherical_world(boardRowInfo* board, unsigned char neighbors[rows][M])
 {
 	int i_prev, i_next, j_prev, j_next;
@@ -38,11 +38,9 @@ void count_neighbors_spherical_world(boardRowInfo* board, unsigned char neighbor
   // Inner cells
   //ara mateix això fa el càlcul de TOTES les rows de la sub board, hauriem de fer que en cas de ser fila 0 o COL_NUM - 1 ho miri
   //no de cell_state, sino de board->under/board->upper
-  for (int i = board->startingRow+1; i < (board->startingRow+board->ROW_NUM-1); i++) {
+  for (int i = board->startingRow+1; i < (board->startingRow+board->ROW_NUM)-1; i++) {
     for (int j = 0; j < (board->COL_NUM); j++) {
-      
-      
-      printf("[1]Calculating %i (%i, %i)\n",board->rank ,i, j);
+      //printf("[1]Calculating %i (%i, %i)\n",board->rank ,i, j);
       i_prev = (1 < i) ? i - 1 : board->COL_NUM;
       i_next = (i < board->COL_NUM ) ? i + 1 : 0;
       j_prev = (1 < j) ? j - 1 : board->ROW_NUM;
@@ -78,7 +76,7 @@ void count_neighbors_spherical_world(boardRowInfo* board, unsigned char neighbor
       for (int j = 0; j < (board->COL_NUM); j++) {
         
         
-        printf("[1]Calculating %i (%i, %i)\n",board->rank ,i, j);
+        //printf("[1]Calculating %i (%i, %i)\n",board->rank ,i, j);
         i_prev = (1 < i) ? i - 1 : board->COL_NUM;
         i_next = (i < board->COL_NUM ) ? i + 1 : 0;
         j_prev = (1 < j) ? j - 1 : board->ROW_NUM;
@@ -113,7 +111,7 @@ void count_neighbors_spherical_world(boardRowInfo* board, unsigned char neighbor
     for (int j = 0; j < (board->COL_NUM); j++) {
       int i=board->startingRow;
       
-      printf("[2]Calculating %i (%i, %i)\n",board->rank ,i, j);
+      //printf("[2]Calculating %i (%i, %i)\n",board->rank ,i, j);
       i_prev = (1 < i) ? i - 1 : board->COL_NUM;
       i_next = (i < board->COL_NUM ) ? i + 1 : 0;
       j_prev = (1 < j) ? j - 1 : board->ROW_NUM;
@@ -146,7 +144,7 @@ void count_neighbors_spherical_world(boardRowInfo* board, unsigned char neighbor
     for (int j = 0; j < (board->COL_NUM); j++) {
       
       int i = board->finalRow;
-      printf("[3]Calculating %i (%i, %i)\n",board->rank ,i, j);
+      //printf("[3]Calculating %i (%i, %i)\n",board->rank ,i, j);
       i_prev = (1 < i) ? i - 1 : board->COL_NUM;
       i_next = (i < board->COL_NUM ) ? i + 1 : 0;
       j_prev = (1 < j) ? j - 1 : board->ROW_NUM;
