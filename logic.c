@@ -21,6 +21,7 @@ void click_on_cell(board_t* board, int row, int column)
 
 void count_neighbors(boardRowInfo* board, unsigned char neighbors[rows][M])
 {
+  
 	count_neighbors_spherical_world(board, neighbors);
 }
 
@@ -34,7 +35,7 @@ void count_neighbors_spherical_world(boardRowInfo* board, unsigned char neighbor
       neighbors[i][j] = DEAD;
     }
   }
-
+  
   // Inner cells
   //ara mateix això fa el càlcul de TOTES les rows de la sub board, hauriem de fer que en cas de ser fila 0 o COL_NUM - 1 ho miri
   //no de cell_state, sino de board->under/board->upper
@@ -72,6 +73,7 @@ void count_neighbors_spherical_world(boardRowInfo* board, unsigned char neighbor
       printf("%i",neighbors[i][j]);
     }
   }
+  
 
     for (int j = 0; j < (board->COL_NUM); j++) {
       int i=board->startingRow;
@@ -106,6 +108,7 @@ void count_neighbors_spherical_world(boardRowInfo* board, unsigned char neighbor
         neighbors[i][j]++;
       }
     }
+    
     for (int j = 0; j < (board->COL_NUM); j++) {
       
       int i = board->finalRow;
@@ -139,6 +142,7 @@ void count_neighbors_spherical_world(boardRowInfo* board, unsigned char neighbor
         neighbors[i][j]++;
       }
     }
+    
   return;
   
   // Top cells
@@ -423,6 +427,7 @@ void evolve(boardRowInfo* board, const unsigned char neighbors[rows][M])
       printf("%i",board->cell_state[i][j]);
     }
   }
+  
 }
 
 
