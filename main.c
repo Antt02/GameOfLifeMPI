@@ -238,7 +238,14 @@ int main(int argc, char** argv)
 	myBoard->startingRow = startRow;
 	myBoard->finalRow = finalRow;
 	myBoard->game_state=board->game_state;
-	myBoard->game_state=rank;
+	myBoard->rank=rank;
+	int i,j;
+	for(i=0;i<rows;i++){
+		for(j=0;j<M;j++){
+			myBoard->neighbors[i][j]=neighbors[i][j];
+		}
+	}
+	
 	
 	//definició objecte tipus vector per enviar les rows extra
 	MPI_Datatype boardRow;
@@ -445,8 +452,8 @@ int main(int argc, char** argv)
 
 		// use appropriate location if you are using MacOS or Linux
 		fptr = fopen("./test3.log","w");
-      	for(i=0;i<myBoard->ROW_NUM;i++){
-			for(j=0;j<myBoard->COL_NUM;j++){
+      	for(i=0;i<5;i++){
+			for(j=0;j<myBoard->finalRow+1;j++){
 			fprintf(fptr,"%u ",neighbors[i][j]);
 			}
 			fprintf(fptr,"\n");
