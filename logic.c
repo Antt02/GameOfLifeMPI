@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include "./game.h"
 #include "./logic.h"
+#include <mpi.h>
 
 void click_on_cell(board_t* board, int row, int column)
 {
@@ -37,9 +38,11 @@ void count_neighbors_spherical_world(boardRowInfo* board, unsigned char neighbor
   // Inner cells
   //ara mateix això fa el càlcul de TOTES les rows de la sub board, hauriem de fer que en cas de ser fila 0 o COL_NUM - 1 ho miri
   //no de cell_state, sino de board->under/board->upper
-  for (int i = board->startingRow; i < (board->startingRow+board->ROW_NUM); i++) {
+  for (int i = board->startingRow+1; i < (board->startingRow+board->ROW_NUM-1); i++) {
     for (int j = 0; j < (board->COL_NUM); j++) {
-      //printf("[1]Calculating (%i, %i)\n", i, j);
+      
+      
+      printf("[1]Calculating %i (%i, %i)\n",board->rank ,i, j);
       i_prev = (1 < i) ? i - 1 : board->COL_NUM;
       i_next = (i < board->COL_NUM ) ? i + 1 : 0;
       j_prev = (1 < j) ? j - 1 : board->ROW_NUM;
@@ -68,13 +71,115 @@ void count_neighbors_spherical_world(boardRowInfo* board, unsigned char neighbor
       if (board->cell_state[i_next][j_next] == ALIVE) {
         neighbors[i][j]++;
       }
+      printf("%i",neighbors[i][j]);
     }
   }
+    for (int i = board->startingRow+1; i < (board->startingRow+board->ROW_NUM-1); i++) {
+      for (int j = 0; j < (board->COL_NUM); j++) {
+        
+        
+        printf("[1]Calculating %i (%i, %i)\n",board->rank ,i, j);
+        i_prev = (1 < i) ? i - 1 : board->COL_NUM;
+        i_next = (i < board->COL_NUM ) ? i + 1 : 0;
+        j_prev = (1 < j) ? j - 1 : board->ROW_NUM;
+        j_next = (j < board->ROW_NUM) ? j + 1 : 0;    
+        if (board->cell_state[i_prev][j_prev] == ALIVE) {
+          neighbors[i][j]++;
+        }
+        if (board->cell_state[i][j_prev] == ALIVE) {
+          neighbors[i][j]++;
+        }
+        if (board->cell_state[i_next][j_prev] == ALIVE) {
+          neighbors[i][j]++;
+        }
+        if (board->cell_state[i_prev][j] == ALIVE) {
+          neighbors[i][j]++;
+        }
+        if (board->cell_state[i_next][j] == ALIVE) {
+          neighbors[i][j]++;
+        }
+        if (board->cell_state[i_prev][j_next] == ALIVE) {
+          neighbors[i][j]++;
+        }
+        if (board->cell_state[i][j_next] == ALIVE) {
+          neighbors[i][j]++;
+        }
+        if (board->cell_state[i_next][j_next] == ALIVE) {
+          neighbors[i][j]++;
+        }
+      }
+  }
 
+    for (int j = 0; j < (board->COL_NUM); j++) {
+      int i=board->startingRow;
+      
+      printf("[2]Calculating %i (%i, %i)\n",board->rank ,i, j);
+      i_prev = (1 < i) ? i - 1 : board->COL_NUM;
+      i_next = (i < board->COL_NUM ) ? i + 1 : 0;
+      j_prev = (1 < j) ? j - 1 : board->ROW_NUM;
+      j_next = (j < board->ROW_NUM) ? j + 1 : 0;    
+      if (board->upper[j_prev] == ALIVE) {
+        neighbors[i][j]++;
+      }
+      if (board->cell_state[i][j_prev] == ALIVE) {
+        neighbors[i][j]++;
+      }
+      if (board->cell_state[i_next][j_prev] == ALIVE) {
+        neighbors[i][j]++;
+      }
+      if (board->upper[j] == ALIVE) {
+        neighbors[i][j]++;
+      }
+      if (board->cell_state[i_next][j] == ALIVE) {
+        neighbors[i][j]++;
+      }
+      if (board->upper[j_next] == ALIVE) {
+        neighbors[i][j]++;
+      }
+      if (board->cell_state[i][j_next] == ALIVE) {
+        neighbors[i][j]++;
+      }
+      if (board->cell_state[i_next][j_next] == ALIVE) {
+        neighbors[i][j]++;
+      }
+    }
+    for (int j = 0; j < (board->COL_NUM); j++) {
+      
+      int i = board->finalRow;
+      printf("[3]Calculating %i (%i, %i)\n",board->rank ,i, j);
+      i_prev = (1 < i) ? i - 1 : board->COL_NUM;
+      i_next = (i < board->COL_NUM ) ? i + 1 : 0;
+      j_prev = (1 < j) ? j - 1 : board->ROW_NUM;
+      j_next = (j < board->ROW_NUM) ? j + 1 : 0;    
+      if (board->cell_state[i_prev][j_prev] == ALIVE) {
+        neighbors[i][j]++;
+      }
+      if (board->cell_state[i][j_prev] == ALIVE) {
+        neighbors[i][j]++;
+      }
+      if (board->under[j_prev] == ALIVE) {
+        neighbors[i][j]++;
+      }
+      if (board->cell_state[i_prev][j] == ALIVE) {
+        neighbors[i][j]++;
+      }
+      if (board->under[j] == ALIVE) {
+        neighbors[i][j]++;
+      }
+      if (board->cell_state[i_prev][j_next] == ALIVE) {
+        neighbors[i][j]++;
+      }
+      if (board->cell_state[i][j_next] == ALIVE) {
+        neighbors[i][j]++;
+      }
+      if (board->under[j_next] == ALIVE) {
+        neighbors[i][j]++;
+      }
+    }
   return;
   
   // Top cells
-  for (int i = 1; i < (board->COL_NUM - 1); i++) {
+  for (int i = 1; i < (board->COL_NUM); i++) {
     printf("[2]Calculating (%i, 0/1)\n", i);
     if (board->cell_state[i-1][0] == ALIVE) {
       neighbors[i][0]++;
@@ -93,25 +198,7 @@ void count_neighbors_spherical_world(boardRowInfo* board, unsigned char neighbor
     }
   }
   
-  // Left cells
-  for (int j = 1; j < (board->ROW_NUM - 1); j++) {
-    printf("[3]Calculating (0/1, %i)\n", j);
-    if (board->cell_state[0][j-1] == ALIVE) {
-      neighbors[0][j]++;
-    }
-    if (board->cell_state[1][j-1] == ALIVE) {
-      neighbors[0][j]++;
-    }
-    if (board->cell_state[1][j] == ALIVE) {
-      neighbors[0][j]++;
-    }
-    if (board->cell_state[1][j+1] == ALIVE) {
-      neighbors[0][j]++;
-    }
-    if (board->cell_state[0][j+1] == ALIVE) {
-      neighbors[0][j]++;
-    }
-  }
+
 
   // Bottom cells
   for (int i = 1; i < (board->COL_NUM - 1); i++) {
@@ -132,6 +219,27 @@ void count_neighbors_spherical_world(boardRowInfo* board, unsigned char neighbor
       neighbors[i][board->ROW_NUM - 1]++;
     }
   
+  }
+
+   return;
+     // Left cells
+  for (int j = 1; j < (board->ROW_NUM - 1); j++) {
+    printf("[3]Calculating (0/1, %i)\n", j);
+    if (board->cell_state[0][j-1] == ALIVE) {
+      neighbors[0][j]++;
+    }
+    if (board->cell_state[1][j-1] == ALIVE) {
+      neighbors[0][j]++;
+    }
+    if (board->cell_state[1][j] == ALIVE) {
+      neighbors[0][j]++;
+    }
+    if (board->cell_state[1][j+1] == ALIVE) {
+      neighbors[0][j]++;
+    }
+    if (board->cell_state[0][j+1] == ALIVE) {
+      neighbors[0][j]++;
+    }
   }
   // Right cells
   for (int j = 1; j < (board->ROW_NUM - 1); j++) {
@@ -349,6 +457,7 @@ void evolve(boardRowInfo* board, const unsigned char neighbors[rows][M])
         board->cell_state[i][j] = DEAD;
       // survival case is implicit, as only cells with 2 or 3 neighbors will
       // survive.
+      printf("%i",board->cell_state[i][j]);
     }
   }
 }

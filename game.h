@@ -27,6 +27,7 @@ typedef struct {
   int ROW_NUM; //nº of rows assigned
   int startingRow; //first row from which to check
   int finalRow; //last row to check
+  int rank;
 } boardRowInfo;
 
 #endif // GAME_H_
