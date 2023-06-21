@@ -12,6 +12,7 @@
 //#define GRAPHICAL_MODE
 typedef struct {
   unsigned char cell_state[D_COL_NUM][D_ROW_NUM];
+
   int game_state;
   int COL_NUM;
   int ROW_NUM;  
@@ -28,6 +29,7 @@ typedef struct {
   int startingRow; //first row from which to check
   int finalRow; //last row to check
   int rank;
+  unsigned char neighbors[D_COL_NUM][D_COL_NUM];
 } boardRowInfo;
 
 #endif // GAME_H_

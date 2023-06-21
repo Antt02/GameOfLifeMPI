@@ -243,27 +243,38 @@ int main(int argc, char** argv)
 	myBoard->ROW_NUM = rows;
 	myBoard->COL_NUM = M;
 	myBoard->startingRow = startRow;
-	myBoard->finalRow = finalRow-1;
+	myBoard->finalRow = finalRow;
 	myBoard->game_state=board->game_state;
 	myBoard->rank=rank;
-	printf("Rank %i: from %i to %i (%i rows)\n", rank, myBoard->startingRow, myBoard->finalRow, rows);
+	int i,j;
+	for(i=0;i<rows;i++){
+		for(j=0;j<M;j++){
+			myBoard->neighbors[i][j]=neighbors[i][j];
+		}
+	}
 	
 	//definició objecte tipus vector per enviar les rows extra
 	MPI_Datatype boardRow;
 	MPI_Status st;
 	MPI_Type_vector(1, M, sizeof(unsigned char)*M, MPI_UNSIGNED_CHAR, &boardRow); //matriz
 	MPI_Type_commit(&boardRow);
-	MPI_Datatype boardRows;
-	MPI_Type_vector(rows, M, sizeof(unsigned char)*M*rows, MPI_UNSIGNED_CHAR, &boardRows); //matriz
-	MPI_Type_commit(&boardRows);
-	//s'agafa el tros de board a calcular
-	for(x=0;x<rows;x++){
-		for(y=0;y<M;y++){
-			neighbors[x][y]= DEAD;
-			myBoard->cell_state[x][y] = board->cell_state[startRow+x][y];
+	/*
+	int recvcounts[size], disp[size], i;
+	for (i=0;i<size;i++){
+		recvcounts[i]=M;
+		disp[i]=i*M;
+	}
+	*/
+	
+		for(x=0;x<rows;x++){
+			for(y=0;y<M;y++){
+				neighbors[x][y]= DEAD;
+				myBoard->cell_state[x][y] = board->cell_state[startRow+x][y];
+				//if(rank==0)printf("%i, ", myBoard->cell_state[x][y]);
+			}
+			//if(rank==0)printf("\n");
 		}
-	}	
-	printf("About to start the while, i'm %i\n", rank);
+	
 	while (quit==false && (EndTime<0 || Iteration<EndTime)) 
 	{
 
@@ -360,37 +371,38 @@ int main(int argc, char** argv)
 		SDL_RenderClear(renderer);
 	}
 #endif
-		MPI_Barrier(MPI_COMM_WORLD);
+		//s'actualitza el tros de board a calcular
+	
 		
-		//es comparteixen les files que falten per fer el calcul
-		if (rank==0) { //FIRST NODE
-			//send my last row -> upper for the next
-			MPI_Send(&myBoard->cell_state[rows-1], M, boardRow, 1, 1, MPI_COMM_WORLD);
-			//recieve my upper from previous
-			MPI_Recv(&myBoard->upper, M, boardRow, size-1, 1, MPI_COMM_WORLD, &st);
-			//send my first row -> under for the previous
-			MPI_Send(&myBoard->cell_state[0], M, boardRow, size-1, 2, MPI_COMM_WORLD);
-			//recieve my under from next
-			MPI_Recv(&myBoard->under, M, boardRow, 1, 2, MPI_COMM_WORLD, &st);
-		}else if(rank==size-1){ //LAST NODE
-			//recieve my upper from previous
-			MPI_Recv(&myBoard->upper, M, boardRow, size-2, 1, MPI_COMM_WORLD, &st);
-			//send my last row -> upper for the next
-			MPI_Send(&myBoard->cell_state[rows-1], M, boardRow, 0, 1, MPI_COMM_WORLD);
-			//recieve my under from next
-			MPI_Recv(&myBoard->upper, M, boardRow, 0, 2, MPI_COMM_WORLD, &st);
-			//send my first row -> under for the previous
-			MPI_Send(&myBoard->cell_state[0], M, boardRow, size-2, 2, MPI_COMM_WORLD);
-		}else{ //INTERMEDIUM NODE
-			//recieve my upper from previous
-			MPI_Recv(&myBoard->upper, M, boardRow, rank-1, 1, MPI_COMM_WORLD, &st);
-			//send my last row -> upper for the next
-			MPI_Send(&myBoard->cell_state[rows-1], M, boardRow, rank+1, 1, MPI_COMM_WORLD);
-			//recieve my under from next
-			MPI_Recv(&myBoard->under, M, boardRow, rank+1, 2, MPI_COMM_WORLD, &st);
-			//send my first row -> under for the previous
-			MPI_Send(&myBoard->cell_state[rows-1], M, boardRow, rank-1, 2, MPI_COMM_WORLD);
-		}
+		//se comparteixen les files que falten per fer el calcul
+        if (rank==0) { //FIRST NODE
+            //send my last row -> upper for the next
+            MPI_Send(&myBoard->cell_state[rows-1], M, boardRow, 1, 1, MPI_COMM_WORLD);
+            //recieve my upper from previous
+            MPI_Recv(&myBoard->upper, M, boardRow, size-1, 1, MPI_COMM_WORLD, &st);
+            //send my first row -> under for the previous
+            MPI_Send(&myBoard->cell_state[0], M, boardRow, size-1, 2, MPI_COMM_WORLD);
+            //recieve my under from next
+            MPI_Recv(&myBoard->under, M, boardRow, 1, 2, MPI_COMM_WORLD, &st);
+        }else if(rank==size-1){ //LAST NODE
+            //recieve my upper from previous
+            MPI_Recv(&myBoard->upper, M, boardRow, size-2, 1, MPI_COMM_WORLD, &st);
+            //send my last row -> upper for the next
+            MPI_Send(&myBoard->cell_state[rows-1], M, boardRow, 0, 1, MPI_COMM_WORLD);
+            //recieve my under from next
+            MPI_Recv(&myBoard->under, M, boardRow, 0, 2, MPI_COMM_WORLD, &st);
+            //send my first row -> under for the previous
+            MPI_Send(&myBoard->cell_state[0], M, boardRow, size-2, 2, MPI_COMM_WORLD);
+        }else{ //INTERMEDIUM NODE
+            //recieve my upper from previous
+            MPI_Recv(&myBoard->upper, M, boardRow, rank-1, 1, MPI_COMM_WORLD, &st);
+            //send my last row -> upper for the next
+            MPI_Send(&myBoard->cell_state[rows-1], M, boardRow, rank+1, 1, MPI_COMM_WORLD);
+            //recieve my under from next
+            MPI_Recv(&myBoard->under, M, boardRow, rank+1, 2, MPI_COMM_WORLD, &st);
+            //send my first row -> under for the previous
+            MPI_Send(&myBoard->cell_state[rows-1], M, boardRow, rank-1, 2, MPI_COMM_WORLD);
+        }
 		MPI_Comm_rank(MPI_COMM_WORLD, &rank);
 		myBoard->rank=rank;
 		//es realitza el calcul de la nova iteració

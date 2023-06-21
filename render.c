@@ -22,6 +22,7 @@ void render_board(SDL_Renderer* renderer, boardRowInfo *board,
       
       
       evolve(board, neighbors);
+
       break;
     case PAUSE_STATE:
       if (Graphical_Mode&&board->rank==0)
