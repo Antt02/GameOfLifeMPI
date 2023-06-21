@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ant/Downloads/gol-1/gol
+CMAKE_SOURCE_DIR = /home/xipi3000/Documents/GameOfLifeMPI
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ant/Downloads/gol-1/gol
+CMAKE_BINARY_DIR = /home/xipi3000/Documents/GameOfLifeMPI
 
 # Include any dependencies generated for this target.
 include CMakeFiles/conway.dir/depend.make
@@ -72,44 +72,44 @@ include CMakeFiles/conway.dir/flags.make
 CMakeFiles/conway.dir/main.c.o: CMakeFiles/conway.dir/flags.make
 CMakeFiles/conway.dir/main.c.o: main.c
 CMakeFiles/conway.dir/main.c.o: CMakeFiles/conway.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ant/Downloads/gol-1/gol/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/conway.dir/main.c.o"
-	mpicc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/conway.dir/main.c.o -MF CMakeFiles/conway.dir/main.c.o.d -o CMakeFiles/conway.dir/main.c.o -c /home/ant/Downloads/gol-1/gol/main.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/xipi3000/Documents/GameOfLifeMPI/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/conway.dir/main.c.o"
+	mpicc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/conway.dir/main.c.o -MF CMakeFiles/conway.dir/main.c.o.d -o CMakeFiles/conway.dir/main.c.o -c /home/xipi3000/Documents/GameOfLifeMPI/main.c
 
 CMakeFiles/conway.dir/main.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/conway.dir/main.c.i"
-	mpicc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ant/Downloads/gol-1/gol/main.c > CMakeFiles/conway.dir/main.c.i
+	mpicc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/xipi3000/Documents/GameOfLifeMPI/main.c > CMakeFiles/conway.dir/main.c.i
 
 CMakeFiles/conway.dir/main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/conway.dir/main.c.s"
-	mpicc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ant/Downloads/gol-1/gol/main.c -o CMakeFiles/conway.dir/main.c.s
+	mpicc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/xipi3000/Documents/GameOfLifeMPI/main.c -o CMakeFiles/conway.dir/main.c.s
 
 CMakeFiles/conway.dir/logic.c.o: CMakeFiles/conway.dir/flags.make
 CMakeFiles/conway.dir/logic.c.o: logic.c
 CMakeFiles/conway.dir/logic.c.o: CMakeFiles/conway.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ant/Downloads/gol-1/gol/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/conway.dir/logic.c.o"
-	mpicc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/conway.dir/logic.c.o -MF CMakeFiles/conway.dir/logic.c.o.d -o CMakeFiles/conway.dir/logic.c.o -c /home/ant/Downloads/gol-1/gol/logic.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/xipi3000/Documents/GameOfLifeMPI/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/conway.dir/logic.c.o"
+	mpicc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/conway.dir/logic.c.o -MF CMakeFiles/conway.dir/logic.c.o.d -o CMakeFiles/conway.dir/logic.c.o -c /home/xipi3000/Documents/GameOfLifeMPI/logic.c
 
 CMakeFiles/conway.dir/logic.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/conway.dir/logic.c.i"
-	mpicc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ant/Downloads/gol-1/gol/logic.c > CMakeFiles/conway.dir/logic.c.i
+	mpicc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/xipi3000/Documents/GameOfLifeMPI/logic.c > CMakeFiles/conway.dir/logic.c.i
 
 CMakeFiles/conway.dir/logic.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/conway.dir/logic.c.s"
-	mpicc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ant/Downloads/gol-1/gol/logic.c -o CMakeFiles/conway.dir/logic.c.s
+	mpicc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/xipi3000/Documents/GameOfLifeMPI/logic.c -o CMakeFiles/conway.dir/logic.c.s
 
 CMakeFiles/conway.dir/render.c.o: CMakeFiles/conway.dir/flags.make
 CMakeFiles/conway.dir/render.c.o: render.c
 CMakeFiles/conway.dir/render.c.o: CMakeFiles/conway.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ant/Downloads/gol-1/gol/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/conway.dir/render.c.o"
-	mpicc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/conway.dir/render.c.o -MF CMakeFiles/conway.dir/render.c.o.d -o CMakeFiles/conway.dir/render.c.o -c /home/ant/Downloads/gol-1/gol/render.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/xipi3000/Documents/GameOfLifeMPI/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/conway.dir/render.c.o"
+	mpicc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/conway.dir/render.c.o -MF CMakeFiles/conway.dir/render.c.o.d -o CMakeFiles/conway.dir/render.c.o -c /home/xipi3000/Documents/GameOfLifeMPI/render.c
 
 CMakeFiles/conway.dir/render.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/conway.dir/render.c.i"
-	mpicc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ant/Downloads/gol-1/gol/render.c > CMakeFiles/conway.dir/render.c.i
+	mpicc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/xipi3000/Documents/GameOfLifeMPI/render.c > CMakeFiles/conway.dir/render.c.i
 
 CMakeFiles/conway.dir/render.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/conway.dir/render.c.s"
-	mpicc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ant/Downloads/gol-1/gol/render.c -o CMakeFiles/conway.dir/render.c.s
+	mpicc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/xipi3000/Documents/GameOfLifeMPI/render.c -o CMakeFiles/conway.dir/render.c.s
 
 # Object files for target conway
 conway_OBJECTS = \
@@ -127,7 +127,7 @@ conway: CMakeFiles/conway.dir/build.make
 conway: /usr/lib/x86_64-linux-gnu/libSDL2main.a
 conway: /usr/lib/x86_64-linux-gnu/libSDL2.so
 conway: CMakeFiles/conway.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ant/Downloads/gol-1/gol/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking C executable conway"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/xipi3000/Documents/GameOfLifeMPI/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking C executable conway"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/conway.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -139,6 +139,6 @@ CMakeFiles/conway.dir/clean:
 .PHONY : CMakeFiles/conway.dir/clean
 
 CMakeFiles/conway.dir/depend:
-	cd /home/ant/Downloads/gol-1/gol && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ant/Downloads/gol-1/gol /home/ant/Downloads/gol-1/gol /home/ant/Downloads/gol-1/gol /home/ant/Downloads/gol-1/gol /home/ant/Downloads/gol-1/gol/CMakeFiles/conway.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/xipi3000/Documents/GameOfLifeMPI && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/xipi3000/Documents/GameOfLifeMPI /home/xipi3000/Documents/GameOfLifeMPI /home/xipi3000/Documents/GameOfLifeMPI /home/xipi3000/Documents/GameOfLifeMPI /home/xipi3000/Documents/GameOfLifeMPI/CMakeFiles/conway.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/conway.dir/depend
 

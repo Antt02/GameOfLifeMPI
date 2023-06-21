@@ -1,4 +1,5 @@
-CMakeFiles/conway.dir/logic.c.o: /home/ant/Downloads/gol-1/gol/logic.c \
+CMakeFiles/conway.dir/logic.c.o: \
+ /home/xipi3000/Documents/GameOfLifeMPI/logic.c \
  /usr/include/stdc-predef.h /usr/include/stdio.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
  /usr/include/features.h /usr/include/features-time64.h \
@@ -22,5 +23,13 @@ CMakeFiles/conway.dir/logic.c.o: /home/ant/Downloads/gol-1/gol/logic.c \
  /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
  /usr/include/x86_64-linux-gnu/bits/floatn.h \
  /usr/include/x86_64-linux-gnu/bits/floatn-common.h \
- /home/ant/Downloads/gol-1/gol/./game.h \
- /home/ant/Downloads/gol-1/gol/./logic.h
+ /home/xipi3000/Documents/GameOfLifeMPI/./game.h \
+ /home/xipi3000/Documents/GameOfLifeMPI/./logic.h \
+ /usr/include/x86_64-linux-gnu/mpich/mpi.h \
+ /usr/lib/gcc/x86_64-linux-gnu/11/include/stdint.h /usr/include/stdint.h \
+ /usr/include/x86_64-linux-gnu/bits/wchar.h \
+ /usr/include/x86_64-linux-gnu/bits/stdint-intn.h \
+ /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
+ /usr/include/x86_64-linux-gnu/mpich/mpi_proto.h \
+ /usr/include/x86_64-linux-gnu/mpich/mpio.h \
+ /usr/include/x86_64-linux-gnu/mpich/mpi.h

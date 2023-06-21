@@ -28,7 +28,16 @@ CMakeFiles/conway.dir/logic.c.o: logic.c \
   /usr/include/x86_64-linux-gnu/bits/floatn.h \
   /usr/include/x86_64-linux-gnu/bits/floatn-common.h \
   game.h \
-  logic.h
+  logic.h \
+  /usr/include/x86_64-linux-gnu/mpich/mpi.h \
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/stdint.h \
+  /usr/include/stdint.h \
+  /usr/include/x86_64-linux-gnu/bits/wchar.h \
+  /usr/include/x86_64-linux-gnu/bits/stdint-intn.h \
+  /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
+  /usr/include/x86_64-linux-gnu/mpich/mpi_proto.h \
+  /usr/include/x86_64-linux-gnu/mpich/mpio.h \
+  /usr/include/x86_64-linux-gnu/mpich/mpi.h
 
 CMakeFiles/conway.dir/main.c.o: main.c \
   /usr/include/stdc-predef.h \
@@ -600,16 +609,6 @@ render.c:
 
 /usr/lib/gcc/x86_64-linux-gnu/11/include/popcntintrin.h:
 
-/usr/include/SDL2/SDL_log.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/11/include/stdbool.h:
-
-/usr/include/SDL2/SDL_hidapi.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/11/include/uintrintrin.h:
-
-/usr/include/x86_64-linux-gnu/bits/atomic_wide_counter.h:
-
 /usr/include/SDL2/SDL_sensor.h:
 
 /usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h:
@@ -646,23 +645,27 @@ render.c:
 
 /usr/include/string.h:
 
-/usr/include/x86_64-linux-gnu/bits/types.h:
-
-/usr/include/x86_64-linux-gnu/bits/stdint-intn.h:
-
-/usr/include/stdc-predef.h:
-
-/usr/include/x86_64-linux-gnu/bits/struct_mutex.h:
-
-/usr/include/SDL2/SDL_stdinc.h:
-
-/usr/include/SDL2/SDL_shape.h:
-
-/usr/include/SDL2/SDL_rwops.h:
-
 /usr/include/endian.h:
 
 game.h:
+
+/usr/include/stdc-predef.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/11/include/mmintrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/11/include/lzcntintrin.h:
+
+/usr/include/x86_64-linux-gnu/mpich/mpio.h:
+
+main.c:
+
+/usr/lib/gcc/x86_64-linux-gnu/11/include/stdint.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/clock_t.h:
+
+/usr/include/SDL2/SDL_touch.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/__FILE.h:
 
 /usr/lib/gcc/x86_64-linux-gnu/11/include/pmmintrin.h:
 
@@ -694,18 +697,6 @@ logic.c:
 
 /usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h:
 
-/usr/include/x86_64-linux-gnu/bits/types/clock_t.h:
-
-/usr/include/SDL2/SDL_touch.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/__FILE.h:
-
-main.c:
-
-/usr/lib/gcc/x86_64-linux-gnu/11/include/stdint.h:
-
-/usr/include/alloca.h:
-
 /usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h:
 
 /usr/include/wchar.h:
@@ -731,6 +722,10 @@ main.c:
 /usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h:
 
 /usr/lib/gcc/x86_64-linux-gnu/11/include/pconfigintrin.h:
+
+/usr/include/stdint.h:
+
+/usr/include/x86_64-linux-gnu/bits/fp-fast.h:
 
 /usr/include/x86_64-linux-gnu/bits/timesize.h:
 
@@ -772,6 +767,8 @@ main.c:
 
 /usr/include/x86_64-linux-gnu/bits/fp-logb.h:
 
+/usr/include/x86_64-linux-gnu/bits/wchar.h:
+
 /usr/lib/gcc/x86_64-linux-gnu/11/include/xsaveoptintrin.h:
 
 /usr/include/x86_64-linux-gnu/gnu/stubs-64.h:
@@ -785,6 +782,16 @@ main.c:
 logic.h:
 
 /usr/include/features.h:
+
+/usr/include/x86_64-linux-gnu/bits/stdint-intn.h:
+
+/usr/include/x86_64-linux-gnu/bits/types.h:
+
+/usr/include/SDL2/SDL_hidapi.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/11/include/uintrintrin.h:
+
+/usr/include/x86_64-linux-gnu/bits/atomic_wide_counter.h:
 
 /usr/include/x86_64-linux-gnu/bits/endian.h:
 
@@ -806,45 +813,47 @@ logic.h:
 
 /usr/include/x86_64-linux-gnu/bits/floatn.h:
 
-/usr/include/SDL2/SDL_keycode.h:
-
-/usr/include/x86_64-linux-gnu/bits/confname.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/locale_t.h:
-
-/usr/include/x86_64-linux-gnu/bits/struct_rwlock.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h:
-
-/usr/include/strings.h:
-
 /usr/include/SDL2/SDL_clipboard.h:
 
 /usr/include/x86_64-linux-gnu/mpich/mpi.h:
 
-/usr/include/stdint.h:
+/usr/include/x86_64-linux-gnu/bits/struct_mutex.h:
 
-/usr/include/x86_64-linux-gnu/bits/fp-fast.h:
+/usr/include/SDL2/SDL_stdinc.h:
 
-/usr/include/x86_64-linux-gnu/bits/wchar.h:
+/usr/include/SDL2/SDL_shape.h:
 
-/usr/include/unistd.h:
+/usr/include/SDL2/SDL_rwops.h:
+
+/usr/include/alloca.h:
+
+/usr/include/SDL2/SDL_log.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/11/include/stdbool.h:
 
 /usr/include/x86_64-linux-gnu/sys/select.h:
 
 /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h:
 
-/usr/include/SDL2/SDL_filesystem.h:
+/usr/include/unistd.h:
 
-/usr/include/x86_64-linux-gnu/bits/unistd_ext.h:
+/usr/include/SDL2/SDL_keycode.h:
+
+/usr/include/x86_64-linux-gnu/bits/confname.h:
+
+/usr/include/SDL2/SDL_filesystem.h:
 
 /usr/include/x86_64-linux-gnu/mpich/mpi_proto.h:
 
-/usr/lib/gcc/x86_64-linux-gnu/11/include/mmintrin.h:
+/usr/include/x86_64-linux-gnu/bits/unistd_ext.h:
 
-/usr/lib/gcc/x86_64-linux-gnu/11/include/lzcntintrin.h:
+/usr/include/x86_64-linux-gnu/bits/types/locale_t.h:
 
-/usr/include/x86_64-linux-gnu/mpich/mpio.h:
+/usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h:
+
+/usr/include/x86_64-linux-gnu/bits/struct_rwlock.h:
+
+/usr/include/strings.h:
 
 /usr/include/SDL2/SDL.h:
 

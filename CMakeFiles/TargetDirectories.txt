@@ -1,7 +1,7 @@
-/home/ant/Downloads/gol-1/gol/CMakeFiles/conway.dir
-/home/ant/Downloads/gol-1/gol/CMakeFiles/edit_cache.dir
-/home/ant/Downloads/gol-1/gol/CMakeFiles/rebuild_cache.dir
-/home/ant/Downloads/gol-1/gol/CMakeFiles/list_install_components.dir
-/home/ant/Downloads/gol-1/gol/CMakeFiles/install.dir
-/home/ant/Downloads/gol-1/gol/CMakeFiles/install/local.dir
-/home/ant/Downloads/gol-1/gol/CMakeFiles/install/strip.dir
+/home/xipi3000/Documents/GameOfLifeMPI/CMakeFiles/conway.dir
+/home/xipi3000/Documents/GameOfLifeMPI/CMakeFiles/edit_cache.dir
+/home/xipi3000/Documents/GameOfLifeMPI/CMakeFiles/rebuild_cache.dir
+/home/xipi3000/Documents/GameOfLifeMPI/CMakeFiles/list_install_components.dir
+/home/xipi3000/Documents/GameOfLifeMPI/CMakeFiles/install.dir
+/home/xipi3000/Documents/GameOfLifeMPI/CMakeFiles/install/local.dir
+/home/xipi3000/Documents/GameOfLifeMPI/CMakeFiles/install/strip.dir

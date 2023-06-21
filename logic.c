@@ -40,13 +40,15 @@ void count_neighbors_spherical_world(boardRowInfo* board, unsigned char neighbor
   //no de cell_state, sino de board->under/board->upper
   for (int i = board->startingRow+1; i < (board->startingRow+board->ROW_NUM-1); i++) {
     for (int j = 0; j < (board->COL_NUM); j++) {
-      
+      i-=board->startingRow;
       
       printf("[1]Calculating %i (%i, %i)\n",board->rank ,i, j);
       i_prev = (1 < i) ? i - 1 : board->COL_NUM;
       i_next = (i < board->COL_NUM ) ? i + 1 : 0;
       j_prev = (1 < j) ? j - 1 : board->ROW_NUM;
       j_next = (j < board->ROW_NUM) ? j + 1 : 0;    
+     
+
       if (board->cell_state[i_prev][j_prev] == ALIVE) {
         neighbors[i][j]++;
       }
@@ -74,50 +76,20 @@ void count_neighbors_spherical_world(boardRowInfo* board, unsigned char neighbor
       printf("%i",neighbors[i][j]);
     }
   }
-    for (int i = board->startingRow+1; i < (board->startingRow+board->ROW_NUM-1); i++) {
-      for (int j = 0; j < (board->COL_NUM); j++) {
-        
-        
-        printf("[1]Calculating %i (%i, %i)\n",board->rank ,i, j);
-        i_prev = (1 < i) ? i - 1 : board->COL_NUM;
-        i_next = (i < board->COL_NUM ) ? i + 1 : 0;
-        j_prev = (1 < j) ? j - 1 : board->ROW_NUM;
-        j_next = (j < board->ROW_NUM) ? j + 1 : 0;    
-        if (board->cell_state[i_prev][j_prev] == ALIVE) {
-          neighbors[i][j]++;
-        }
-        if (board->cell_state[i][j_prev] == ALIVE) {
-          neighbors[i][j]++;
-        }
-        if (board->cell_state[i_next][j_prev] == ALIVE) {
-          neighbors[i][j]++;
-        }
-        if (board->cell_state[i_prev][j] == ALIVE) {
-          neighbors[i][j]++;
-        }
-        if (board->cell_state[i_next][j] == ALIVE) {
-          neighbors[i][j]++;
-        }
-        if (board->cell_state[i_prev][j_next] == ALIVE) {
-          neighbors[i][j]++;
-        }
-        if (board->cell_state[i][j_next] == ALIVE) {
-          neighbors[i][j]++;
-        }
-        if (board->cell_state[i_next][j_next] == ALIVE) {
-          neighbors[i][j]++;
-        }
-      }
-  }
 
     for (int j = 0; j < (board->COL_NUM); j++) {
-      int i=board->startingRow;
+      
+      int i=0;
       
       printf("[2]Calculating %i (%i, %i)\n",board->rank ,i, j);
       i_prev = (1 < i) ? i - 1 : board->COL_NUM;
       i_next = (i < board->COL_NUM ) ? i + 1 : 0;
       j_prev = (1 < j) ? j - 1 : board->ROW_NUM;
       j_next = (j < board->ROW_NUM) ? j + 1 : 0;    
+       if(i==0 && j==0){
+        printf("\n\nPOOOOOGGG%i,%i,%i,%i\n\n",i_prev,i_next,j_prev,j_next);
+      }
+
       if (board->upper[j_prev] == ALIVE) {
         neighbors[i][j]++;
       }
@@ -145,7 +117,7 @@ void count_neighbors_spherical_world(boardRowInfo* board, unsigned char neighbor
     }
     for (int j = 0; j < (board->COL_NUM); j++) {
       
-      int i = board->finalRow;
+      int i = board->finalRow-board->startingRow;
       printf("[3]Calculating %i (%i, %i)\n",board->rank ,i, j);
       i_prev = (1 < i) ? i - 1 : board->COL_NUM;
       i_next = (i < board->COL_NUM ) ? i + 1 : 0;

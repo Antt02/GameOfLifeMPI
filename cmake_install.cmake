@@ -1,4 +1,4 @@
-# Install script for directory: /home/ant/Downloads/gol-1/gol
+# Install script for directory: /home/xipi3000/Documents/GameOfLifeMPI
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -43,25 +43,25 @@ if(NOT DEFINED CMAKE_OBJDUMP)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  if(EXISTS "$ENV{DESTDIR}/home/ant/Downloads/gol-1/gol/conway" AND
-     NOT IS_SYMLINK "$ENV{DESTDIR}/home/ant/Downloads/gol-1/gol/conway")
+  if(EXISTS "$ENV{DESTDIR}/home/xipi3000/Documents/GameOfLifeMPI/conway" AND
+     NOT IS_SYMLINK "$ENV{DESTDIR}/home/xipi3000/Documents/GameOfLifeMPI/conway")
     file(RPATH_CHECK
-         FILE "$ENV{DESTDIR}/home/ant/Downloads/gol-1/gol/conway"
+         FILE "$ENV{DESTDIR}/home/xipi3000/Documents/GameOfLifeMPI/conway"
          RPATH "")
   endif()
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/ant/Downloads/gol-1/gol/conway")
+   "/home/xipi3000/Documents/GameOfLifeMPI/conway")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-  file(INSTALL DESTINATION "/home/ant/Downloads/gol-1/gol" TYPE EXECUTABLE FILES "/home/ant/Downloads/gol-1/gol/conway")
-  if(EXISTS "$ENV{DESTDIR}/home/ant/Downloads/gol-1/gol/conway" AND
-     NOT IS_SYMLINK "$ENV{DESTDIR}/home/ant/Downloads/gol-1/gol/conway")
+  file(INSTALL DESTINATION "/home/xipi3000/Documents/GameOfLifeMPI" TYPE EXECUTABLE FILES "/home/xipi3000/Documents/GameOfLifeMPI/conway")
+  if(EXISTS "$ENV{DESTDIR}/home/xipi3000/Documents/GameOfLifeMPI/conway" AND
+     NOT IS_SYMLINK "$ENV{DESTDIR}/home/xipi3000/Documents/GameOfLifeMPI/conway")
     if(CMAKE_INSTALL_DO_STRIP)
-      execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}/home/ant/Downloads/gol-1/gol/conway")
+      execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}/home/xipi3000/Documents/GameOfLifeMPI/conway")
     endif()
   endif()
 endif()
@@ -74,5 +74,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/ant/Downloads/gol-1/gol/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/xipi3000/Documents/GameOfLifeMPI/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

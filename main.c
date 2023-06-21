@@ -236,8 +236,9 @@ int main(int argc, char** argv)
 	myBoard->ROW_NUM = rows;
 	myBoard->COL_NUM = M;
 	myBoard->startingRow = startRow;
-	myBoard->finalRow = startRow;
+	myBoard->finalRow = finalRow;
 	myBoard->game_state=board->game_state;
+	myBoard->game_state=rank;
 	
 	//definició objecte tipus vector per enviar les rows extra
 	MPI_Datatype boardRow;
@@ -395,7 +396,66 @@ int main(int argc, char** argv)
 		printf("preRender\n");
 		render_board(renderer, myBoard, neighbors, board);
 		printf("PostRender\n");
+		int i,j;
+		if(rank==0){
+		FILE *fptr;
+
+		// use appropriate location if you are using MacOS or Linux
+		fptr = fopen("./test0.log","w");
+
+			for(i=0;i<5;i++){
+				for(j=0;j<board->COL_NUM;j++){
+				fprintf(fptr,"%u ",myBoard->cell_state[i][j]);
+				}
+				fprintf(fptr,"\n");
+
+			}
+		fclose(fptr);
+		}
+		if(rank==1){
+			FILE *fptr;
+
+		// use appropriate location if you are using MacOS or Linux
+		fptr = fopen("./test1.log","w");
+      	for(i=0;i<myBoard->ROW_NUM;i++){
+			for(j=0;j<myBoard->COL_NUM;j++){
+			fprintf(fptr,"%u ",myBoard->cell_state[i][j]);
+			}
+			fprintf(fptr,"\n");
+		}
+		fclose(fptr);
+      }
+	  if(rank==0){
+		FILE *fptr;
+
+		// use appropriate location if you are using MacOS or Linux
+		fptr = fopen("./test2.log","w");
+
+			for(i=0;i<5;i++){
+				for(j=0;j<board->COL_NUM;j++){
+				fprintf(fptr,"%u ",neighbors[i][j]);
+				}
+				fprintf(fptr,"\n");
+
+			}
+		fclose(fptr);
+		}
+		if(rank==1){
+			FILE *fptr;
+
+		// use appropriate location if you are using MacOS or Linux
+		fptr = fopen("./test3.log","w");
+      	for(i=0;i<myBoard->ROW_NUM;i++){
+			for(j=0;j<myBoard->COL_NUM;j++){
+			fprintf(fptr,"%u ",neighbors[i][j]);
+			}
+			fprintf(fptr,"\n");
+		}
+		fclose(fptr);
+      }
 #endif
+
+		
 		//després del render_board s'hauria d'actualitzar la board general com a tal!!!!!
 		if (Graphical_Mode && rank==0) 
 		{ 

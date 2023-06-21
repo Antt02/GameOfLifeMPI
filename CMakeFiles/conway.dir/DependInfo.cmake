@@ -8,9 +8,9 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/ant/Downloads/gol-1/gol/logic.c" "CMakeFiles/conway.dir/logic.c.o" "gcc" "CMakeFiles/conway.dir/logic.c.o.d"
-  "/home/ant/Downloads/gol-1/gol/main.c" "CMakeFiles/conway.dir/main.c.o" "gcc" "CMakeFiles/conway.dir/main.c.o.d"
-  "/home/ant/Downloads/gol-1/gol/render.c" "CMakeFiles/conway.dir/render.c.o" "gcc" "CMakeFiles/conway.dir/render.c.o.d"
+  "/home/xipi3000/Documents/GameOfLifeMPI/logic.c" "CMakeFiles/conway.dir/logic.c.o" "gcc" "CMakeFiles/conway.dir/logic.c.o.d"
+  "/home/xipi3000/Documents/GameOfLifeMPI/main.c" "CMakeFiles/conway.dir/main.c.o" "gcc" "CMakeFiles/conway.dir/main.c.o.d"
+  "/home/xipi3000/Documents/GameOfLifeMPI/render.c" "CMakeFiles/conway.dir/render.c.o" "gcc" "CMakeFiles/conway.dir/render.c.o.d"
   )
 
 # Targets to which this target links.

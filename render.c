@@ -17,6 +17,7 @@ void render_board(SDL_Renderer* renderer, boardRowInfo *board,
       }
       count_neighbors(board, neighbors);
       evolve(board, neighbors);
+
       break;
     case PAUSE_STATE:
       if (Graphical_Mode)

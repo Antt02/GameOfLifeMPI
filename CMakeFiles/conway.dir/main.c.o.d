@@ -1,5 +1,6 @@
-CMakeFiles/conway.dir/main.c.o: /home/ant/Downloads/gol-1/gol/main.c \
- /usr/include/stdc-predef.h /usr/include/stdlib.h \
+CMakeFiles/conway.dir/main.c.o: \
+ /home/xipi3000/Documents/GameOfLifeMPI/main.c /usr/include/stdc-predef.h \
+ /usr/include/stdlib.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
  /usr/include/features.h /usr/include/features-time64.h \
  /usr/include/x86_64-linux-gnu/bits/wordsize.h \
@@ -185,6 +186,6 @@ CMakeFiles/conway.dir/main.c.o: /home/ant/Downloads/gol-1/gol/main.c \
  /usr/include/SDL2/SDL_shape.h /usr/include/SDL2/SDL_system.h \
  /usr/include/SDL2/SDL_timer.h /usr/include/SDL2/SDL_version.h \
  /usr/include/SDL2/SDL_locale.h /usr/include/SDL2/SDL_misc.h \
- /home/ant/Downloads/gol-1/gol/./game.h \
- /home/ant/Downloads/gol-1/gol/./logic.h \
- /home/ant/Downloads/gol-1/gol/./render.h
+ /home/xipi3000/Documents/GameOfLifeMPI/./game.h \
+ /home/xipi3000/Documents/GameOfLifeMPI/./logic.h \
+ /home/xipi3000/Documents/GameOfLifeMPI/./render.h
