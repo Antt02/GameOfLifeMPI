@@ -41,14 +41,14 @@ void count_neighbors_spherical_world(boardRowInfo* board, unsigned char pop[rows
   //no de cell_state, sino de board->under/board->upper
   for (int i = 1; i < board->finalRow - board->startingRow-1; i++) {
     for (int j = 0; j < (board->COL_NUM); j++) {
-   
+      i_prev = (1 < i) ? i - 1 : board->finalRow - board->startingRow;;
+      i_next = (i < board->finalRow - board->startingRow) ? i + 1 : 0;
+      j_prev = (1 < j) ? j - 1 : board->COL_NUM;
+      j_next = (j <  board->COL_NUM) ? j + 1 : 0;  
       
-      printf("[1]Calculating %i (%i, %i)\n",board->rank ,i+board->rank*5, j);
-      i_prev = (1 < i) ? i - 1 : board->COL_NUM;
-      i_next = (i < board->COL_NUM ) ? i + 1 : 0;
-      j_prev = (1 < j) ? j - 1 : board->finalRow - board->startingRow;
-      j_next = (j <  board->finalRow - board->startingRow) ? j + 1 : 0;    
-     
+      printf("[1]Calculating %i (%i, %i),  Searching(%i)(%i)(%i)(%i)\n",board->rank ,i+board->rank*5, j,i_prev+board->rank*5,i_next+board->rank*5,j_prev,j_next);
+       
+
 
       if (board->cell_state[i_prev][j_prev] == ALIVE) {
         board->neighbors[i][j]++;
