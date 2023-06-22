@@ -138,8 +138,8 @@ int main(int argc, char** argv)
 				if(rank==0){
 					if ((optopt == 't' || optopt == 's' || optopt == 'c' || optopt == 'i' || optopt == 'o' || optopt == 'w' || optopt == 'h' || optopt == 'e' ))
 						fprintf(stderr, "Option -%c requires an argument.\n", optopt);
-					else if (isprint (optopt))
-						fprintf (stderr, "Unknown option `-%c'.\n", optopt);
+					//else if (isprint (optopt))
+					//	fprintf (stderr, "Unknown option `-%c'.\n", optopt);
 					else
 						fprintf (stderr, "Unknown option character `\\x%x'.\n", optopt);
 					printf("Setting default options.\n");
@@ -407,7 +407,7 @@ int main(int argc, char** argv)
 		myBoard->rank=rank;
 		//es realitza el calcul de la nova iteració
 #ifdef NO_SDL 
-		render_board(myBoard, neighbors, board);
+		render_board_noSdl(myBoard, neighbors, board);
 #else
 		render_board(renderer, myBoard, neighbors, board);
 #endif

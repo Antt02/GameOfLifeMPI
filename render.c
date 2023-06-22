@@ -1,4 +1,4 @@
-#include <SDL2/SDL.h>
+
 #include <mpi.h>
 
 #include "./game.h"
@@ -8,13 +8,18 @@
 bool Graphical_Mode = false;
 int rows, M;
 
-void render_board(SDL_Renderer* renderer, boardRowInfo *board,
+
+
+
+
+#ifdef NO_SDL 
+void render_board_noSdl(boardRowInfo *board,
                   unsigned char neighbors[rows][M], board_t* fullBoard)
 { 
   switch(fullBoard->game_state) { 
     case RUNNING_STATE:
       if (Graphical_Mode&&board->rank==0){
-      	render_running_state(renderer, board, fullBoard);
+      	
       }
 
       
@@ -26,11 +31,14 @@ void render_board(SDL_Renderer* renderer, boardRowInfo *board,
       break;
     case PAUSE_STATE:
       if (Graphical_Mode&&board->rank==0)
-        render_pause_state(renderer, board, fullBoard);
+       
       break;
     default: {}
   }
 }
+#else
+
+#include <SDL2/SDL.h>
 
 void render_running_state(SDL_Renderer *renderer, boardRowInfo *board, board_t *fullBoard)
 {
@@ -84,3 +92,4 @@ void pause_square(SDL_Renderer *renderer, int pos_x, int pos_y, board_t* board)
   SDL_RenderFillRect(renderer, &cell);
 }
 
+#endif
