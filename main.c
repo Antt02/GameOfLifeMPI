@@ -400,8 +400,8 @@ int main(int argc, char** argv)
 		render_board(renderer, myBoard, neighbors, board);
 #endif
 		if (Graphical_Mode && rank==0) 
-		{ 
-#ifndef NO_SDL 
+		{
+#ifndef NO_SDL
 			SDL_RenderPresent(renderer);
 #endif
 			usleep(TICKS);
@@ -424,7 +424,6 @@ int main(int argc, char** argv)
 		for(int x=1; x<size;x++){
 			int measure = rows;
 			if(x+1==size){
-				printf("a\n");
 				measure+=M%size;
 			}
 			unsigned char recvBuff[M];
@@ -433,7 +432,6 @@ int main(int argc, char** argv)
 			for(int c=0;c<measure;c++){
 				MPI_Irecv(&recvBuff, measure, boardRow, x, x+1 , MPI_COMM_WORLD, &rq);
 				MPI_Wait(&rq, &stat);
-				printf("Recieved info from %i", stat.MPI_SOURCE);
 				for (int d=0;d<M;d++){
 					recieved[c][d] = recvBuff[d];
 				}
@@ -442,7 +440,7 @@ int main(int argc, char** argv)
 			int recvRank = stat.MPI_SOURCE;
 			for (int y=0;y<measure;y++){
 				for (int z = 0; z<M;z++){
-					board->cell_state[recvRank*measure + y][z] = recieved[y][z];
+					board->cell_state[recvRank*rows + y][z] = recieved[y][z];
 				}
 			}
 		}
@@ -471,9 +469,8 @@ int main(int argc, char** argv)
 	 	printf("Writting Board file %s.\n",output_file); fflush(stdout);
 	 	life_write(output_file, board);
 	}
-	//free(board);
-	//free(myBoard);
+	free(board);
+	free(myBoard);
 	MPI_Finalize();
-	printf("VALE SI HE ACABAT");
 	return EXIT_SUCCESS;
 }
